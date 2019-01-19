@@ -13,13 +13,14 @@ const HeroSection = () => (
           <p className="hero-section__content__heading">Stones</p>
 
           <p className="hero-section__content__heading">Redefined</p>
-
-          <p className="hero-section__content__text">
-            <span aria-label="pointing finger" role="img">
-              &#x1F449;
-            </span>
-            Sign up for trial
-          </p>
+          <Centrifier>
+            <p className="hero-section__content__text">
+              <span aria-label="pointing finger" role="img">
+                &#x1F449;
+              </span>
+              Sign up for trial
+            </p>
+          </Centrifier>
         </div>
       </Centrifier>
     </Container>
