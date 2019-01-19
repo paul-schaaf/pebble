@@ -8,7 +8,7 @@ import './featureSection.sass';
 const FeatureSection = () => (
   <div className="feature-section">
     <Container>
-      <p>Features</p>
+      <p className="feature-section__heading">Features</p>
     </Container>
   </div>
 );
