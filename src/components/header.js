@@ -8,7 +8,7 @@ import './header.sass';
 const Header = ({ siteTitle }) => (
   <div className="navbar-box">
     <Container>
-      <h1>{siteTitle}</h1>
+      <p className="title">{siteTitle}</p>
     </Container>
   </div>
 );
