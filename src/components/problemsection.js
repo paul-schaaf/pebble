@@ -10,7 +10,7 @@ const ProblemSection = () => (
     <Container>
       <Centrifier>
         <p>Why Pebble?</p>
-        <p>We are solving key issues that the stone industry faces t0day</p>
+        <p>We are solving key issues that the stone industry faces today</p>
       </Centrifier>
     </Container>
   </div>
