@@ -6,6 +6,7 @@ import HeroSection from '../components/heroSection';
 import ProblemSection from '../components/problemSection';
 import FeatureSection from '../components/featureSection';
 import PricingSection from '../components/pricingSection';
+import PraiseSection from '../components/praiseSection';
 
 const IndexPage = () => (
   <Layout>
@@ -14,6 +15,7 @@ const IndexPage = () => (
     <ProblemSection />
     <FeatureSection />
     <PricingSection />
+    <PraiseSection />
   </Layout>
 );
 
