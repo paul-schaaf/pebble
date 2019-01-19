@@ -1,6 +1,13 @@
+@import ../layout
+  
 .container
   position: relative
-  margin: 0 auto
-  @media screen and (min-width: 1088px)
+  margin-left: 32px
+  margin-right: 32px
+  +for-phone-only
+    margin-left: 16px
+    margin-right: 16px
+  +for-desktop-up
     max-width: 1088px
     width: auto
+    margin: 0 auto
