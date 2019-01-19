@@ -8,7 +8,17 @@ import './heroSection.sass';
 const HeroSection = () => (
   <div className="hero-section">
     <Container>
-      <Centrifier>hi</Centrifier>
+      <Centrifier>
+        <p>Stones</p>
+      </Centrifier>
+      <Centrifier>
+        <p>Redefined</p>
+      </Centrifier>
+      <Centrifier>
+        <p>
+          <span>&#x1F449;</span>Sign up for trial
+        </p>
+      </Centrifier>
     </Container>
   </div>
 );
