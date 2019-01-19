@@ -10,9 +10,15 @@ const PricingSection = () => (
     <Container>
       <p className="pricing-section__heading">Pricing</p>
       <div className="pricing-section__plan-box">
-        <Card type="pricing">Basic</Card>
-        <Card type="pricing">Pro</Card>
-        <Card type="pricing">Enterprise</Card>
+        <Card type="pricing">
+          <p className="card--pricing__plan-name">Basic</p>
+        </Card>
+        <Card type="pricing">
+          <p className="card--pricing__plan-name">Pro</p>
+        </Card>
+        <Card type="pricing">
+          <p className="card--pricing__plan-name">Enterprise</p>
+        </Card>
       </div>
     </Container>
   </div>
