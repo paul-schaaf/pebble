@@ -17,6 +17,7 @@ const PricingSection = () => (
               &#x1F41F;
             </span>
           </p>
+          <p className="card--pricing__plan-price">9$</p>
         </Card>
         <Card type="pricing">
           <p className="card--pricing__plan-name">
@@ -25,6 +26,7 @@ const PricingSection = () => (
               &#x1F42C;
             </span>
           </p>
+          <p className="card--pricing__plan-price">20$</p>
         </Card>
         <Card type="pricing">
           <p className="card--pricing__plan-name">
@@ -37,6 +39,7 @@ const PricingSection = () => (
               &#x1F433;
             </span>
           </p>
+          <p className="card--pricing__plan-price">Contact us</p>
         </Card>
       </div>
     </Container>
