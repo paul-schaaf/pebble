@@ -23,8 +23,42 @@ const ProblemSection = () => (
       </Centrifier>
       <Centrifier>
         <div className="problem-section__card-box">
-          <Card type="problem">hi</Card>
-          <Card type="problem">hi</Card>
+          <Card type="problem">
+            <p>No Healthy Food</p>
+            <p>
+              <span>&#x1F36D;</span>
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco labo-ris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in volup-tate velit esse cillum dolore eu fugiat
+              nulla paria-tur. Excepteur sint aliquip ex ea commodo ea ut
+            </p>
+            <p>
+              <span>&#x1F449;</span>
+              Read more
+            </p>
+          </Card>
+          <Card type="problem">
+            <p>High Housing Costs</p>
+            <p>
+              <span>&#x1F3DA;</span>
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco labo-ris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in volup-tate velit esse cillum dolore eu fugiat
+              nulla paria-tur. Excepteur sint aliquip ex ea commodo ea ut
+            </p>
+            <p>
+              <span>&#x1F449;</span>
+              Read more
+            </p>
+          </Card>
         </div>
       </Centrifier>
     </Container>
