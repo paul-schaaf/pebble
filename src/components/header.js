@@ -59,7 +59,7 @@ class Header extends Component {
           clearTimeout(this.state.scrollTimer);
         }
         this.setState({ canShowNavbar: false });
-        navbar.style.top = '-80px';
+        navbar.style.top = '-85px';
         this.setState({
           scrollTimer: setTimeout(() => {
             this.setState({ canShowNavbar: true });
