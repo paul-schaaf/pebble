@@ -9,15 +9,18 @@ const HeroSection = () => (
   <div className="hero-section">
     <Container>
       <Centrifier>
-        <p>Stones</p>
-      </Centrifier>
-      <Centrifier>
-        <p>Redefined</p>
-      </Centrifier>
-      <Centrifier>
-        <p>
-          <span>&#x1F449;</span>Sign up for trial
-        </p>
+        <div className="hero-section__content">
+          <p className="hero-section__content__heading">Stones</p>
+
+          <p className="hero-section__content__heading">Redefined</p>
+
+          <p className="hero-section__content__text">
+            <span aria-label="pointing finger" role="img">
+              &#x1F449;
+            </span>
+            Sign up for trial
+          </p>
+        </div>
       </Centrifier>
     </Container>
   </div>
