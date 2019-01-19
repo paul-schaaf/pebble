@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Container from './helperComponents/container';
+
 import './header.sass';
 
 const Header = ({ siteTitle }) => (
   <div className="navbar-box">
-    <div>
-      <h1 style={{ margin: 0 }}>{siteTitle}</h1>
-    </div>
+    <Container>
+      <h1>{siteTitle}</h1>
+    </Container>
   </div>
 );
 
