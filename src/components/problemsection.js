@@ -3,6 +3,8 @@ import React from 'react';
 import Container from './helperComponents/container';
 import Centrifier from './helperComponents/centrifier';
 
+import Card from './card';
+
 import './problemSection.sass';
 
 const ProblemSection = () => (
@@ -17,6 +19,12 @@ const ProblemSection = () => (
           <p className="problem-section__header-box__subtitle">
             stone industry faces today
           </p>
+        </div>
+      </Centrifier>
+      <Centrifier>
+        <div className="problem-section__card-box">
+          <Card type="problem">hi</Card>
+          <Card type="problem">hi</Card>
         </div>
       </Centrifier>
     </Container>
