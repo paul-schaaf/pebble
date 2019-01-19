@@ -24,13 +24,13 @@ const ProblemSection = () => (
       <Centrifier>
         <div className="problem-section__card-box">
           <Card type="problem">
-            <p className="card--problem__heading">No Healthy Food</p>
-            <p className="card--problem__main-emoji">
+            <p className="card__heading">No Healthy Food</p>
+            <p className="card__main-emoji">
               <span role="img" aria-label="lollipop emoji">
                 &#x1F36D;
               </span>
             </p>
-            <p className="card--problem__text">
+            <p className="card__text">
               Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco labo-ris
@@ -39,7 +39,7 @@ const ProblemSection = () => (
               nulla paria-tur. Excepteur sint aliquip ex ea commodo ea ut
             </p>
             <Centrifier>
-              <p className="card--problem__read-more">
+              <p className="card__read-more">
                 <span role="img" aria-label="pointing finger">
                   &#x1F449;
                 </span>
@@ -48,13 +48,13 @@ const ProblemSection = () => (
             </Centrifier>
           </Card>
           <Card type="problem">
-            <p className="card--problem__heading">High Housing Costs</p>
-            <p className="card--problem__main-emoji">
+            <p className="card__heading">High Housing Costs</p>
+            <p className="card__main-emoji">
               <span role="img" aria-label="shack">
                 &#x1F3DA;
               </span>
             </p>
-            <p className="card--problem__text">
+            <p className="card__text">
               Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco labo-ris
@@ -63,7 +63,7 @@ const ProblemSection = () => (
               nulla paria-tur. Excepteur sint aliquip ex ea commodo ea ut
             </p>
             <Centrifier>
-              <p className="card--problem__read-more">
+              <p className="card__read-more">
                 <span role="img" aria-label="pointing finger">
                   &#x1F449;
                 </span>
