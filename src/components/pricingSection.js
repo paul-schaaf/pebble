@@ -39,7 +39,7 @@ const PricingSection = () => (
               &#x1F433;
             </span>
           </p>
-          <p className="card--pricing__plan-price">Contact us</p>
+          <p className="card--pricing__plan-contact">Contact us</p>
         </Card>
       </div>
     </Container>
