@@ -2,6 +2,8 @@ import React from 'react';
 
 import './card.sass';
 
-const Card = () => <div>hi</div>;
+const Card = ({ type, children }) => (
+  <div className={`card card--${type}`}>{children}</div>
+);
 
 export default Card;
