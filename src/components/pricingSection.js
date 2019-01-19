@@ -11,13 +11,32 @@ const PricingSection = () => (
       <p className="pricing-section__heading">Pricing</p>
       <div className="pricing-section__plan-box">
         <Card type="pricing">
-          <p className="card--pricing__plan-name">Basic</p>
+          <p className="card--pricing__plan-name">
+            Basic
+            <span role="img" aria-label="basic plan emoji">
+              &#x1F41F;
+            </span>
+          </p>
         </Card>
         <Card type="pricing">
-          <p className="card--pricing__plan-name">Pro</p>
+          <p className="card--pricing__plan-name">
+            Pro
+            <span role="img" aria-label="pro plan emoji">
+              &#x1F42C;
+            </span>
+          </p>
         </Card>
         <Card type="pricing">
-          <p className="card--pricing__plan-name">Enterprise</p>
+          <p className="card--pricing__plan-name">
+            Enterprise
+            <span
+              className="whale-emoji"
+              role="img"
+              aria-label="enterprise plan emoji"
+            >
+              &#x1F433;
+            </span>
+          </p>
         </Card>
       </div>
     </Container>
