@@ -23,3 +23,25 @@ body
 
 p
   margin: 0
+
+//Responsive mixins
+
+=for-phone-only 
+  @media (max-width: 599px)
+    @content
+
+=for-tablet-portrait-up
+  @media (min-width: 600px)
+    @content
+
+=for-tablet-landscape-up
+  @media (min-width: 900px)
+    @content
+
+=for-desktop-up
+  @media (min-width: 1200px)
+    @content
+
+=for-big-desktop-up
+  @media (min-width: 1800px)
+    @content
