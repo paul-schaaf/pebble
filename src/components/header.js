@@ -9,6 +9,12 @@ const Header = ({ siteTitle }) => (
   <div className="navbar-box">
     <Container>
       <p className="title">{siteTitle}</p>
+      <div className="link-box">
+        <p>Why Pebble?</p>
+        <p>Features</p>
+        <p>Pricing</p>
+        <p>Praise</p>
+      </div>
     </Container>
   </div>
 );
