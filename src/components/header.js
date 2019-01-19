@@ -75,11 +75,10 @@ class Header extends Component {
       <div id="navbar" className="navbar-box">
         <Container>
           <p className="title">{this.props.siteTitle}</p>
-          <div className="link-box">
-            <p>Why Pebble?</p>
-            <p>Features</p>
-            <p>Pricing</p>
-            <p>Praise</p>
+          <div className="hamburger-menu">
+            <div className="hamburger-menu__line" />
+            <div className="hamburger-menu__line" />
+            <div className="hamburger-menu__line" />
           </div>
         </Container>
       </div>
