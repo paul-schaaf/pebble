@@ -24,11 +24,13 @@ const ProblemSection = () => (
       <Centrifier>
         <div className="problem-section__card-box">
           <Card type="problem">
-            <p>No Healthy Food</p>
-            <p>
-              <span>&#x1F36D;</span>
+            <p className="card--problem__heading">No Healthy Food</p>
+            <p className="card--problem__main-emoji">
+              <span role="img" aria-label="lollipop emoji">
+                &#x1F36D;
+              </span>
             </p>
-            <p>
+            <p className="card--problem__text">
               Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco labo-ris
@@ -36,17 +38,23 @@ const ProblemSection = () => (
               reprehenderit in volup-tate velit esse cillum dolore eu fugiat
               nulla paria-tur. Excepteur sint aliquip ex ea commodo ea ut
             </p>
-            <p>
-              <span>&#x1F449;</span>
-              Read more
-            </p>
+            <Centrifier>
+              <p className="card--problem__read-more">
+                <span role="img" aria-label="pointing finger">
+                  &#x1F449;
+                </span>
+                Read more
+              </p>
+            </Centrifier>
           </Card>
           <Card type="problem">
-            <p>High Housing Costs</p>
-            <p>
-              <span>&#x1F3DA;</span>
+            <p className="card--problem__heading">High Housing Costs</p>
+            <p className="card--problem__main-emoji">
+              <span role="img" aria-label="shack">
+                &#x1F3DA;
+              </span>
             </p>
-            <p>
+            <p className="card--problem__text">
               Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco labo-ris
@@ -54,10 +62,14 @@ const ProblemSection = () => (
               reprehenderit in volup-tate velit esse cillum dolore eu fugiat
               nulla paria-tur. Excepteur sint aliquip ex ea commodo ea ut
             </p>
-            <p>
-              <span>&#x1F449;</span>
-              Read more
-            </p>
+            <Centrifier>
+              <p className="card--problem__read-more">
+                <span role="img" aria-label="pointing finger">
+                  &#x1F449;
+                </span>
+                Read more
+              </p>
+            </Centrifier>
           </Card>
         </div>
       </Centrifier>
