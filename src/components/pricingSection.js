@@ -18,6 +18,7 @@ const PricingSection = () => (
             </span>
           </p>
           <p className="card--pricing__plan-price">9$</p>
+          <p className="card--pricing__plan-price--info">/user/month</p>
         </Card>
         <Card type="pricing">
           <p className="card--pricing__plan-name">
@@ -27,6 +28,7 @@ const PricingSection = () => (
             </span>
           </p>
           <p className="card--pricing__plan-price">20$</p>
+          <p className="card--pricing__plan-price--info">/user/month</p>
         </Card>
         <Card type="pricing">
           <p className="card--pricing__plan-name">
