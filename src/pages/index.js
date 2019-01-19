@@ -5,6 +5,7 @@ import SEO from '../components/seo';
 import HeroSection from '../components/heroSection';
 import ProblemSection from '../components/problemSection';
 import FeatureSection from '../components/featureSection';
+import PricingSection from '../components/pricingSection';
 
 const IndexPage = () => (
   <Layout>
@@ -12,6 +13,7 @@ const IndexPage = () => (
     <HeroSection />
     <ProblemSection />
     <FeatureSection />
+    <PricingSection />
   </Layout>
 );
 
