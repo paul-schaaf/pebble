@@ -2,11 +2,12 @@
   
 .container
   position: relative
-  margin-left: 32px
-  margin-right: 32px
   +for-phone-only
     margin-left: 16px
     margin-right: 16px
+  +for-tablet-portrait-up
+    margin-left: 32px
+    margin-right: 32px
   +for-desktop-up
     max-width: 1088px
     width: auto
