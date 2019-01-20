@@ -76,9 +76,9 @@ class Header extends Component {
         <Container>
           <p className="title">{this.props.siteTitle}</p>
           <div className="hamburger-menu">
-            <div className="hamburger-menu__line" />
-            <div className="hamburger-menu__line" />
-            <div className="hamburger-menu__line" />
+            <div className="hamburger-menu__line hamburger-menu__line--one" />
+            <div className="hamburger-menu__line hamburger-menu__line--two" />
+            <div className="hamburger-menu__line hamburger-menu__line--three" />
           </div>
         </Container>
       </div>
