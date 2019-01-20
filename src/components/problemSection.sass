@@ -7,9 +7,15 @@
     text-align: center
 
     &__heading
-      font-size: 80px
+      font-size: 44px
       color: rgba(0,0,0,0.95)
       letter-spacing: 3px
+      @media (min-width: 700px) and (min-height: 400px)
+        font-size: 52px
+      @media (min-width: 500px) and (min-height: 500px)
+        font-size: 64px
+      @media (min-width: 768px) and (min-height: 700px)
+        font-size: 80px
 
     &__subtitle
       font-size: 18px

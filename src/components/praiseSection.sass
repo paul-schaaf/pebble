@@ -4,12 +4,18 @@
   width: 100%
   
   &__heading
-    font-size: 80px
+    font-size: 44px
     font-family: $secondary-text
     font-weight: 900
     letter-spacing: 3px
     //margin-left: 550px
     margin-left: calc(100vw * .02)
+    @media (min-width: 700px) and (min-height: 400px)
+      font-size: 52px
+    @media (min-width: 500px) and (min-height: 500px)
+      font-size: 64px
+    @media (min-width: 768px) and (min-height: 700px)
+      font-size: 80px
   
   &__scroll-box
     padding-top: 60px
