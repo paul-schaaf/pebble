@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 
 import Container from './helperComponents/container';
 
+import pebbleIcon from '../images/header_oval.svg';
+
 import './header.sass';
 
 class Header extends Component {
@@ -74,6 +76,7 @@ class Header extends Component {
     return (
       <div id="navbar" className="navbar-box">
         <Container>
+          <img className="navbar-box__pebble" src={pebbleIcon} />
           <p className="title">{this.props.siteTitle}</p>
           <div className="hamburger-menu">
             <div className="hamburger-menu__line hamburger-menu__line--one" />
