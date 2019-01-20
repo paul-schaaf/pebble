@@ -66,6 +66,24 @@ const PraiseSection = () => (
           <p className="card--praise__praise-text">Nice work, yummy!</p>
           <p className="card--praise__praise-author">- @theFriendlyZombie</p>
         </Card>
+        <Card type="praise">
+          <p className="card--praise__praise-emoji">
+            <span role="img" aria-label="praise emoji">
+              👩‍🎨
+            </span>
+          </p>
+          <p className="card--praise__praise-text">Beautiful!</p>
+          <p className="card--praise__praise-author">- @emilia</p>
+        </Card>
+        <Card type="praise">
+          <p className="card--praise__praise-emoji">
+            <span role="img" aria-label="praise emoji">
+              👨‍🚀
+            </span>
+          </p>
+          <p className="card--praise__praise-text">Five stars!</p>
+          <p className="card--praise__praise-author">- @oscar</p>
+        </Card>
         <div className="praise-section__scroll-box__card-box--one__placeholder" />
       </div>
       <div className="praise-section__scroll-box__card-box">
@@ -122,6 +140,24 @@ const PraiseSection = () => (
           </p>
           <p className="card--praise__praise-text">Magnificent!</p>
           <p className="card--praise__praise-author">- @henry</p>
+        </Card>
+        <Card type="praise">
+          <p className="card--praise__praise-emoji">
+            <span role="img" aria-label="praise emoji">
+              👸🏼
+            </span>
+          </p>
+          <p className="card--praise__praise-text">Yes, yes, yes!</p>
+          <p className="card--praise__praise-author">- @sissi</p>
+        </Card>
+        <Card type="praise">
+          <p className="card--praise__praise-emoji">
+            <span role="img" aria-label="praise emoji">
+              👮🏿
+            </span>
+          </p>
+          <p className="card--praise__praise-text">Very secure!</p>
+          <p className="card--praise__praise-author">- @richard</p>
         </Card>
       </div>
     </div>
