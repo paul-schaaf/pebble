@@ -38,11 +38,24 @@
       margin-right: 5px
 
   &--problem
-    height: 383px
-    width: 400px
+    height: 430px
     text-align: center
     padding: 0 45px 0 45px
     box-sizing: border-box
+    
+    width: 360px
+    @media (min-width: 511px)
+      height: 390px
+      width: 450px
+    @media (min-width: 701px)
+      height: 310px
+      width: 600px
+    @media (min-width: 871px)
+      width: 350px
+      height: 430px
+    @media (min-width: 981px)
+      width: 400px
+      height: 383px
 
   &--feature
     height: 310px

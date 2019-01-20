@@ -24,6 +24,16 @@
     margin-top: 60px
     margin-bottom: 200px
     display: flex
+    flex-direction: column
+    @media (min-width: 871px)
+      flex-direction: row
     
+    div
+      margin-bottom: 30px
+      @media (min-width: 511px)
+        margin-bottom: 60px
+      @media (min-width:871px)
+        margin-bottom: 0px
     div:first-child
-      margin-right: 60px
+      @media (min-width: 871px)
+        margin-right: 60px
