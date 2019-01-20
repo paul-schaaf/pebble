@@ -53,11 +53,14 @@
 
   &--pricing
     height: 415px
-    //width: calc(100vw * 0.208)
-    width: 300px
-    @media (max-width: 1020px)
-      width: 250px
     font-weight: 700
+    @media (max-width: 950px)
+      width: 250px
+    @media (min-width: 951px)
+      width: 275px
+    @media (min-width: 1021px)
+      width: 300px
+    
 
     &__plan-name
       font-size: 25px
