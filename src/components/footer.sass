@@ -1,12 +1,25 @@
 .footer-section
-  height: 220px
+  height: 705px
   background: rgb(250,250,250)
   box-sizing: border-box
-  padding-top: 30px
   padding-bottom: 35px
+  padding-left: 20px
+  display: flex
+  flex-direction: column
+  @media (min-width: 751px)
+    padding-top: 30px
+    height: 220px
+    flex-direction: row
+    justify-content: center
+
+  div:first-child
+    margin-top: 15px
 
   &__box
-    margin-right: 60px
+    margin-top: 30px
+    @media (min-width: 751px)
+      margin-top: 0px
+      margin-right: 60px
     @media (min-width: 831px)
       margin-right: 80px
 
@@ -19,11 +32,15 @@
       color: rgba(0,0,0,0.80)
       
     &__info-text
-      font-size: 12px
+      font-size: 15px
       font-weight: 500
       color: rgba(0,0,0,0.15)
-      line-height: 19px
+      line-height: 25px
       margin-top: 15px
+      @media (min-width: 751px)
+        font-size: 12px
+        line-height: 19px
+        margin-top: 15px
 
     &__footer-link
       font-size: 15px
