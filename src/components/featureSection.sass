@@ -12,7 +12,34 @@
     margin-top: 60px
     margin-bottom: 250px
     display: grid
-    grid-template-columns: 310px 310px 310px
-    grid-template-rows: 310px 310px
-    grid-column-gap: 60px
-    grid-row-gap: 60px
+    grid-template-columns: 360px
+    grid-template-rows: 300px 300px 300px 300px 300px 300px
+    grid-row-gap: 20px
+    @media (min-width: 511px)
+      grid-template-columns: 450px
+      grid-template-rows: 260px 260px 260px 260px 260px 260px
+      grid-row-gap: 30px
+    @media (min-width: 701px)
+      grid-template-columns: 300px 300px
+      grid-template-rows: 310px 310px 310px
+      grid-column-gap: 30px
+      grid-row-gap: 30px
+    @media (min-width: 781px)
+      grid-column-gap: 60px
+      grid-row-gap: 60px
+    @media (min-width: 891px)
+      grid-template-columns: 400px 400px
+      grid-template-rows: 290px 290px 290px
+      grid-column-gap: 30px
+      grid-row-gap: 30px
+    @media (min-width: 1051px)
+      grid-template-columns: 310px 310px 310px
+      grid-template-rows: 310px 310px
+      grid-column-gap: 30px
+      grid-row-gap: 30px
+    @media (min-width: 1111px)
+      grid-column-gap: 45px
+      grid-row-gap: 45px
+    @media (min-width: 1181px)
+      grid-column-gap: 60px
+      grid-row-gap: 60px
