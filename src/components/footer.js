@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Centrifier from './helperComponents/centrifier';
-
 import './footer.sass';
 
 const Footer = () => (
