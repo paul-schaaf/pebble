@@ -6,7 +6,12 @@
     font-family: $secondary-text
     font-weight: 900
     letter-spacing: 3px
-    margin-left: 230px
+    margin-left: calc(100vw * .05)
+
+    @media (min-width: 500px)
+      margin-left: calc(100vw * .10)
+    @media (min-width: 731px)
+      margin-left: calc(100vw * 0.1597)
 
   &__plan-box
     margin-top: 60px
