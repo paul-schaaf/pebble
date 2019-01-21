@@ -13,6 +13,7 @@ class Header extends Component {
     prevScrollpos: 0,
     canShowNavbar: true,
     scrollTimer: 'none',
+    menuOpen: false,
   };
 
   componentDidMount = () => {
@@ -73,6 +74,25 @@ class Header extends Component {
     }
   };
 
+  onMenuClick = () => {
+    if (!this.state.menuOpen) {
+      const pebble = document.querySelector('.navbar-box__pebble');
+      if (window.innerWidth >= 768) {
+        pebble.style.transform =
+          'scale3d(50, 50, 50) rotate(45deg) translateY(2.5px)';
+      } else {
+        pebble.style.transform =
+          'scale3d(30, 30, 30) rotate(30deg) translateY(2.5px)';
+      }
+      this.setState({ menuOpen: true });
+    } else {
+      const pebble = document.querySelector('.navbar-box__pebble');
+      pebble.style.transform =
+        'scale3d(1, 1, 1) rotate(0deg) translateY(2.5px)';
+      this.setState({ menuOpen: false });
+    }
+  };
+
   render() {
     return (
       <div id="navbar" className="navbar-box">
@@ -91,7 +111,7 @@ class Header extends Component {
           >
             <p className="title">{this.props.siteTitle}</p>
           </Link>
-          <div className="hamburger-menu">
+          <div onClick={this.onMenuClick} className="hamburger-menu">
             <div className="hamburger-menu__line hamburger-menu__line--one" />
             <div className="hamburger-menu__line hamburger-menu__line--two" />
             <div className="hamburger-menu__line hamburger-menu__line--three" />
