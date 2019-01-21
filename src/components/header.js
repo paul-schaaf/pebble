@@ -75,20 +75,24 @@ class Header extends Component {
   };
 
   onMenuClick = () => {
+    const pebble = document.querySelector('.navbar-box__pebble');
+    const body = document.querySelector('body');
     if (!this.state.menuOpen) {
-      const pebble = document.querySelector('.navbar-box__pebble');
       if (window.innerWidth >= 768) {
         pebble.style.transform =
           'scale3d(50, 50, 50) rotate(45deg) translateY(2.5px)';
+        body.classList.add('stop-scrolling');
       } else {
         pebble.style.transform =
           'scale3d(30, 30, 30) rotate(30deg) translateY(2.5px)';
+        body.classList.add('stop-scrolling');
       }
       this.setState({ menuOpen: true });
     } else {
       const pebble = document.querySelector('.navbar-box__pebble');
       pebble.style.transform =
         'scale3d(1, 1, 1) rotate(0deg) translateY(2.5px)';
+      body.classList.remove('stop-scrolling');
       this.setState({ menuOpen: false });
     }
   };
