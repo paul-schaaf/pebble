@@ -1,16 +1,13 @@
 import React from 'react';
+import Img from 'gatsby-image';
 
 import Container from './helperComponents/container';
 import Centrifier from './helperComponents/centrifier';
 import Card from './card';
 
-import lollipopIcon from '../images/lollipop.png';
-import shackIcon from '../images/shackIcon.png';
-import fingerIcon from '../images/pointing_finger.png';
-
 import './problemSection.sass';
 
-const ProblemSection = () => (
+const ProblemSection = ({ lollipopEmoji, shackEmoji, fingerEmoji }) => (
   <div className="problem-section">
     <Container>
       <Centrifier>
@@ -28,11 +25,15 @@ const ProblemSection = () => (
         <div className="problem-section__card-box">
           <Card type="problem">
             <p className="card__heading">No Healthy Food</p>
-            <p className="card__main-emoji">
+            <div className="card__main-emoji">
               <span role="img" aria-label="lollipop emoji">
-                <img className="card__main-emoji__img" src={lollipopIcon} />
+                <Img
+                  alt="lollipop emoji"
+                  className="card__main-emoji__img"
+                  fixed={lollipopEmoji.childImageSharp.fixed}
+                />
               </span>
-            </p>
+            </div>
             <p className="card__text">
               Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -42,21 +43,29 @@ const ProblemSection = () => (
               nulla paria-tur. Excepteur sint aliquip ex ea commodo ea ut
             </p>
             <Centrifier>
-              <p className="card__read-more">
+              <div className="card__read-more">
                 <span role="img" aria-label="pointing finger">
-                  <img className="card__finger" src={fingerIcon} />
+                  <Img
+                    alt="pointing finger"
+                    className="card__finger"
+                    fixed={fingerEmoji.childImageSharp.fixed}
+                  />
                 </span>
                 Read more
-              </p>
+              </div>
             </Centrifier>
           </Card>
           <Card type="problem">
             <p className="card__heading">High Housing Costs</p>
-            <p className="card__main-emoji">
+            <div className="card__main-emoji">
               <span role="img" aria-label="shack">
-                <img className="card__main-emoji__img" src={shackIcon} />
+                <Img
+                  alt="shack emoji"
+                  className="card__main-emoji__img"
+                  fixed={shackEmoji.childImageSharp.fixed}
+                />
               </span>
-            </p>
+            </div>
             <p className="card__text">
               Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -66,12 +75,16 @@ const ProblemSection = () => (
               nulla paria-tur. Excepteur sint aliquip ex ea commodo ea ut
             </p>
             <Centrifier>
-              <p className="card__read-more">
+              <div className="card__read-more">
                 <span role="img" aria-label="pointing finger">
-                  <img className="card__finger" src={fingerIcon} />
+                  <Img
+                    alt="pointing finger"
+                    className="card__finger"
+                    fixed={fingerEmoji.childImageSharp.fixed}
+                  />
                 </span>
                 Read more
-              </p>
+              </div>
             </Centrifier>
           </Card>
         </div>
