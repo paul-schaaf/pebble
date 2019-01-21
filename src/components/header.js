@@ -122,7 +122,8 @@ class Header extends Component {
           </div>
         </Container>
         <div className="menu">
-          <p onClick={this.onMenuClick}>back</p>
+          <div onClick={this.onMenuClick} className="menu__icon-close" />
+
           <Link
             to="problemSection"
             spy={true}

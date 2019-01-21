@@ -61,7 +61,8 @@
   display: none
   align-items: center
   flex-direction: column
-  padding-top: 50px
+  padding-top: 35px
+
   p 
     font-family: $secondary-text
     cursor: pointer
@@ -70,11 +71,40 @@
     color: white
     font-weight: 900
     letter-spacing: 3px
-    line-height: 125px
+    line-height: 140px
     
-
   p:hover
     color: black
+
+  &__icon-close
+    position: absolute
+    top: -35px
+    left: 25px
+    height: 45px
+    width: 45px
+    cursor: pointer
+      
+    &:before
+      position: absolute;
+      left: 15px;
+      content: ' ';
+      height: 50px;
+      width: 2px;
+      background-color: white
+      transform: rotate(45deg)
+
+    &:after 
+      position: absolute;
+      left: 15px;
+      content: ' ';
+      height: 50px;
+      width: 2px;
+      background-color: white;
+      transform: rotate(-45deg)
+
+    &:hover
+        
+        
 
   
 
