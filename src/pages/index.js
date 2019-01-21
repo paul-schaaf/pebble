@@ -16,26 +16,34 @@ const IndexPage = ({ data }) => (
     <Element name="heroSection">
       <HeroSection fingerEmoji={data.fingerEmojiBig} />
     </Element>
-    <ProblemSection
-      lollipopEmoji={data.lollipopEmoji}
-      shackEmoji={data.shackEmoji}
-      fingerEmoji={data.fingerEmojiSmall}
-    />
-    <FeatureSection
-      craneEmoji={data.craneEmoji}
-      microscopeEmoji={data.microscopeEmoji}
-      robotEmoji={data.robotEmoji}
-      dnaEmoji={data.dnaEmoji}
-      policeCarEmoji={data.policeCarEmoji}
-      brainEmoji={data.brainEmoji}
-      fingerEmoji={data.fingerEmojiSmall}
-    />
-    <PricingSection
-      smallFishEmoji={data.smallFishEmoji}
-      mediumFishEmoji={data.mediumFishEmoji}
-      bigFishEmoji={data.bigFishEmoji}
-    />
-    <PraiseSection />
+    <Element name="problemSection">
+      <ProblemSection
+        lollipopEmoji={data.lollipopEmoji}
+        shackEmoji={data.shackEmoji}
+        fingerEmoji={data.fingerEmojiSmall}
+      />
+    </Element>
+    <Element name="featureSection">
+      <FeatureSection
+        craneEmoji={data.craneEmoji}
+        microscopeEmoji={data.microscopeEmoji}
+        robotEmoji={data.robotEmoji}
+        dnaEmoji={data.dnaEmoji}
+        policeCarEmoji={data.policeCarEmoji}
+        brainEmoji={data.brainEmoji}
+        fingerEmoji={data.fingerEmojiSmall}
+      />
+    </Element>
+    <Element name="pricingSection">
+      <PricingSection
+        smallFishEmoji={data.smallFishEmoji}
+        mediumFishEmoji={data.mediumFishEmoji}
+        bigFishEmoji={data.bigFishEmoji}
+      />
+    </Element>
+    <Element name="praiseSection">
+      <PraiseSection />
+    </Element>
   </Layout>
 );
 

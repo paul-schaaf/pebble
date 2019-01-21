@@ -111,7 +111,7 @@ class Header extends Component {
             spy={true}
             smooth={'easeInOutCubic'}
             duration={750}
-            offset={-70}
+            offset={-80}
           >
             <p className="title">{this.props.siteTitle}</p>
           </Link>
@@ -123,10 +123,54 @@ class Header extends Component {
         </Container>
         <div className="menu">
           <p onClick={this.onMenuClick}>back</p>
-          <p className="menu__link--first">Why Pebble?</p>
-          <p className="menu__link--second">Features</p>
-          <p className="menu__link--third">Pricing</p>
-          <p className="menu__link--fourth">Praise</p>
+          <Link
+            to="problemSection"
+            spy={true}
+            smooth={'easeInOutCubic'}
+            duration={750}
+            offset={-80}
+            delay={1200}
+          >
+            <p onClick={this.onMenuClick} className="menu__link--first">
+              Why Pebble?
+            </p>
+          </Link>
+          <Link
+            to="featureSection"
+            spy={true}
+            smooth={'easeInOutCubic'}
+            duration={750}
+            offset={-80}
+            delay={1200}
+          >
+            <p onClick={this.onMenuClick} className="menu__link--second">
+              Features
+            </p>
+          </Link>
+          <Link
+            to="pricingSection"
+            spy={true}
+            smooth={'easeInOutCubic'}
+            duration={750}
+            offset={-80}
+            delay={1200}
+          >
+            <p onClick={this.onMenuClick} className="menu__link--third">
+              Pricing
+            </p>
+          </Link>
+          <Link
+            to="praiseSection"
+            spy={true}
+            smooth={'easeInOutCubic'}
+            duration={750}
+            offset={-80}
+            delay={1200}
+          >
+            <p onClick={this.onMenuClick} className="menu__link--fourth">
+              Praise
+            </p>
+          </Link>
         </div>
       </div>
     );
