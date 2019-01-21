@@ -17,7 +17,7 @@
   &__pebble
     margin-right: 1px
     transform: translateY(2.5px)
-    transition: .5s
+    transition: 1.5s
     width: 14px
   
   .title
@@ -53,6 +53,30 @@
       &--three
         width: 25px
         margin-left: 5px
+
+.menu
+  position: absolute
+  width: 100vw
+  height: 100vh
+  display: none
+  align-items: center
+  flex-direction: column
+  padding-top: 50px
+  > p 
+    font-family: $secondary-text
+    cursor: pointer
+    transition: .1s
+    font-size: 80px
+    color: white
+    font-weight: 900
+    letter-spacing: 3px
+    line-height: 125px
+    
+
+  > p:hover
+    color: black
+
+  
 
 .stop-scrolling
   height: 100%

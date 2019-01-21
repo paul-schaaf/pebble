@@ -77,22 +77,22 @@ class Header extends Component {
   onMenuClick = () => {
     const pebble = document.querySelector('.navbar-box__pebble');
     const body = document.querySelector('body');
+    const menu = document.querySelector('.menu');
     if (!this.state.menuOpen) {
-      if (window.innerWidth >= 768) {
-        pebble.style.transform =
-          'scale3d(50, 50, 50) rotate(45deg) translateY(2.5px)';
-        body.classList.add('stop-scrolling');
-      } else {
-        pebble.style.transform =
-          'scale3d(30, 30, 30) rotate(30deg) translateY(2.5px)';
-        body.classList.add('stop-scrolling');
-      }
+      pebble.style.transform =
+        'scale3d(250, 250, 250) rotate(45deg) translateY(2.5px) translateX(4px)';
+      body.classList.add('stop-scrolling');
+      setTimeout(() => {
+        menu.style.display = 'flex';
+      }, 750);
+
       this.setState({ menuOpen: true });
     } else {
       const pebble = document.querySelector('.navbar-box__pebble');
       pebble.style.transform =
         'scale3d(1, 1, 1) rotate(0deg) translateY(2.5px)';
       body.classList.remove('stop-scrolling');
+      menu.style.display = 'none';
       this.setState({ menuOpen: false });
     }
   };
@@ -121,6 +121,13 @@ class Header extends Component {
             <div className="hamburger-menu__line hamburger-menu__line--three" />
           </div>
         </Container>
+        <div className="menu">
+          <p onClick={this.onMenuClick}>back</p>
+          <p className="menu__link--first">Why Pebble?</p>
+          <p className="menu__link--second">Features</p>
+          <p className="menu__link--third">Pricing</p>
+          <p className="menu__link--fourth">Praise</p>
+        </div>
       </div>
     );
   }
