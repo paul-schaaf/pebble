@@ -81,6 +81,7 @@ class Header extends Component {
     if (!this.state.menuOpen) {
       pebble.style.transform =
         'scale3d(250, 250, 250) rotate(45deg) translateY(2.5px) translateX(4px)';
+      pebble.style.opacity = 0.85;
       body.classList.add('stop-scrolling');
       setTimeout(() => {
         menu.style.display = 'flex';
@@ -91,6 +92,7 @@ class Header extends Component {
       const pebble = document.querySelector('.navbar-box__pebble');
       pebble.style.transform =
         'scale3d(1, 1, 1) rotate(0deg) translateY(2.5px)';
+      pebble.style.opacity = 1;
       body.classList.remove('stop-scrolling');
       menu.style.display = 'none';
       this.setState({ menuOpen: false });
