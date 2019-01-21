@@ -56,29 +56,51 @@
 
 .menu
   position: absolute
+  top: 0px
   width: 100vw
   height: 100vh
   display: none
   align-items: center
+  justify-content: center
   flex-direction: column
-  padding-top: 35px
+  
+  &__link
+    &--first
+      margin-top: 100vh * 0.03
+    &--second
+      margin-top: 100vh * 0.04
+    &--third
+      margin-top: 100vh * 0.04
+    &--fourth
+      margin-top: 100vh * 0.04
 
   p 
     font-family: $secondary-text
     cursor: pointer
     transition: .1s
-    font-size: 80px
+    font-size: 40px
     color: white
     font-weight: 900
     letter-spacing: 3px
-    line-height: 140px
+    @media (min-width: 400px)
+      font-size: 50px
+    @media (min-width: 500px)
+      font-size: 60px
+    @media (min-width: 600px)
+      font-size: 70px
+    @media (min-width: 700px)
+      font-size: 80px
+    @media (max-height: 500px)
+      font-size: 50px
+    @media (max-height: 400px)
+      font-size: 40px
     
   p:hover
     color: black
 
   &__icon-close
     position: absolute
-    top: -35px
+    top: 25px
     left: 25px
     height: 45px
     width: 45px
@@ -101,12 +123,6 @@
       width: 2px;
       background-color: white;
       transform: rotate(-45deg)
-
-    &:hover
-        
-        
-
-  
 
 .stop-scrolling
   height: 100%
