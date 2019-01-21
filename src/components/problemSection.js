@@ -6,6 +6,7 @@ import Card from './card';
 
 import lollipopIcon from '../images/lollipop.png';
 import shackIcon from '../images/shackIcon.png';
+import fingerIcon from '../images/pointing_finger.png';
 
 import './problemSection.sass';
 
@@ -43,7 +44,7 @@ const ProblemSection = () => (
             <Centrifier>
               <p className="card__read-more">
                 <span role="img" aria-label="pointing finger">
-                  &#x1F449;
+                  <img className="card__finger" src={fingerIcon} />
                 </span>
                 Read more
               </p>
@@ -67,7 +68,7 @@ const ProblemSection = () => (
             <Centrifier>
               <p className="card__read-more">
                 <span role="img" aria-label="pointing finger">
-                  &#x1F449;
+                  <img className="card__finger" src={fingerIcon} />
                 </span>
                 Read more
               </p>
