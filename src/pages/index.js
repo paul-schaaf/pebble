@@ -44,6 +44,16 @@ export const mainEmoji = graphql`
   }
 `;
 
+export const fishEmoji = graphql`
+  fragment fishEmoji on File {
+    childImageSharp {
+      fixed(width: 18) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+`;
+
 export const query = graphql`
   query {
     fingerEmojiSmall: file(relativePath: { eq: "pointing_finger.png" }) {
@@ -96,6 +106,18 @@ export const query = graphql`
 
     brainEmoji: file(relativePath: { eq: "brainEmoji.png" }) {
       ...mainEmoji
+    }
+
+    smallFishEmoji: file(relativePath: { eq: "smallFishEmoji.png" }) {
+      ...fishEmoji
+    }
+
+    mediumFishEmoji: file(relativePath: { eq: "mediumFishEmoji.png" }) {
+      ...fishEmoji
+    }
+
+    bigFishEmoji: file(relativePath: { eq: "bigFishEmoji.png" }) {
+      ...fishEmoji
     }
   }
 `;
