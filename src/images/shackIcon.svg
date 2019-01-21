@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19">
-  <text fill-opacity=".8" fill-rule="evenodd" font-family="AppleColorEmoji, Apple Color Emoji" font-size="15" letter-spacing=".075" transform="translate(-506 -46)">
-    <tspan x="505.134" y="62.25">🏚</tspan>
-  </text>
+  <g fill="none" fill-rule="evenodd" transform="translate(-1 -1)">
+    <text fill="#000" fill-opacity=".8" font-family="AppleColorEmoji, Apple Color Emoji" font-size="15" letter-spacing=".075">
+      <tspan x=".134" y="17.25">🏚</tspan>
+    </text>
+    <rect width="1" height="1" x="5" y="15" fill="#5E2D0A" fill-rule="nonzero"/>
+  </g>
 </svg>
