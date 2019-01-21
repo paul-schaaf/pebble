@@ -18,7 +18,14 @@ const IndexPage = ({ data }) => (
       shackEmoji={data.shackEmoji}
       fingerEmoji={data.fingerEmojiSmall}
     />
-    <FeatureSection />
+    <FeatureSection
+      craneEmoji={data.craneEmoji}
+      microscopeEmoji={data.microscopeEmoji}
+      robotEmoji={data.robotEmoji}
+      dnaEmoji={data.dnaEmoji}
+      policeCarEmoji={data.policeCarEmoji}
+      brainEmoji={data.brainEmoji}
+    />
     <PricingSection />
     <PraiseSection />
   </Layout>
