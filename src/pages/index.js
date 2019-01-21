@@ -12,7 +12,7 @@ import PraiseSection from '../components/praiseSection';
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <HeroSection />
+    <HeroSection fingerEmoji={data.fingerEmojiBig} />
     <ProblemSection
       lollipopEmoji={data.lollipopEmoji}
       shackEmoji={data.shackEmoji}
@@ -50,6 +50,14 @@ export const query = graphql`
       childImageSharp {
         fixed(width: 22) {
           ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    fingerEmojiBig: file(relativePath: { eq: "pointing_finger.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 34) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
