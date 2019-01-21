@@ -1,4 +1,5 @@
 import React from 'react';
+import Img from 'gatsby-image';
 
 import Container from './helperComponents/container';
 import Centrifier from './helperComponents/centrifier';
@@ -6,7 +7,15 @@ import Card from './card';
 
 import './featureSection.sass';
 
-const FeatureSection = () => (
+const FeatureSection = ({
+  craneEmoji,
+  microscopeEmoji,
+  robotEmoji,
+  dnaEmoji,
+  policeCarEmoji,
+  brainEmoji,
+  fingerEmoji,
+}) => (
   <div className="feature-section">
     <Container>
       <p className="feature-section__heading">Features</p>
@@ -14,23 +23,27 @@ const FeatureSection = () => (
         <div className="feature-section__card-grid">
           <Card type="feature">
             <p className="card__heading">Construction Tech</p>
-            <p className="card__main-emoji">
+            <div className="card__main-emoji">
               <span role="img" aria-label="construction emoji">
                 &#x1F3D7;
               </span>
-            </p>
+            </div>
             <p className="card__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis
             </p>
             <Centrifier>
-              <p className="card__read-more">
+              <div className="card__read-more">
                 <span role="img" aria-label="pointing finger">
-                  &#x1F449;
+                  <Img
+                    alt="pointing finger"
+                    className="card__finger"
+                    fixed={fingerEmoji.childImageSharp.fixed}
+                  />
                 </span>
                 Read more
-              </p>
+              </div>
             </Centrifier>
           </Card>
           <Card type="feature">
@@ -46,12 +59,16 @@ const FeatureSection = () => (
               enim ad minim veniam, quis
             </p>
             <Centrifier>
-              <p className="card__read-more">
+              <div className="card__read-more">
                 <span role="img" aria-label="pointing finger">
-                  &#x1F449;
+                  <Img
+                    alt="pointing finger"
+                    className="card__finger"
+                    fixed={fingerEmoji.childImageSharp.fixed}
+                  />
                 </span>
                 Read more
-              </p>
+              </div>
             </Centrifier>
           </Card>
           <Card type="feature">
@@ -67,12 +84,16 @@ const FeatureSection = () => (
               enim ad minim veniam, quis
             </p>
             <Centrifier>
-              <p className="card__read-more">
+              <div className="card__read-more">
                 <span role="img" aria-label="pointing finger">
-                  &#x1F449;
+                  <Img
+                    alt="pointing finger"
+                    className="card__finger"
+                    fixed={fingerEmoji.childImageSharp.fixed}
+                  />
                 </span>
                 Read more
-              </p>
+              </div>
             </Centrifier>
           </Card>
           <Card type="feature">
@@ -88,12 +109,16 @@ const FeatureSection = () => (
               enim ad minim veniam, quis
             </p>
             <Centrifier>
-              <p className="card__read-more">
+              <div className="card__read-more">
                 <span role="img" aria-label="pointing finger">
-                  &#x1F449;
+                  <Img
+                    alt="pointing finger"
+                    className="card__finger"
+                    fixed={fingerEmoji.childImageSharp.fixed}
+                  />
                 </span>
                 Read more
-              </p>
+              </div>
             </Centrifier>
           </Card>
           <Card type="feature">
@@ -109,12 +134,16 @@ const FeatureSection = () => (
               enim ad minim veniam, quis
             </p>
             <Centrifier>
-              <p className="card__read-more">
+              <div className="card__read-more">
                 <span role="img" aria-label="pointing finger">
-                  &#x1F449;
+                  <Img
+                    alt="pointing finger"
+                    className="card__finger"
+                    fixed={fingerEmoji.childImageSharp.fixed}
+                  />
                 </span>
                 Read more
-              </p>
+              </div>
             </Centrifier>
           </Card>
           <Card type="feature">
@@ -130,12 +159,16 @@ const FeatureSection = () => (
               enim ad minim veniam, quis
             </p>
             <Centrifier>
-              <p className="card__read-more">
+              <div className="card__read-more">
                 <span role="img" aria-label="pointing finger">
-                  &#x1F449;
+                  <Img
+                    alt="pointing finger"
+                    className="card__finger"
+                    fixed={fingerEmoji.childImageSharp.fixed}
+                  />
                 </span>
                 Read more
-              </p>
+              </div>
             </Centrifier>
           </Card>
         </div>
