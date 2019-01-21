@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Img from 'gatsby-image';
 
 import Container from './helperComponents/container';
@@ -6,6 +6,40 @@ import Centrifier from './helperComponents/centrifier';
 import Card from './card';
 
 import './featureSection.sass';
+
+const FeatureCardContent = ({ heading, alt, isRobot, emoji, fingerEmoji }) => (
+  <Fragment>
+    <p className="card__heading">{heading}</p>
+    <div className="card__main-emoji">
+      <span>
+        <Img
+          alt={alt}
+          className={`card__main-emoji__img card__main-emoji--${
+            isRobot ? 'feature' : 'robot'
+          }`}
+          fixed={emoji.childImageSharp.fixed}
+        />
+      </span>
+    </div>
+    <p className="card__text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis
+    </p>
+    <Centrifier>
+      <div className="card__read-more">
+        <span role="img" aria-label="pointing finger">
+          <Img
+            alt="pointing finger"
+            className="card__finger"
+            fixed={fingerEmoji.childImageSharp.fixed}
+          />
+        </span>
+        Read more
+      </div>
+    </Centrifier>
+  </Fragment>
+);
 
 const FeatureSection = ({
   craneEmoji,
@@ -22,178 +56,52 @@ const FeatureSection = ({
       <Centrifier>
         <div className="feature-section__card-grid">
           <Card type="feature">
-            <p className="card__heading">Construction Tech</p>
-            <div className="card__main-emoji">
-              <span role="img" aria-label="construction emoji">
-                <Img
-                  alt="crane emoji"
-                  className="card__main-emoji__img card__main-emoji--feature"
-                  fixed={craneEmoji.childImageSharp.fixed}
-                />
-              </span>
-            </div>
-            <p className="card__text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis
-            </p>
-            <Centrifier>
-              <div className="card__read-more">
-                <span role="img" aria-label="pointing finger">
-                  <Img
-                    alt="pointing finger"
-                    className="card__finger"
-                    fixed={fingerEmoji.childImageSharp.fixed}
-                  />
-                </span>
-                Read more
-              </div>
-            </Centrifier>
+            <FeatureCardContent
+              heading="Construction Tech"
+              alt="crane emoji"
+              emoji={craneEmoji}
+              fingerEmoji={fingerEmoji}
+            />
           </Card>
           <Card type="feature">
-            <p className="card__heading">Nanotechnology</p>
-            <div className="card__main-emoji">
-              <span role="img" aria-label="microscope emoji">
-                <Img
-                  alt="microscope emoji"
-                  className="card__main-emoji__img card__main-emoji--feature"
-                  fixed={microscopeEmoji.childImageSharp.fixed}
-                />
-              </span>
-            </div>
-            <p className="card__text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis
-            </p>
-            <Centrifier>
-              <div className="card__read-more">
-                <span role="img" aria-label="pointing finger">
-                  <Img
-                    alt="pointing finger"
-                    className="card__finger"
-                    fixed={fingerEmoji.childImageSharp.fixed}
-                  />
-                </span>
-                Read more
-              </div>
-            </Centrifier>
+            <FeatureCardContent
+              heading="Nanotechnology"
+              alt="microscope emoji"
+              emoji={microscopeEmoji}
+              fingerEmoji={fingerEmoji}
+            />
           </Card>
           <Card type="feature">
-            <p className="card__heading">Robotics</p>
-            <div className="card__main-emoji card__main-emoji--robot">
-              <span role="img" aria-label="robot emoji">
-                <Img
-                  alt="robot emoji"
-                  className="card__main-emoji__img"
-                  fixed={robotEmoji.childImageSharp.fixed}
-                />
-              </span>
-            </div>
-            <p className="card__text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis
-            </p>
-            <Centrifier>
-              <div className="card__read-more">
-                <span role="img" aria-label="pointing finger">
-                  <Img
-                    alt="pointing finger"
-                    className="card__finger"
-                    fixed={fingerEmoji.childImageSharp.fixed}
-                  />
-                </span>
-                Read more
-              </div>
-            </Centrifier>
+            <FeatureCardContent
+              heading="Robotics"
+              alt="robot emoji"
+              emoji={robotEmoji}
+              fingerEmoji={fingerEmoji}
+            />
           </Card>
           <Card type="feature">
-            <p className="card__heading">Bioengineering</p>
-            <div className="card__main-emoji card__main-emoji--feature">
-              <span role="img" aria-label="DNA emoji">
-                <Img
-                  alt="dna emoji"
-                  className="card__main-emoji__img"
-                  fixed={dnaEmoji.childImageSharp.fixed}
-                />
-              </span>
-            </div>
-            <p className="card__text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis
-            </p>
-            <Centrifier>
-              <div className="card__read-more">
-                <span role="img" aria-label="pointing finger">
-                  <Img
-                    alt="pointing finger"
-                    className="card__finger"
-                    fixed={fingerEmoji.childImageSharp.fixed}
-                  />
-                </span>
-                Read more
-              </div>
-            </Centrifier>
+            <FeatureCardContent
+              heading="Bioengineering"
+              alt="dna emoji"
+              emoji={dnaEmoji}
+              fingerEmoji={fingerEmoji}
+            />
           </Card>
           <Card type="feature">
-            <p className="card__heading">Cybersecurity</p>
-            <div className="card__main-emoji card__main-emoji--feature">
-              <span role="img" aria-label="police car emoji">
-                <Img
-                  alt="police car emoji"
-                  className="card__main-emoji__img"
-                  fixed={policeCarEmoji.childImageSharp.fixed}
-                />
-              </span>
-            </div>
-            <p className="card__text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis
-            </p>
-            <Centrifier>
-              <div className="card__read-more">
-                <span role="img" aria-label="pointing finger">
-                  <Img
-                    alt="pointing finger"
-                    className="card__finger"
-                    fixed={fingerEmoji.childImageSharp.fixed}
-                  />
-                </span>
-                Read more
-              </div>
-            </Centrifier>
+            <FeatureCardContent
+              heading="Cybersecurity"
+              alt="police car emoji"
+              emoji={policeCarEmoji}
+              fingerEmoji={fingerEmoji}
+            />
           </Card>
           <Card type="feature">
-            <p className="card__heading">Neuroscience</p>
-            <div className="card__main-emoji card__main-emoji--feature">
-              <span role="img" aria-label="brain emoji">
-                <Img
-                  alt="brain emoji"
-                  className="card__main-emoji__img"
-                  fixed={brainEmoji.childImageSharp.fixed}
-                />
-              </span>
-            </div>
-            <p className="card__text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis
-            </p>
-            <Centrifier>
-              <div className="card__read-more">
-                <span role="img" aria-label="pointing finger">
-                  <Img
-                    alt="pointing finger"
-                    className="card__finger"
-                    fixed={fingerEmoji.childImageSharp.fixed}
-                  />
-                </span>
-                Read more
-              </div>
-            </Centrifier>
+            <FeatureCardContent
+              heading="Neuroscience"
+              alt="brain emoji"
+              emoji={brainEmoji}
+              fingerEmoji={fingerEmoji}
+            />
           </Card>
         </div>
       </Centrifier>
