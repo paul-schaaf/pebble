@@ -27,7 +27,11 @@ const IndexPage = ({ data }) => (
       brainEmoji={data.brainEmoji}
       fingerEmoji={data.fingerEmojiSmall}
     />
-    <PricingSection />
+    <PricingSection
+      smallFishEmoji={data.smallFishEmoji}
+      mediumFishEmoji={data.mediumFishEmoji}
+      bigFishEmoji={data.bigFishEmoji}
+    />
     <PraiseSection />
   </Layout>
 );
