@@ -4,7 +4,7 @@ import Container from './helperComponents/container';
 import Centrifier from './helperComponents/centrifier';
 import Card from './card';
 
-import lollipopIcon from '../images/lollipop.svg';
+import lollipopIcon from '../images/lollipop.png';
 import shackIcon from '../images/shackIcon.png';
 
 import './problemSection.sass';
