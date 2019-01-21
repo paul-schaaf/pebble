@@ -71,7 +71,11 @@ export const query = graphql`
     }
 
     robotEmoji: file(relativePath: { eq: "robotEmoji.png" }) {
-      ...mainEmoji
+      childImageSharp {
+        fixed(width: 28) {
+          ...GatsbyImageSharpFixed
+        }
+      }
     }
 
     dnaEmoji: file(relativePath: { eq: "dnaEmoji.png" }) {
