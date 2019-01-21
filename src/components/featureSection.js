@@ -25,7 +25,11 @@ const FeatureSection = ({
             <p className="card__heading">Construction Tech</p>
             <div className="card__main-emoji">
               <span role="img" aria-label="construction emoji">
-                &#x1F3D7;
+                <Img
+                  alt="crane emoji"
+                  className="card__main-emoji__img"
+                  fixed={craneEmoji.childImageSharp.fixed}
+                />
               </span>
             </div>
             <p className="card__text">
@@ -48,11 +52,15 @@ const FeatureSection = ({
           </Card>
           <Card type="feature">
             <p className="card__heading">Nanotechnology</p>
-            <p className="card__main-emoji">
+            <div className="card__main-emoji">
               <span role="img" aria-label="microscope emoji">
-                &#x1F52C;
+                <Img
+                  alt="microscope emoji"
+                  className="card__main-emoji__img"
+                  fixed={microscopeEmoji.childImageSharp.fixed}
+                />
               </span>
-            </p>
+            </div>
             <p className="card__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -73,11 +81,15 @@ const FeatureSection = ({
           </Card>
           <Card type="feature">
             <p className="card__heading">Robotics</p>
-            <p className="card__main-emoji">
+            <div className="card__main-emoji">
               <span role="img" aria-label="robot emoji">
-                &#x1F916;
+                <Img
+                  alt="robot emoji"
+                  className="card__main-emoji__img"
+                  fixed={robotEmoji.childImageSharp.fixed}
+                />
               </span>
-            </p>
+            </div>
             <p className="card__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -98,11 +110,15 @@ const FeatureSection = ({
           </Card>
           <Card type="feature">
             <p className="card__heading">Bioengineering</p>
-            <p className="card__main-emoji">
+            <div className="card__main-emoji">
               <span role="img" aria-label="DNA emoji">
-                &#x1F9EC;
+                <Img
+                  alt="dna emoji"
+                  className="card__main-emoji__img"
+                  fixed={dnaEmoji.childImageSharp.fixed}
+                />
               </span>
-            </p>
+            </div>
             <p className="card__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -123,11 +139,15 @@ const FeatureSection = ({
           </Card>
           <Card type="feature">
             <p className="card__heading">Cybersecurity</p>
-            <p className="card__main-emoji">
+            <div className="card__main-emoji">
               <span role="img" aria-label="police car emoji">
-                &#x1F693;
+                <Img
+                  alt="police car emoji"
+                  className="card__main-emoji__img"
+                  fixed={policeCarEmoji.childImageSharp.fixed}
+                />
               </span>
-            </p>
+            </div>
             <p className="card__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -148,11 +168,15 @@ const FeatureSection = ({
           </Card>
           <Card type="feature">
             <p className="card__heading">Neuroscience</p>
-            <p className="card__main-emoji">
+            <div className="card__main-emoji">
               <span role="img" aria-label="brain emoji">
-                &#x1F9E0;
+                <Img
+                  alt="brain emoji"
+                  className="card__main-emoji__img"
+                  fixed={brainEmoji.childImageSharp.fixed}
+                />
               </span>
-            </p>
+            </div>
             <p className="card__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
