@@ -66,7 +66,7 @@ export const query = graphql`
       ...mainEmoji
     }
 
-    miscroscopeEmoji: file(relativePath: { eq: "microscope.png" }) {
+    microscopeEmoji: file(relativePath: { eq: "microscope.png" }) {
       ...mainEmoji
     }
 
