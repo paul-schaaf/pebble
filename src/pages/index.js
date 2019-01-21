@@ -38,6 +38,14 @@ export const mainEmoji = graphql`
 
 export const query = graphql`
   query {
+    fingerEmojiSmall: file(relativePath: { eq: "pointing_finger.png" }) {
+      childImageSharp {
+        fixed(width: 22) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
     lollipopEmoji: file(relativePath: { eq: "lollipop.png" }) {
       ...mainEmoji
     }
@@ -46,12 +54,28 @@ export const query = graphql`
       ...mainEmoji
     }
 
-    fingerEmojiSmall: file(relativePath: { eq: "pointing_finger.png" }) {
-      childImageSharp {
-        fixed(width: 22) {
-          ...GatsbyImageSharpFixed
-        }
-      }
+    craneEmoji: file(relativePath: { eq: "craneEmoji.png" }) {
+      ...mainEmoji
+    }
+
+    miscroscopeEmoji: file(relativePath: { eq: "microscope.png" }) {
+      ...mainEmoji
+    }
+
+    robotEmoji: file(relativePath: { eq: "robotEmoji.png" }) {
+      ...mainEmoji
+    }
+
+    dnaEmoji: file(relativePath: { eq: "dnaEmoji.png" }) {
+      ...mainEmoji
+    }
+
+    policeCarEmoji: file(relativePath: { eq: "policeCarEmoji.png" }) {
+      ...mainEmoji
+    }
+
+    brainEmoji: file(relativePath: { eq: "brainEmoji.png" }) {
+      ...mainEmoji
     }
   }
 `;
