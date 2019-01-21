@@ -25,6 +25,7 @@ const IndexPage = ({ data }) => (
       dnaEmoji={data.dnaEmoji}
       policeCarEmoji={data.policeCarEmoji}
       brainEmoji={data.brainEmoji}
+      fingerEmoji={data.fingerEmojiSmall}
     />
     <PricingSection />
     <PraiseSection />
