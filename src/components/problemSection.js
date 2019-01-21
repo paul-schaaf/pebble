@@ -25,7 +25,7 @@ const ProblemSection = ({ lollipopEmoji, shackEmoji, fingerEmoji }) => (
         <div className="problem-section__card-box">
           <Card type="problem">
             <p className="card__heading">No Healthy Food</p>
-            <div className="card__main-emoji">
+            <div className="card__main-emoji card__main-emoji--problem">
               <span role="img" aria-label="lollipop emoji">
                 <Img
                   alt="lollipop emoji"
@@ -57,7 +57,7 @@ const ProblemSection = ({ lollipopEmoji, shackEmoji, fingerEmoji }) => (
           </Card>
           <Card type="problem">
             <p className="card__heading">High Housing Costs</p>
-            <div className="card__main-emoji">
+            <div className="card__main-emoji card__main-emoji--problem">
               <span role="img" aria-label="shack">
                 <Img
                   alt="shack emoji"

@@ -27,7 +27,7 @@ const FeatureSection = ({
               <span role="img" aria-label="construction emoji">
                 <Img
                   alt="crane emoji"
-                  className="card__main-emoji__img"
+                  className="card__main-emoji__img card__main-emoji--feature"
                   fixed={craneEmoji.childImageSharp.fixed}
                 />
               </span>
@@ -56,7 +56,7 @@ const FeatureSection = ({
               <span role="img" aria-label="microscope emoji">
                 <Img
                   alt="microscope emoji"
-                  className="card__main-emoji__img"
+                  className="card__main-emoji__img card__main-emoji--feature"
                   fixed={microscopeEmoji.childImageSharp.fixed}
                 />
               </span>
@@ -81,7 +81,7 @@ const FeatureSection = ({
           </Card>
           <Card type="feature">
             <p className="card__heading">Robotics</p>
-            <div className="card__main-emoji">
+            <div className="card__main-emoji card__main-emoji--robot">
               <span role="img" aria-label="robot emoji">
                 <Img
                   alt="robot emoji"
@@ -110,7 +110,7 @@ const FeatureSection = ({
           </Card>
           <Card type="feature">
             <p className="card__heading">Bioengineering</p>
-            <div className="card__main-emoji">
+            <div className="card__main-emoji card__main-emoji--feature">
               <span role="img" aria-label="DNA emoji">
                 <Img
                   alt="dna emoji"
@@ -139,7 +139,7 @@ const FeatureSection = ({
           </Card>
           <Card type="feature">
             <p className="card__heading">Cybersecurity</p>
-            <div className="card__main-emoji">
+            <div className="card__main-emoji card__main-emoji--feature">
               <span role="img" aria-label="police car emoji">
                 <Img
                   alt="police car emoji"
@@ -168,7 +168,7 @@ const FeatureSection = ({
           </Card>
           <Card type="feature">
             <p className="card__heading">Neuroscience</p>
-            <div className="card__main-emoji">
+            <div className="card__main-emoji card__main-emoji--feature">
               <span role="img" aria-label="brain emoji">
                 <Img
                   alt="brain emoji"
