@@ -1,4 +1,5 @@
 import React from 'react';
+import { Element } from 'react-scroll';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
@@ -12,7 +13,9 @@ import PraiseSection from '../components/praiseSection';
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <HeroSection fingerEmoji={data.fingerEmojiBig} />
+    <Element name="heroSection">
+      <HeroSection fingerEmoji={data.fingerEmojiBig} />
+    </Element>
     <ProblemSection
       lollipopEmoji={data.lollipopEmoji}
       shackEmoji={data.shackEmoji}

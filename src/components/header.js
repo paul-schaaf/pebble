@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Link } from 'react-scroll';
 
 import Container from './helperComponents/container';
 
@@ -81,7 +82,15 @@ class Header extends Component {
             className="navbar-box__pebble"
             src={pebbleIcon}
           />
-          <p className="title">{this.props.siteTitle}</p>
+          <Link
+            to="heroSection"
+            spy={true}
+            smooth={'easeInOutCubic'}
+            duration={750}
+            offset={-70}
+          >
+            <p className="title">{this.props.siteTitle}</p>
+          </Link>
           <div className="hamburger-menu">
             <div className="hamburger-menu__line hamburger-menu__line--one" />
             <div className="hamburger-menu__line hamburger-menu__line--two" />
