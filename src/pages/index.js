@@ -51,7 +51,7 @@ export const mainEmoji = graphql`
 export const fishEmoji = graphql`
   fragment fishEmoji on File {
     childImageSharp {
-      fixed(width: 18) {
+      fixed(width: 22) {
         ...GatsbyImageSharpFixed
       }
     }
@@ -121,7 +121,11 @@ export const query = graphql`
     }
 
     bigFishEmoji: file(relativePath: { eq: "bigFishEmoji.png" }) {
-      ...fishEmoji
+      childImageSharp {
+        fluid(maxWidth: 20) {
+          ...GatsbyImageSharpFluid
+        }
+      }
     }
   }
 `;

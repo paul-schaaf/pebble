@@ -1,4 +1,5 @@
 import React from 'react';
+import Img from 'gatsby-image';
 
 import Container from './helperComponents/container';
 import Card from './card';
@@ -6,19 +7,22 @@ import Card from './card';
 import './pricingSection.sass';
 import Centrifier from './helperComponents/centrifier';
 
-const PricingSection = () => (
+const PricingSection = ({ smallFishEmoji, mediumFishEmoji, bigFishEmoji }) => (
   <div className="pricing-section">
     <Container>
       <p className="pricing-section__heading">Pricing</p>
       <Centrifier>
         <div className="pricing-section__plan-box">
           <Card type="pricing">
-            <p className="card--pricing__plan-name">
+            <div className="card--pricing__plan-name">
               Basic
               <span role="img" aria-label="basic plan emoji">
-                &#x1F41F;
+                <Img
+                  alt="basic plan emoji"
+                  fixed={smallFishEmoji.childImageSharp.fixed}
+                />
               </span>
-            </p>
+            </div>
             <p className="card--pricing__plan-price">9$</p>
             <p className="card--pricing__plan-price--info">/user/month</p>
             <p className="card--pricing__plan-feature">
@@ -37,12 +41,19 @@ const PricingSection = () => (
             <p className="card--pricing__plan-feature">dazzling devOps</p>
           </Card>
           <Card type="pricing">
-            <p className="card--pricing__plan-name">
+            <div className="card--pricing__plan-name">
               Pro
-              <span role="img" aria-label="pro plan emoji">
-                &#x1F42C;
+              <span
+                className="dolphin-emoji"
+                role="img"
+                aria-label="pro plan emoji"
+              >
+                <Img
+                  alt="pro plan emoji"
+                  fixed={mediumFishEmoji.childImageSharp.fixed}
+                />
               </span>
-            </p>
+            </div>
             <p className="card--pricing__plan-price">20$</p>
             <p className="card--pricing__plan-price--info">/user/month</p>
             <p className="card--pricing__plan-feature">
@@ -59,16 +70,19 @@ const PricingSection = () => (
             </p>
           </Card>
           <Card type="pricing">
-            <p className="card--pricing__plan-name">
+            <div className="card--pricing__plan-name">
               Enterprise
               <span
                 className="whale-emoji"
                 role="img"
                 aria-label="enterprise plan emoji"
               >
-                &#x1F433;
+                <Img
+                  alt="enterprise plan emoji"
+                  fluid={bigFishEmoji.childImageSharp.fluid}
+                />
               </span>
-            </p>
+            </div>
             <p className="card--pricing__plan-contact">Contact us</p>
             <p className="card--pricing__plan-feature">
               all the basic and pro features
