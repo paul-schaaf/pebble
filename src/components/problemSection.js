@@ -2,8 +2,10 @@ import React from 'react';
 
 import Container from './helperComponents/container';
 import Centrifier from './helperComponents/centrifier';
-
 import Card from './card';
+
+import lollipopIcon from '../images/lollipop.svg';
+import shackIcon from '../images/shackIcon.svg';
 
 import './problemSection.sass';
 
@@ -27,7 +29,7 @@ const ProblemSection = () => (
             <p className="card__heading">No Healthy Food</p>
             <p className="card__main-emoji">
               <span role="img" aria-label="lollipop emoji">
-                &#x1F36D;
+                <img className="card__main-emoji__img" src={lollipopIcon} />
               </span>
             </p>
             <p className="card__text">
@@ -51,7 +53,7 @@ const ProblemSection = () => (
             <p className="card__heading">High Housing Costs</p>
             <p className="card__main-emoji">
               <span role="img" aria-label="shack">
-                &#x1F3DA;
+                <img className="card__main-emoji__img" src={shackIcon} />
               </span>
             </p>
             <p className="card__text">
