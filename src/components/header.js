@@ -76,7 +76,11 @@ class Header extends Component {
     return (
       <div id="navbar" className="navbar-box">
         <Container>
-          <img className="navbar-box__pebble" src={pebbleIcon} />
+          <img
+            alt="pebble icon"
+            className="navbar-box__pebble"
+            src={pebbleIcon}
+          />
           <p className="title">{this.props.siteTitle}</p>
           <div className="hamburger-menu">
             <div className="hamburger-menu__line hamburger-menu__line--one" />
