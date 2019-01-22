@@ -5,10 +5,15 @@ import Container from './helperComponents/container';
 import Centrifier from './helperComponents/centrifier';
 import Card from './card';
 
+import pebble1 from '../images/pebbles/blue_pebble1.svg';
+
 import './problemSection.sass';
 
 const ProblemSection = ({ lollipopEmoji, shackEmoji, fingerEmoji }) => (
   <div className="problem-section">
+    <div className="problem-section__pebble-box">
+      <img src={pebble1} />
+    </div>
     <Container>
       <Centrifier>
         <div className="problem-section__header-box">
