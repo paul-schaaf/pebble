@@ -148,5 +148,11 @@ export const query = graphql`
         }
       }
     }
+
+    womanYellowFaceWhiteHair: file(
+      relativePath: { eq: "woman_yellowFace_whiteHair.png" }
+    ) {
+      ...praiseEmoji
+    }
   }
 `;
