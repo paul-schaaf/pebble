@@ -132,7 +132,7 @@ class Header extends Component {
             smooth={'easeInOutCubic'}
             duration={750}
             offset={-80}
-            delay={1200}
+            delay={1300}
           >
             <p onClick={this.onMenuClick} className="menu__link--first">
               Why Pebble?
@@ -144,7 +144,7 @@ class Header extends Component {
             smooth={'easeInOutCubic'}
             duration={750}
             offset={-80}
-            delay={1200}
+            delay={1300}
           >
             <p onClick={this.onMenuClick} className="menu__link--second">
               Features
@@ -156,7 +156,7 @@ class Header extends Component {
             smooth={'easeInOutCubic'}
             duration={750}
             offset={-80}
-            delay={1200}
+            delay={1300}
           >
             <p onClick={this.onMenuClick} className="menu__link--third">
               Pricing
@@ -168,7 +168,7 @@ class Header extends Component {
             smooth={'easeInOutCubic'}
             duration={750}
             offset={-80}
-            delay={1200}
+            delay={1300}
           >
             <p onClick={this.onMenuClick} className="menu__link--fourth">
               Praise
