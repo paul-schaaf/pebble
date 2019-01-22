@@ -69,6 +69,16 @@ export const fishEmoji = graphql`
   }
 `;
 
+export const praiseEmoji = graphql`
+  fragment praiseEmoji on File {
+    childImageSharp {
+      fixed(width: 22) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+`;
+
 export const query = graphql`
   query {
     fingerEmojiSmall: file(relativePath: { eq: "pointing_finger.png" }) {
