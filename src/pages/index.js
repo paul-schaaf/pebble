@@ -89,7 +89,7 @@ export const fishEmoji = graphql`
 export const praiseEmoji = graphql`
   fragment praiseEmoji on File {
     childImageSharp {
-      fixed(width: 26) {
+      fixed(width: 24) {
         ...GatsbyImageSharpFixed
       }
     }
