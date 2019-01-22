@@ -19,6 +19,7 @@ const PraiseCardContent = ({ emoji, text, author }) => (
 const PraiseSection = ({
   womanYellowFaceWhiteHair,
   womanWhiteFaceBlackHair,
+  robotEmoji,
 }) => (
   <div className="praise-section">
     <Container>
@@ -33,9 +34,14 @@ const PraiseSection = ({
             author="Jayqueline"
           />
         </Card>
-        {/*<Card type="praise">
-          <PraiseCardContent emoji="🤖" text="Beep Boop." author="Mr.Robot" />
+        <Card type="praise">
+          <PraiseCardContent
+            emoji={robotEmoji}
+            text="Beep Boop."
+            author="Mr.Robot"
+          />
         </Card>
+        {/*
         <Card type="praise">
           <PraiseCardContent emoji="👨‍🦳" text="Spectacular!" author="Bob" />
         </Card>
