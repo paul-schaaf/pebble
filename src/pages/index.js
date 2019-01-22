@@ -173,5 +173,61 @@ export const query = graphql`
     santaEmoji: file(relativePath: { eq: "praiseEmojis/santa.png" }) {
       ...praiseEmoji
     }
+
+    manYellowFaceWhiteHair: file(
+      relativePath: { eq: "praiseEmojis/man_yellowFace_whiteHair.png" }
+    ) {
+      ...praiseEmoji
+    }
+
+    manBlackFaceBlackHair: file(
+      relativePath: { eq: "praiseEmojis/man_blackFace_blackHair.png" }
+    ) {
+      ...praiseEmoji
+    }
+
+    grandma: file(relativePath: { eq: "praiseEmojis/grandma.png" }) {
+      ...praiseEmoji
+    }
+
+    womanWhiteFaceRedhair: file(
+      relativePath: { eq: "praiseEmojis/woman_whiteFace_redHair.png" }
+    ) {
+      ...praiseEmoji
+    }
+
+    womanBlackFaceCurlyHair: file(
+      relativePath: { eq: "praiseEmojis/woman_blackFace_curlyHair.png" }
+    ) {
+      ...praiseEmoji
+    }
+
+    manScientist: file(relativePath: { eq: "praiseEmojis/man_scientist.png" }) {
+      ...praiseEmoji
+    }
+
+    zombie: file(relativePath: { eq: "praiseEmojis/zombie.png" }) {
+      ...praiseEmoji
+    }
+
+    manLaptop: file(relativePath: { eq: "praiseEmojis/man_laptop.png" }) {
+      ...praiseEmoji
+    }
+
+    womanArtist: file(relativePath: { eq: "praiseEmojis/woman_artist.png" }) {
+      ...praiseEmoji
+    }
+
+    princess: file(relativePath: { eq: "praiseEmojis/princess.png" }) {
+      ...praiseEmoji
+    }
+
+    manAstronaut: file(relativePath: { eq: "praiseEmojis/man_astronaut.png" }) {
+      ...praiseEmoji
+    }
+
+    blackOfficer: file(relativePath: { eq: "praiseEmojis/black_officer.png" }) {
+      ...praiseEmoji
+    }
   }
 `;
