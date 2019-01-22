@@ -8,17 +8,18 @@ import './praiseSection.sass';
 
 const PraiseCardContent = ({ emoji, text, author }) => (
   <Fragment>
-    <p className="card--praise__praise-emoji">
-      <span role="img" aria-label="praise emoji">
-        {emoji}
-      </span>
-    </p>
+    <div className="card--praise__praise-emoji">
+      <Img fixed={emoji.childImageSharp.fixed} />
+    </div>
     <p className="card--praise__praise-text">{text}</p>
     <p className="card--praise__praise-author">{`- @${author}`}</p>
   </Fragment>
 );
 
-const PraiseSection = ({ womanYellowFaceWhiteHair }) => (
+const PraiseSection = ({
+  womanYellowFaceWhiteHair,
+  womanWhiteFaceBlackHair,
+}) => (
   <div className="praise-section">
     <Container>
       <p className="praise-section__heading">Praise</p>
@@ -26,18 +27,13 @@ const PraiseSection = ({ womanYellowFaceWhiteHair }) => (
     <div className="praise-section__scroll-box">
       <div className="praise-section__scroll-box__card-box--one">
         <Card type="praise">
-          <div className="card--praise__praise-emoji">
-            <Img fixed={womanYellowFaceWhiteHair.childImageSharp.fixed} />
-          </div>
-          <p className="card--praise__praise-text">Amazing tool!</p>
-          <p className="card--praise__praise-author">-@ Jayqueline</p>
-          {/*<PraiseCardContent
-            emoji="👩‍🦳"
+          <PraiseCardContent
+            emoji={womanYellowFaceWhiteHair}
             text="Amazing tool!"
             author="Jayqueline"
-          /> */}
+          />
         </Card>
-        <Card type="praise">
+        {/*<Card type="praise">
           <PraiseCardContent emoji="🤖" text="Beep Boop." author="Mr.Robot" />
         </Card>
         <Card type="praise">
@@ -69,17 +65,18 @@ const PraiseSection = ({ womanYellowFaceWhiteHair }) => (
         </Card>
         <Card type="praise">
           <PraiseCardContent emoji="👨‍🚀" text="Five stars!" author="oscar" />
-        </Card>
+        </Card>*/}
         <div className="praise-section__scroll-box__card-box--one__placeholder" />
       </div>
       <div className="praise-section__scroll-box__card-box">
         <Card type="praise">
           <PraiseCardContent
-            emoji="👩🏻"
+            emoji={womanWhiteFaceBlackHair}
             text="So great and simple!"
             author="Dnice"
           />
         </Card>
+        {/*}
         <Card type="praise">
           <PraiseCardContent
             emoji="🎅"
@@ -108,7 +105,7 @@ const PraiseSection = ({ womanYellowFaceWhiteHair }) => (
         </Card>
         <Card type="praise">
           <PraiseCardContent emoji="👮🏿" text="Very secure!" author="richard" />
-        </Card>
+      </Card>*/}
       </div>
     </div>
   </div>
