@@ -189,13 +189,21 @@ export const query = graphql`
     manYellowFaceWhiteHair: file(
       relativePath: { eq: "praiseEmojis/man_yellowFace_whiteHair.png" }
     ) {
-      ...praiseEmoji
+      childImageSharp {
+        fixed(width: 22) {
+          ...GatsbyImageSharpFixed
+        }
+      }
     }
 
     manBlackFaceBlackHair: file(
       relativePath: { eq: "praiseEmojis/man_blackFace_blackHair.png" }
     ) {
-      ...praiseEmoji
+      childImageSharp {
+        fixed(width: 22) {
+          ...GatsbyImageSharpFixed
+        }
+      }
     }
 
     grandma: file(relativePath: { eq: "praiseEmojis/grandma.png" }) {
@@ -239,7 +247,11 @@ export const query = graphql`
     }
 
     blackOfficer: file(relativePath: { eq: "praiseEmojis/black_officer.png" }) {
-      ...praiseEmoji
+      childImageSharp {
+        fixed(width: 18) {
+          ...GatsbyImageSharpFixed
+        }
+      }
     }
   }
 `;
