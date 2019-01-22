@@ -21,6 +21,18 @@ const PraiseSection = ({
   womanWhiteFaceBlackHair,
   robotEmoji,
   santaEmoji,
+  manYellowFaceWhiteHair,
+  manBlackFaceBlackHair,
+  grandma,
+  womanWhiteFaceRedhair,
+  womanBlackFaceCurlyHair,
+  manScientist,
+  zombie,
+  manLaptop,
+  womanArtist,
+  princess,
+  manAstronaut,
+  blackOfficer,
 }) => (
   <div className="praise-section">
     <Container>
@@ -42,37 +54,50 @@ const PraiseSection = ({
             author="Mr.Robot"
           />
         </Card>
-        {/*
-        <Card type="praise">
-          <PraiseCardContent emoji="👨‍🦳" text="Spectacular!" author="Bob" />
-        </Card>
+
         <Card type="praise">
           <PraiseCardContent
-            emoji="👵🏻"
-            text="I love this thing!!"
-            author="grandma"
+            emoji={manYellowFaceWhiteHair}
+            text="Spectacular!"
+            author="Bob"
           />
         </Card>
         <Card type="praise">
           <PraiseCardContent
-            emoji="👩🏾‍🦱"
+            emoji={grandma}
+            text="I love this thing!!"
+            author="grandma"
+          />
+        </Card>
+
+        <Card type="praise">
+          <PraiseCardContent
+            emoji={womanBlackFaceCurlyHair}
             text="Fantastic Features!"
             author="annie"
           />
         </Card>
         <Card type="praise">
           <PraiseCardContent
-            emoji="🧟"
+            emoji={zombie}
             text="Nice work, yummy!"
             author="theFriendlyZombie"
           />
         </Card>
         <Card type="praise">
-          <PraiseCardContent emoji="👩‍🎨" text="Beautiful!" author="emilia" />
+          <PraiseCardContent
+            emoji={womanArtist}
+            text="Beautiful!"
+            author="emilia"
+          />
         </Card>
         <Card type="praise">
-          <PraiseCardContent emoji="👨‍🚀" text="Five stars!" author="oscar" />
-        </Card>*/}
+          <PraiseCardContent
+            emoji={manAstronaut}
+            text="Five stars!"
+            author="oscar"
+          />
+        </Card>
         <div className="praise-section__scroll-box__card-box--one__placeholder" />
       </div>
       <div className="praise-section__scroll-box__card-box">
@@ -91,29 +116,50 @@ const PraiseSection = ({
             author="Santa"
           />
         </Card>
-        {/*
+
         <Card type="praise">
-          <PraiseCardContent emoji="👨🏾" text="Awesome stuff!" author="Jack" />
+          <PraiseCardContent
+            emoji={manBlackFaceBlackHair}
+            text="Awesome stuff!"
+            author="Jack"
+          />
         </Card>
         <Card type="praise">
           <PraiseCardContent
-            emoji="👩🏻‍🦰"
+            emoji={womanWhiteFaceRedhair}
             text="I've fallen in love!"
             author="hannah"
           />
         </Card>
+
         <Card type="praise">
-          <PraiseCardContent emoji="👨‍🔬" text="Just Sublime!" author="Lance" />
+          <PraiseCardContent
+            emoji={manScientist}
+            text="Just Sublime!"
+            author="Lance"
+          />
         </Card>
         <Card type="praise">
-          <PraiseCardContent emoji="👨🏾‍💻" text="Magnificent" author="henry" />
+          <PraiseCardContent
+            emoji={manLaptop}
+            text="Magnificent"
+            author="henry"
+          />
         </Card>
         <Card type="praise">
-          <PraiseCardContent emoji="👸🏼" text="Yes, yes, yes!" author="sissi" />
+          <PraiseCardContent
+            emoji={princess}
+            text="Yes, yes, yes!"
+            author="sissi"
+          />
         </Card>
         <Card type="praise">
-          <PraiseCardContent emoji="👮🏿" text="Very secure!" author="richard" />
-      </Card>*/}
+          <PraiseCardContent
+            emoji={blackOfficer}
+            text="Very secure!"
+            author="richard"
+          />
+        </Card>
       </div>
     </div>
   </div>

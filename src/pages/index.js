@@ -47,6 +47,18 @@ const IndexPage = ({ data }) => (
         womanWhiteFaceBlackHair={data.womanWhiteFaceBlackHair}
         robotEmoji={data.robotPraise}
         santaEmoji={data.santaEmoji}
+        manYellowFaceWhiteHair={data.manYellowFaceWhiteHair}
+        manBlackFaceBlackHair={data.manBlackFaceBlackHair}
+        grandma={data.grandma}
+        womanWhiteFaceRedhair={data.womanWhiteFaceRedhair}
+        womanBlackFaceCurlyHair={data.womanBlackFaceCurlyHair}
+        manScientist={data.manScientist}
+        zombie={data.zombie}
+        manLaptop={data.manLaptop}
+        womanArtist={data.womanArtist}
+        princess={data.princess}
+        manAstronaut={data.manAstronaut}
+        blackOfficer={data.blackOfficer}
       />
     </Element>
   </Layout>
