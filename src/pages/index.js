@@ -42,7 +42,7 @@ const IndexPage = ({ data }) => (
       />
     </Element>
     <Element name="praiseSection">
-      <PraiseSection />
+      <PraiseSection womanYellowFaceWhiteHair={data.womanYellowFaceWhiteHair} />
     </Element>
   </Layout>
 );
