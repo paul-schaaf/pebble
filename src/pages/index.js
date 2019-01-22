@@ -42,7 +42,10 @@ const IndexPage = ({ data }) => (
       />
     </Element>
     <Element name="praiseSection">
-      <PraiseSection womanYellowFaceWhiteHair={data.womanYellowFaceWhiteHair} />
+      <PraiseSection
+        womanYellowFaceWhiteHair={data.womanYellowFaceWhiteHair}
+        womanWhiteFaceBlackHair={data.womanWhiteFaceBlackHair}
+      />
     </Element>
   </Layout>
 );
@@ -151,6 +154,12 @@ export const query = graphql`
 
     womanYellowFaceWhiteHair: file(
       relativePath: { eq: "praiseEmojis/woman_yellowFace_whiteHair.png" }
+    ) {
+      ...praiseEmoji
+    }
+
+    womanWhiteFaceBlackHair: file(
+      relativePath: { eq: "praiseEmojis/woman_whiteFace_blackHair.png" }
     ) {
       ...praiseEmoji
     }
