@@ -12,7 +12,8 @@ import './problemSection.sass';
 const ProblemSection = ({ lollipopEmoji, shackEmoji, fingerEmoji }) => (
   <div className="problem-section">
     <div className="problem-section__pebble-box">
-      <img src={pebble1} />
+      <img className="problem-section__pebble-box__pebble1" src={pebble1} />
+      <img className="problem-section__pebble-box__pebble2" src={pebble1} />
     </div>
     <Container>
       <Centrifier>
