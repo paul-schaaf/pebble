@@ -114,11 +114,11 @@ export const query = graphql`
       }
     }
 
-    lollipopEmoji: file(relativePath: { eq: "lollipop.png" }) {
+    lollipopEmoji: file(relativePath: { eq: "problemEmojis/lollipop.png" }) {
       ...mainEmoji
     }
 
-    shackEmoji: file(relativePath: { eq: "shackIcon.png" }) {
+    shackEmoji: file(relativePath: { eq: "problemEmojis/shackIcon.png" }) {
       ...mainEmoji
     }
 
