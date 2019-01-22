@@ -14,6 +14,7 @@ const ProblemSection = ({ lollipopEmoji, shackEmoji, fingerEmoji }) => (
     <div className="problem-section__pebble-box">
       <img className="problem-section__pebble-box__pebble1" src={pebble1} />
       <img className="problem-section__pebble-box__pebble2" src={pebble1} />
+      <img className="problem-section__pebble-box__pebble3" src={pebble1} />
     </div>
     <Container>
       <Centrifier>

@@ -49,6 +49,25 @@
         top: 70px
         width: 250px
         left: 100vw * 0.72
+    &__pebble3
+      position: absolute
+      top: 600px
+      left: 100vw * .5
+      width: 180px
+      transform: rotate(240deg) translateX(50%)
+      @media (min-width: 501px)
+        left: 100vw * .65
+      @media (min-width: 701px)
+        top: 550px
+      @media (min-width: 735px)
+        top: 510px
+        left: 100vw * .5
+        transform: rotate(200deg) translateX(50%)
+      @media (min-width: 871px)
+        top: 400px
+      @media (min-width: 981px)
+        top: 350px
+        width: 210px
 
   &__header-box
     font-family: $secondary-text
