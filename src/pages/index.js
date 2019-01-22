@@ -46,6 +46,7 @@ const IndexPage = ({ data }) => (
         womanYellowFaceWhiteHair={data.womanYellowFaceWhiteHair}
         womanWhiteFaceBlackHair={data.womanWhiteFaceBlackHair}
         robotEmoji={data.robotPraise}
+        santaEmoji={data.santaEmoji}
       />
     </Element>
   </Layout>
@@ -166,6 +167,10 @@ export const query = graphql`
     }
 
     robotPraise: file(relativePath: { eq: "robotEmoji.png" }) {
+      ...praiseEmoji
+    }
+
+    santaEmoji: file(relativePath: { eq: "santa.png" }) {
       ...praiseEmoji
     }
   }
