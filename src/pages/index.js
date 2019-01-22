@@ -170,7 +170,7 @@ export const query = graphql`
       ...praiseEmoji
     }
 
-    santaEmoji: file(relativePath: { eq: "santa.png" }) {
+    santaEmoji: file(relativePath: { eq: "praiseEmojis/santa.png" }) {
       ...praiseEmoji
     }
   }
