@@ -72,7 +72,7 @@ export const fishEmoji = graphql`
 export const praiseEmoji = graphql`
   fragment praiseEmoji on File {
     childImageSharp {
-      fixed(width: 22) {
+      fixed(width: 26) {
         ...GatsbyImageSharpFixed
       }
     }
@@ -150,7 +150,7 @@ export const query = graphql`
     }
 
     womanYellowFaceWhiteHair: file(
-      relativePath: { eq: "woman_yellowFace_whiteHair.png" }
+      relativePath: { eq: "praiseEmojis/woman_yellowFace_whiteHair.png" }
     ) {
       ...praiseEmoji
     }
