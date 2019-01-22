@@ -154,15 +154,19 @@ export const query = graphql`
       ...mainEmoji
     }
 
-    smallFishEmoji: file(relativePath: { eq: "smallFishEmoji.png" }) {
+    smallFishEmoji: file(
+      relativePath: { eq: "pricingEmojis/smallFishEmoji.png" }
+    ) {
       ...fishEmoji
     }
 
-    mediumFishEmoji: file(relativePath: { eq: "mediumFishEmoji.png" }) {
+    mediumFishEmoji: file(
+      relativePath: { eq: "pricingEmojis/mediumFishEmoji.png" }
+    ) {
       ...fishEmoji
     }
 
-    bigFishEmoji: file(relativePath: { eq: "bigFishEmoji.png" }) {
+    bigFishEmoji: file(relativePath: { eq: "pricingEmojis/bigFishEmoji.png" }) {
       childImageSharp {
         fluid(maxWidth: 20) {
           ...GatsbyImageSharpFluid
