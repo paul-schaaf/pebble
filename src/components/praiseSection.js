@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import Img from 'gatsby-image';
 
 import Container from './helperComponents/container';
 import Card from './card';
@@ -17,7 +18,7 @@ const PraiseCardContent = ({ emoji, text, author }) => (
   </Fragment>
 );
 
-const PraiseSection = () => (
+const PraiseSection = ({ womanYellowFaceWhiteHair }) => (
   <div className="praise-section">
     <Container>
       <p className="praise-section__heading">Praise</p>
@@ -25,11 +26,16 @@ const PraiseSection = () => (
     <div className="praise-section__scroll-box">
       <div className="praise-section__scroll-box__card-box--one">
         <Card type="praise">
-          <PraiseCardContent
+          <div className="card--praise__praise-emoji">
+            <Img fixed={womanYellowFaceWhiteHair.childImageSharp.fixed} />
+          </div>
+          <p className="card--praise__praise-text">Amazing tool!</p>
+          <p className="card--praise__praise-author">-@ Jayqueline</p>
+          {/*<PraiseCardContent
             emoji="👩‍🦳"
             text="Amazing tool!"
             author="Jayqueline"
-          />
+          /> */}
         </Card>
         <Card type="praise">
           <PraiseCardContent emoji="🤖" text="Beep Boop." author="Mr.Robot" />
