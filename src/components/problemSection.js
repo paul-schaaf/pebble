@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 
 import Container from './helperComponents/container';
 import Centrifier from './helperComponents/centrifier';
-import Card from './card';
+import Card from 'helperComponents/card';
 
 import pebble1 from '../images/pebbles/blue_pebble1.svg';
 

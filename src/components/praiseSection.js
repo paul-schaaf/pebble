@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Img from 'gatsby-image';
 
 import Container from './helperComponents/container';
-import Card from './card';
+import Card from 'helperComponents/card';
 
 import './praiseSection.sass';
 
