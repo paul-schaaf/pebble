@@ -104,7 +104,7 @@ const PraiseSection = ({
         <Card type="praise">
           <PraiseCardContent
             emoji={womanWhiteFaceBlackHair}
-            text="So great and simple!"
+            text="Great and simple!"
             author="Dnice"
           />
         </Card>
