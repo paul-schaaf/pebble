@@ -2,7 +2,7 @@ import React from 'react';
 import Img from 'gatsby-image';
 
 import Container from './helperComponents/container';
-import Card from 'helperComponents/card';
+import Card from './helperComponents/card';
 
 import './pricingSection.sass';
 import Centrifier from './helperComponents/centrifier';

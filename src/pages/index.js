@@ -122,15 +122,17 @@ export const query = graphql`
       ...mainEmoji
     }
 
-    craneEmoji: file(relativePath: { eq: "craneEmoji.png" }) {
+    craneEmoji: file(relativePath: { eq: "featureEmojis/craneEmoji.png" }) {
       ...mainEmoji
     }
 
-    microscopeEmoji: file(relativePath: { eq: "microscope.png" }) {
+    microscopeEmoji: file(
+      relativePath: { eq: "featureEmojis/microscope.png" }
+    ) {
       ...mainEmoji
     }
 
-    robotEmoji: file(relativePath: { eq: "robotEmoji.png" }) {
+    robotEmoji: file(relativePath: { eq: "featureEmojis/robotEmoji.png" }) {
       childImageSharp {
         fixed(width: 28) {
           ...GatsbyImageSharpFixed
@@ -138,15 +140,17 @@ export const query = graphql`
       }
     }
 
-    dnaEmoji: file(relativePath: { eq: "dnaEmoji.png" }) {
+    dnaEmoji: file(relativePath: { eq: "featureEmojis/dnaEmoji.png" }) {
       ...mainEmoji
     }
 
-    policeCarEmoji: file(relativePath: { eq: "policeCarEmoji.png" }) {
+    policeCarEmoji: file(
+      relativePath: { eq: "featureEmojis/policeCarEmoji.png" }
+    ) {
       ...mainEmoji
     }
 
-    brainEmoji: file(relativePath: { eq: "brainEmoji.png" }) {
+    brainEmoji: file(relativePath: { eq: "featureEmojis/brainEmoji.png" }) {
       ...mainEmoji
     }
 
@@ -178,7 +182,7 @@ export const query = graphql`
       ...praiseEmoji
     }
 
-    robotPraise: file(relativePath: { eq: "robotEmoji.png" }) {
+    robotPraise: file(relativePath: { eq: "featureEmojis/robotEmoji.png" }) {
       ...praiseEmoji
     }
 
