@@ -79,10 +79,26 @@
         top: 400px
     &__pebble4
       position: absolute
-      width: 200px
-      top: 480px
-      left: 100vw * 0.775
-      transform: rotate(75deg)
+      width: 180px
+      top: 1400px
+      left: 100vw * 0.6
+      transform: rotate(70deg)
+      display: none
+      @media (min-width: 671px)
+        display: block
+      @media (min-width: 701px)
+        top: 900px
+        width: 200px
+      @media (min-width: 871px)
+        width: 150px
+        top: 570px
+        left: 100vw * 0.73
+        transform: rotate(90deg)
+      @media (min-width: 1051px)
+        width: 200px
+        top: 480px
+        left: 100vw * 0.775
+        transform: rotate(75deg)
     &__pebble5
       position: absolute
       width: 100px
