@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Img from 'gatsby-image';
 
 import Container from './helperComponents/container';
@@ -8,6 +8,37 @@ import Card from './helperComponents/card';
 import pebble1 from '../images/pebbles/blue_pebble1.svg';
 
 import './pricingSection.sass';
+
+const PricingCardContent = ({ name, emoji, alt, price, features }) => (
+  <Fragment>
+    <div className="card--pricing__plan-name">
+      {name}
+      <span
+        className={
+          name === 'Pro' ? 'dolphin' : name === 'Enterprise' ? 'whale' : null
+        }
+      >
+        <Img alt={alt} fixed={emoji.childImageSharp.fixed} />
+      </span>
+    </div>
+
+    {name !== 'Enterprise' && (
+      <Fragment>
+        <p className="card--pricing__plan-price">{`${price}$`}</p>
+        <p className="card--pricing__plan-price--info">/user/month</p>
+      </Fragment>
+    )}
+    {name === 'Enterprise' && (
+      <p className="card--pricing__plan-contact">Contact us</p>
+    )}
+    <p className="card--pricing__plan-feature">{features[0]}</p>
+    <p className="card--pricing__plan-feature">{features[1]}</p>
+    <p className="card--pricing__plan-feature">{features[2]}</p>
+    <p className="card--pricing__plan-feature">{features[3]}</p>
+    <p className="card--pricing__plan-feature">{features[4]}</p>
+    <p className="card--pricing__plan-feature">{features[5]}</p>
+  </Fragment>
+);
 
 const PricingSection = ({ smallFishEmoji, mediumFishEmoji, bigFishEmoji }) => (
   <div className="pricing-section">
@@ -73,7 +104,7 @@ const PricingSection = ({ smallFishEmoji, mediumFishEmoji, bigFishEmoji }) => (
           <Card type="pricing">
             <div className="card--pricing__plan-name">
               Pro
-              <span className="dolphin-emoji">
+              <span className="dolphin">
                 <Img
                   alt="pro plan emoji"
                   fixed={mediumFishEmoji.childImageSharp.fixed}
@@ -98,7 +129,7 @@ const PricingSection = ({ smallFishEmoji, mediumFishEmoji, bigFishEmoji }) => (
           <Card type="pricing">
             <div className="card--pricing__plan-name">
               Enterprise
-              <span className="whale-emoji">
+              <span className="whale">
                 <Img
                   alt="enterprise plan emoji"
                   fluid={bigFishEmoji.childImageSharp.fluid}
