@@ -36,10 +36,23 @@
       transform: rotate(180deg)
     &__pebble3
       position: absolute
-      width: 130px
-      top: 150px
-      left: 100vw * 0.75
-      transform: rotate(150deg)
+      width: 170px
+      top: 110px
+      left: 100vw * 0.5
+      transform: rotate(-100deg)
+      @media (min-width: 511px)
+        top: 120px
+        left: 100vw * 0.60
+      @media (min-width: 701px)
+        left: 100vw * 0.74
+        width: 130px
+        top: 120px
+        transform: rotate(150deg)
+      @media (min-width: 891px)
+        top: 150px
+        left: 100vw * 0.78
+      @media (min-width: 1350px)
+        left: 100vw * 0.75
     &__pebble4
       position: absolute
       width: 200px
