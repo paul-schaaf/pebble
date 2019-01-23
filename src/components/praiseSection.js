@@ -38,11 +38,12 @@ const PraiseSection = ({
 }) => (
   <div className="praise-section">
     <div className="praise-section___pebble-box">
-      {/*<img
+      <img
         alt=""
         className="praise-section__pebble-box__pebble1"
         src={pebble1}
       />
+      {/*
       <img
         alt=""
         className="praise-section__pebble-box__pebble2"

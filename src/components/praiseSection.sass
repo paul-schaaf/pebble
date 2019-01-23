@@ -7,10 +7,14 @@
     position: absolute
     &__pebble1
       position: absolute
-      width: 200px
+      width: 180px
       left: 100vw * 0.08
-      top: 50px
-      transform: rotate(10deg)
+      top: 100px
+      transform: rotate(170deg)
+      @media (min-width: 671px)
+        width: 200px
+        transform: rotate(10deg)
+        top: 50px
     &__pebble2
       position: absolute
       width: 170px
@@ -58,7 +62,7 @@
     padding-left: 60px
     padding-bottom: 60px
     overflow-x: scroll
-    margin-bottom: 80px
+    margin-bottom: 40px
     
     &__card-box
       display: flex
