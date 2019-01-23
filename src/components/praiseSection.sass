@@ -17,10 +17,28 @@
         top: 50px
     &__pebble2
       position: absolute
-      width: 170px
-      left: 100vw * 0.74
-      top: 110px
-      transform: rotate(-70deg)
+      width: 120px
+      left: 100vw * 0.5
+      top: 370px
+      transform: rotate(-100deg)
+      @media (min-width: 440px)
+        left: 100vw * 0.6
+        top: 350px
+        width: 140px
+      @media (min-width: 551px)
+        top: 300px
+        width: 180px
+      @media (min-width: 671px)
+        width: 140px
+        top: 140px
+        transform: rotate(160deg)
+      @media (min-width: 768px)
+        width: 170px
+        top: 110px
+        left: 100vw * 0.6
+        transform: rotate(-70deg)
+      @media (min-width: 1051px)
+        left: 100vw * 0.74
     &__pebble3
       position: absolute
       width: 300px
