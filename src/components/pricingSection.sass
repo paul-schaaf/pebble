@@ -101,10 +101,16 @@
         transform: rotate(75deg)
     &__pebble5
       position: absolute
-      width: 100px
-      top: 470px
-      left: 100vw * 0.075
-      transform: rotate(-20deg)
+      width: 150px
+      top: 1180px
+      left: 100vw * 0.1
+      transform: rotate(0deg)
+      display: none
+      @media (min-width: 701px)
+        display: block
+      @media (min-width: 871px)
+        display: none
+
   &__heading
     font-size: 55px
     font-family: $secondary-text
