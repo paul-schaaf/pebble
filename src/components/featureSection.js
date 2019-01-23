@@ -53,7 +53,7 @@ const FeatureSection = ({
   fingerEmoji,
 }) => (
   <div className="feature-section">
-    <div classname="feature-section___pebble-box">
+    <div className="feature-section___pebble-box">
       <img
         alt=""
         className="feature-section__pebble-box__pebble1"
