@@ -75,12 +75,13 @@ const FeatureSection = ({
         className="feature-section__pebble-box__pebble4"
         src={pebble1}
       />
-      {/*
+
       <img
         alt=""
         className="feature-section__pebble-box__pebble5"
         src={pebble1}
       />
+      {/*
       <img
         alt=""
         className="feature-section__pebble-box__pebble6"

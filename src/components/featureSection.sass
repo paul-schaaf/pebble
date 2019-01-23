@@ -95,10 +95,30 @@
         
     &__pebble5
       position: absolute
-      width: 300px
-      top: 500px
+      width: 170px
+      top: 1400px
       left: 100vw * 0.10
-      transform: rotate(130deg)
+      transform: rotate(180deg)
+      @media (min-width: 511px)
+        top: 1300px
+        width: 200px
+      @media (min-width: 701px)
+        top: 810px
+      @media (min-width: 891px)
+        width: 270px
+        top: 580px
+        left: 100vw * 0.10
+        transform: rotate(130deg)
+      @media (min-width: 1181px)
+        top: 540px
+        width: 300px
+        left: 100vw * 0.05
+      @media (min-width: 1210px)
+        left: 100vw * 0.06
+      @media (min-width: 1290px)
+        left: 100vw * 0.08
+      @media (min-width: 1350px)
+        left: 100vw * 0.12
     &__pebble6
       position: absolute
       width: 200px
