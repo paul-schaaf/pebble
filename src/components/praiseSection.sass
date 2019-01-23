@@ -41,10 +41,24 @@
         left: 100vw * 0.74
     &__pebble3
       position: absolute
-      width: 300px
-      left: 100vw * 0.4
-      top: 150px
-      transform: rotate(130deg)
+      width: 170px
+      left: 100vw * 0.33
+      top: 350px
+      transform: rotate(220deg)
+      display: none
+      @media (min-width: 671px)
+        display: block
+      @media (min-width: 1051px)
+        left: 100vw * 0.4
+        top: 150px
+        width: 200px
+        transform: rotate(130deg)
+      @media (min-width: 1152px)
+        left: 100vw * 0.39
+        width: 250px
+      @media (min-width: 1350px)
+        left: 100vw * 0.375
+        width: 300px
     &__pebble4
       position: absolute
       width: 170px
