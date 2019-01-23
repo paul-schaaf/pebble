@@ -6,16 +6,36 @@
     position: absolute
     &__pebble1
       position: absolute
-      width: 400px
-      top: 25px
-      left: 100vw * 0.5
-      transform: rotate(240deg)
+      width: 250px
+      top: 170px
+      left: 100vw * 0.6
+      transform: rotate(-30deg)
+      display: none
+      @media (min-width: 701px)
+        display: block
+      @media (min-width: 751px)
+        width: 300px
+      @media (min-width: 871px)
+        width: 400px
+        top: 150px
+        left: 100vw * 0.525
+        transform: rotate(-20deg)
+      @media (min-width: 1051px)
+        top: 50px
+        transform: rotate(200deg)
+        left: 100vw * 0.48
+      @media (min-width: 1181px)
+        top: 25px
+        left: 100vw * 0.5
+        transform: rotate(240deg)
     &__pebble2
       position: absolute
       width: 200px
       top: 160px
       left: 100vw * 0.04
       transform: rotate(90deg)
+      @media (max-width: 511px)
+        top: 130px
       @media (min-width: 1120px)
         left: 100vw * 0.04
       @media (min-width: 1210px)
@@ -50,15 +70,19 @@
     font-weight: 900
     letter-spacing: 3px
     text-align: center
-    /*@ media (min-width: 700px) and (min-height: 400px)
+    @media (min-width: 700px) and (min-height: 400px)
       font-size: 55px
-     @media (min-width: 500px) and (min-height: 500px)
+    @media (min-width: 500px) and (min-height: 500px)
       font-size: 64px
-     @media (min-width: 768px) and (min-height: 700px)*/
-    font-size: 80px
+    @media (min-width: 768px) and (min-height: 700px)
+      font-size: 80px
     @media (min-width: 1051px)
-      margin-left: calc(100vw * .10)
+      margin-left: calc(100vw * .14)
       text-align: left
+    @media (min-width: 1200px)
+      margin-left: calc(100vw * .125)
+    @media (min-width: 1400px)
+      margin-left: calc(100vw * .11)
 
   &__plan-box
     margin-top: 60px
