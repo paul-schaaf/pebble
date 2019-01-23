@@ -5,11 +5,29 @@
   &__pebble-box
     position: absolute
     &__pebble1
+      display: none
       position: absolute
       width: 175px
-      top: 130px
-      left: 100vw * 0.13
-      transform: rotate(-30deg)
+      top: 110px
+      left: 100vw * 0.06
+      transform: rotate(0deg)
+      @media (min-width: 701px)
+        display: block
+      @media (min-width: 871px)
+        top: 100px
+        transform: rotate(-30deg)
+        left: 100vw * 0.07
+      @media (min-width: 1050px)
+        left: 100vw * 0.05
+        top: 130px
+      @media (min-width: 1120px)
+        left: 100vw * 0.07
+      @media (min-width: 1210px)
+        left: 100vw * 0.09
+      @media (min-width: 1290px)
+        left: 100vw * 0.11
+      @media (min-width: 1350px)
+        left: 100vw * 0.13
     &__pebble2
       position: absolute
       width: 250px
