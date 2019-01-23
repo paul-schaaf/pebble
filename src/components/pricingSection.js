@@ -11,6 +11,34 @@ import './pricingSection.sass';
 
 const PricingSection = ({ smallFishEmoji, mediumFishEmoji, bigFishEmoji }) => (
   <div className="pricing-section">
+    <div className="pricing-section__pebble-box">
+      <img
+        alt=""
+        className="pricing-section__pebble-box__pebble1"
+        src={pebble1}
+      />
+
+      <img
+        alt=""
+        className="pricing-section__pebble-box__pebble2"
+        src={pebble1}
+      />
+      <img
+        alt=""
+        className="pricing-section__pebble-box__pebble3"
+        src={pebble1}
+      />
+      <img
+        alt=""
+        className="pricing-section__pebble-box__pebble4"
+        src={pebble1}
+      />
+      <img
+        alt=""
+        className="pricing-section__pebble-box__pebble5"
+        src={pebble1}
+      />
+    </div>
     <Container>
       <p className="pricing-section__heading">Pricing</p>
       <Centrifier>

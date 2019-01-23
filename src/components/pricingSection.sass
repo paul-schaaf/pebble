@@ -1,6 +1,39 @@
 @import layout
   
 .pricing-section
+  position: relative
+  &__pebble-box
+    position: absolute
+    &__pebble1
+      position: absolute
+      width: 400px
+      top: 25px
+      left: 100vw * 0.5
+      transform: rotate(240deg)
+    &__pebble2
+      position: absolute
+      width: 200px
+      top: 120px
+      left: 100vw * 0.075
+      transform: rotate(90deg)
+    &__pebble3
+      position: absolute
+      width: 350px
+      top: 400px
+      left: 100vw * 0.225
+      transform: rotate(150deg)
+    &__pebble4
+      position: absolute
+      width: 200px
+      top: 480px
+      left: 100vw * 0.775
+      transform: rotate(75deg)
+    &__pebble5
+      position: absolute
+      width: 100px
+      top: 470px
+      left: 100vw * 0.075
+      transform: rotate(-20deg)
   &__heading
     font-size: 55px
     font-family: $secondary-text
