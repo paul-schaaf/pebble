@@ -52,7 +52,7 @@ class HeroSection extends Component {
                   items={this.state.show}
                   from={{ opacity: 0, transform: 'translateY(50px)' }}
                   enter={{ opacity: 1, transform: 'translateY(0px)' }}
-                  config={{ friction: 50, delay: 1400 }}
+                  config={{ friction: 50, delay: 1100 }}
                 >
                   {show =>
                     show &&

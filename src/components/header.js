@@ -109,7 +109,7 @@ class Header extends Component {
             items={this.state.show}
             from={{ transform: 'translateY(-50px)' }}
             enter={{ transform: 'translateY(0px)' }}
-            config={{ friction: 50, delay: 1000 }}
+            config={{ friction: 50, delay: 700 }}
           >
             {show =>
               show &&
