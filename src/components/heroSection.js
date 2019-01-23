@@ -25,7 +25,7 @@ class HeroSection extends Component {
                 from={{ opacity: 0 }}
                 enter={{ opacity: 1 }}
                 leave={{ opacity: 0 }}
-                config={{ duration: 2000 }}
+                config={{ duration: 1500 }}
               >
                 {show =>
                   show &&
@@ -49,15 +49,31 @@ class HeroSection extends Component {
               </Transition>
 
               <Centrifier>
-                <div className="hero-section__content__text">
-                  <span aria-label="pointing finger" role="img">
-                    <Img
-                      alt="pointing finger"
-                      fluid={this.props.fingerEmoji.childImageSharp.fluid}
-                    />
-                  </span>
-                  Sign up for trial
-                </div>
+                <Transition
+                  items={this.state.show}
+                  from={{ opacity: 0 }}
+                  enter={{ opacity: 1 }}
+                  leave={{ opacity: 0 }}
+                  config={{ duration: 1000, delay: 1000 }}
+                >
+                  {show =>
+                    show &&
+                    (props => (
+                      <div
+                        style={props}
+                        className="hero-section__content__text"
+                      >
+                        <span aria-label="pointing finger" role="img">
+                          <Img
+                            alt="pointing finger"
+                            fluid={this.props.fingerEmoji.childImageSharp.fluid}
+                          />
+                        </span>
+                        Sign up for trial
+                      </div>
+                    ))
+                  }
+                </Transition>
               </Centrifier>
             </div>
           </Centrifier>
