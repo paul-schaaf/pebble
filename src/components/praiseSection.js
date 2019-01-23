@@ -43,12 +43,13 @@ const PraiseSection = ({
         className="praise-section__pebble-box__pebble1"
         src={pebble1}
       />
-      {/*
+
       <img
         alt=""
         className="praise-section__pebble-box__pebble2"
         src={pebble1}
       />
+      {/*
       <img
         alt=""
         className="praise-section__pebble-box__pebble3"
