@@ -24,7 +24,6 @@ class HeroSection extends Component {
                 items={this.state.show}
                 from={{ opacity: 0 }}
                 enter={{ opacity: 1 }}
-                leave={{ opacity: 0 }}
                 config={{ duration: 1500 }}
               >
                 {show =>
@@ -51,10 +50,9 @@ class HeroSection extends Component {
               <Centrifier>
                 <Transition
                   items={this.state.show}
-                  from={{ opacity: 0 }}
-                  enter={{ opacity: 1 }}
-                  leave={{ opacity: 0 }}
-                  config={{ duration: 1000, delay: 1000 }}
+                  from={{ opacity: 0, transform: 'translateY(50px)' }}
+                  enter={{ opacity: 1, transform: 'translateY(0px)' }}
+                  config={{ friction: 50, delay: 1400 }}
                 >
                   {show =>
                     show &&
