@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-scroll';
+import { Transition } from 'react-spring';
 
 import Container from './helperComponents/container';
 
@@ -14,11 +15,12 @@ class Header extends Component {
     canShowNavbar: true,
     scrollTimer: 'none',
     menuOpen: false,
+    show: false,
   };
 
   componentDidMount = () => {
     window.addEventListener('scroll', this.navbarDisplayHandler);
-    this.setState({ prevScrollpos: window.pageYOffset });
+    this.setState({ prevScrollpos: window.pageYOffset, show: true });
   };
 
   navbarDisplayHandler = () => {
@@ -103,25 +105,39 @@ class Header extends Component {
     return (
       <div id="navbar" className="navbar-box">
         <Container>
-          <img
-            alt="pebble icon"
-            className="navbar-box__pebble"
-            src={pebbleIcon}
-          />
-          <Link
-            to="heroSection"
-            spy={true}
-            smooth={'easeInOutCubic'}
-            duration={750}
-            offset={-80}
+          <Transition
+            items={this.state.show}
+            from={{ transform: 'translateY(-50px)' }}
+            enter={{ transform: 'translateY(0px)' }}
+            config={{ friction: 50, delay: 1000 }}
           >
-            <p className="title">{this.props.siteTitle}</p>
-          </Link>
-          <div onClick={this.onMenuClick} className="hamburger-menu">
-            <div className="hamburger-menu__line hamburger-menu__line--one" />
-            <div className="hamburger-menu__line hamburger-menu__line--two" />
-            <div className="hamburger-menu__line hamburger-menu__line--three" />
-          </div>
+            {show =>
+              show &&
+              (props => (
+                <div style={props}>
+                  <img
+                    alt="pebble icon"
+                    className="navbar-box__pebble"
+                    src={pebbleIcon}
+                  />
+                  <Link
+                    to="heroSection"
+                    spy={true}
+                    smooth={'easeInOutCubic'}
+                    duration={750}
+                    offset={-80}
+                  >
+                    <p className="title">{this.props.siteTitle}</p>
+                  </Link>
+                  <div onClick={this.onMenuClick} className="hamburger-menu">
+                    <div className="hamburger-menu__line hamburger-menu__line--one" />
+                    <div className="hamburger-menu__line hamburger-menu__line--two" />
+                    <div className="hamburger-menu__line hamburger-menu__line--three" />
+                  </div>
+                </div>
+              ))
+            }
+          </Transition>
         </Container>
         <div className="menu">
           <div onClick={this.onMenuClick} className="menu__icon-close" />
