@@ -4,6 +4,8 @@ import Img from 'gatsby-image';
 import Container from './helperComponents/container';
 import Card from './helperComponents/card';
 
+import pebble1 from '../images/pebbles/orange_pebble1.svg';
+
 import './praiseSection.sass';
 
 const PraiseCardContent = ({ emoji, text, author }) => (
@@ -35,6 +37,33 @@ const PraiseSection = ({
   blackOfficer,
 }) => (
   <div className="praise-section">
+    <div className="praise-section___pebble-box">
+      <img
+        alt=""
+        className="praise-section__pebble-box__pebble1"
+        src={pebble1}
+      />
+      <img
+        alt=""
+        className="praise-section__pebble-box__pebble2"
+        src={pebble1}
+      />
+      <img
+        alt=""
+        className="praise-section__pebble-box__pebble3"
+        src={pebble1}
+      />
+      <img
+        alt=""
+        className="praise-section__pebble-box__pebble4"
+        src={pebble1}
+      />
+      <img
+        alt=""
+        className="praise-section__pebble-box__pebble5"
+        src={pebble1}
+      />
+    </div>
     <Container>
       <p className="praise-section__heading">Praise</p>
     </Container>

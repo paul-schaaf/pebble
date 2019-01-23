@@ -1,8 +1,40 @@
 @import layout
   
 .praise-section
+  position: relative
   width: 100%
-  
+  &__pebble-box
+    position: absolute
+    &__pebble1
+      position: absolute
+      width: 200px
+      left: 100vw * 0.08
+      top: 50px
+      transform: rotate(10deg)
+    &__pebble2
+      position: absolute
+      width: 170px
+      left: 100vw * 0.75
+      top: 80px
+      transform: rotate(-120deg)
+    &__pebble3
+      position: absolute
+      width: 300px
+      left: 100vw * 0.4
+      top: 150px
+      transform: rotate(130deg)
+    &__pebble4
+      position: absolute
+      width: 170px
+      left: 100vw * 0.75
+      top: 430px
+      transform: rotate(140deg)
+    &__pebble5
+      position: absolute
+      width: 170px
+      left: 100vw * 0.15
+      top: 400px
+      transform: rotate(-80deg)
   &__heading
     font-size: 55px
     font-family: $secondary-text
