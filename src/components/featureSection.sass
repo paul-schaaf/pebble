@@ -121,10 +121,29 @@
         left: 100vw * 0.12
     &__pebble6
       position: absolute
-      width: 200px
-      top: 700px
-      left: 100vw * 0.475
-      transform: rotate(-60deg)
+      width: 180px
+      top: 1850px
+      left: 100vw * 0.45
+      transform: rotate(-90deg)
+      @media (min-width: 511px)
+        width: 180px
+        top: 1700px
+        left: 100vw * 0.575
+        transform: rotate(0deg)
+      @media (min-width: 701px)
+        width: 70px
+        top: 1110px
+        left: 100vw * 0.575
+      @media (min-width: 781px)
+        width: 120px
+        top: 1110px
+        left: 100vw * 0.55
+      @media (min-width: 981px)
+        top: 900px
+        left: 100vw * 0.55
+        width: 170px
+      @media (min-width: 1051px)
+        display: none
 
   &__heading
     font-size: 55px

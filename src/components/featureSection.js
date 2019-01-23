@@ -81,12 +81,12 @@ const FeatureSection = ({
         className="feature-section__pebble-box__pebble5"
         src={pebble1}
       />
-      {/*
+
       <img
         alt=""
         className="feature-section__pebble-box__pebble6"
         src={pebble1}
-      />*/}
+      />
     </div>
     <Container>
       <p className="feature-section__heading">Features</p>
