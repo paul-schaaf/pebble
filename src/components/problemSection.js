@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Img from 'gatsby-image';
 
 import Container from './helperComponents/container';
@@ -8,6 +8,34 @@ import Card from './helperComponents/card';
 import pebble1 from '../images/pebbles/blue_pebble1.svg';
 
 import './problemSection.sass';
+
+const ProblemCardContent = ({ heading, emoji, alt, text, fingerEmoji }) => (
+  <Fragment>
+    <p className="card__heading">{heading}</p>
+    <div className="card__main-emoji card__main-emoji--problem">
+      <span>
+        <Img
+          alt={alt}
+          className="card__main-emoji__img"
+          fixed={emoji.childImageSharp.fixed}
+        />
+      </span>
+    </div>
+    <p className="card__text">{text}</p>
+    <Centrifier>
+      <div className="card__read-more">
+        <span>
+          <Img
+            alt="pointing finger"
+            className="card__finger"
+            fixed={fingerEmoji.childImageSharp.fixed}
+          />
+        </span>
+        Read more
+      </div>
+    </Centrifier>
+  </Fragment>
+);
 
 const ProblemSection = ({ lollipopEmoji, shackEmoji, fingerEmoji }) => (
   <div className="problem-section">
@@ -53,68 +81,32 @@ const ProblemSection = ({ lollipopEmoji, shackEmoji, fingerEmoji }) => (
       <Centrifier>
         <div className="problem-section__card-box">
           <Card type="problem">
-            <p className="card__heading">No Healthy Food</p>
-            <div className="card__main-emoji card__main-emoji--problem">
-              <span role="img" aria-label="lollipop emoji">
-                <Img
-                  alt="lollipop emoji"
-                  className="card__main-emoji__img"
-                  fixed={lollipopEmoji.childImageSharp.fixed}
-                />
-              </span>
-            </div>
-            <p className="card__text">
-              Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco labo-ris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in volup-tate velit esse cillum dolore eu fugiat
-              nulla paria-tur. Excepteur sint aliquip ex ea commodo ea ut
-            </p>
-            <Centrifier>
-              <div className="card__read-more">
-                <span role="img" aria-label="pointing finger">
-                  <Img
-                    alt="pointing finger"
-                    className="card__finger"
-                    fixed={fingerEmoji.childImageSharp.fixed}
-                  />
-                </span>
-                Read more
-              </div>
-            </Centrifier>
+            <ProblemCardContent
+              heading="No Healthy Food"
+              emoji={lollipopEmoji}
+              alt="lollipop emoji"
+              text="Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco labo-ris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in volup-tate velit esse cillum dolore eu fugiat
+            nulla paria-tur. Excepteur sint aliquip ex ea commodo ea ut"
+              fingerEmoji={fingerEmoji}
+            />
           </Card>
           <Card type="problem">
-            <p className="card__heading">High Housing Costs</p>
-            <div className="card__main-emoji card__main-emoji--problem">
-              <span role="img" aria-label="shack">
-                <Img
-                  alt="shack emoji"
-                  className="card__main-emoji__img"
-                  fixed={shackEmoji.childImageSharp.fixed}
-                />
-              </span>
-            </div>
-            <p className="card__text">
-              Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco labo-ris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in volup-tate velit esse cillum dolore eu fugiat
-              nulla paria-tur. Excepteur sint aliquip ex ea commodo ea ut
-            </p>
-            <Centrifier>
-              <div className="card__read-more">
-                <span role="img" aria-label="pointing finger">
-                  <Img
-                    alt="pointing finger"
-                    className="card__finger"
-                    fixed={fingerEmoji.childImageSharp.fixed}
-                  />
-                </span>
-                Read more
-              </div>
-            </Centrifier>
+            <ProblemCardContent
+              heading="High Housing Costs"
+              emoji={shackEmoji}
+              alt="shack emoji"
+              text="Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco labo-ris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in volup-tate velit esse cillum dolore eu fugiat
+            nulla paria-tur. Excepteur sint aliquip ex ea commodo ea ut"
+              fingerEmoji={fingerEmoji}
+            />
           </Card>
         </div>
       </Centrifier>
