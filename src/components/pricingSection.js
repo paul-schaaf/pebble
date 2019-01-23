@@ -2,10 +2,12 @@ import React from 'react';
 import Img from 'gatsby-image';
 
 import Container from './helperComponents/container';
+import Centrifier from './helperComponents/centrifier';
 import Card from './helperComponents/card';
 
+import pebble1 from '../images/pebbles/blue_pebble1.svg';
+
 import './pricingSection.sass';
-import Centrifier from './helperComponents/centrifier';
 
 const PricingSection = ({ smallFishEmoji, mediumFishEmoji, bigFishEmoji }) => (
   <div className="pricing-section">
@@ -16,7 +18,7 @@ const PricingSection = ({ smallFishEmoji, mediumFishEmoji, bigFishEmoji }) => (
           <Card type="pricing">
             <div className="card--pricing__plan-name">
               Basic
-              <span role="img" aria-label="basic plan emoji">
+              <span>
                 <Img
                   alt="basic plan emoji"
                   fixed={smallFishEmoji.childImageSharp.fixed}
@@ -43,11 +45,7 @@ const PricingSection = ({ smallFishEmoji, mediumFishEmoji, bigFishEmoji }) => (
           <Card type="pricing">
             <div className="card--pricing__plan-name">
               Pro
-              <span
-                className="dolphin-emoji"
-                role="img"
-                aria-label="pro plan emoji"
-              >
+              <span className="dolphin-emoji">
                 <Img
                   alt="pro plan emoji"
                   fixed={mediumFishEmoji.childImageSharp.fixed}
@@ -72,11 +70,7 @@ const PricingSection = ({ smallFishEmoji, mediumFishEmoji, bigFishEmoji }) => (
           <Card type="pricing">
             <div className="card--pricing__plan-name">
               Enterprise
-              <span
-                className="whale-emoji"
-                role="img"
-                aria-label="enterprise plan emoji"
-              >
+              <span className="whale-emoji">
                 <Img
                   alt="enterprise plan emoji"
                   fluid={bigFishEmoji.childImageSharp.fluid}
