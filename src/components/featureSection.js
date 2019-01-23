@@ -5,6 +5,8 @@ import Container from './helperComponents/container';
 import Centrifier from './helperComponents/centrifier';
 import Card from './helperComponents/card';
 
+import pebble1 from '../images/pebbles/orange_pebble1.svg';
+
 import './featureSection.sass';
 
 const FeatureCardContent = ({ heading, alt, isRobot, emoji, fingerEmoji }) => (
@@ -51,6 +53,38 @@ const FeatureSection = ({
   fingerEmoji,
 }) => (
   <div className="feature-section">
+    <div classname="feature-section___pebble-box">
+      <img
+        alt=""
+        className="feature-section__pebble-box__pebble1"
+        src={pebble1}
+      />
+      <img
+        alt=""
+        className="feature-section__pebble-box__pebble2"
+        src={pebble1}
+      />
+      <img
+        alt=""
+        className="feature-section__pebble-box__pebble3"
+        src={pebble1}
+      />
+      <img
+        alt=""
+        className="feature-section__pebble-box__pebble4"
+        src={pebble1}
+      />
+      <img
+        alt=""
+        className="feature-section__pebble-box__pebble5"
+        src={pebble1}
+      />
+      <img
+        alt=""
+        className="feature-section__pebble-box__pebble6"
+        src={pebble1}
+      />
+    </div>
     <Container>
       <p className="feature-section__heading">Features</p>
       <Centrifier>
