@@ -1,11 +1,20 @@
 import React from 'react';
 
+import pebbleIcon from '../images/header_oval.svg';
+
 import './footer.sass';
 
 const Footer = () => (
   <div className="footer-section">
     <div className="footer-section__box">
-      <p className="footer-section__box__heading">Pebble</p>
+      <p className="footer-section__box__heading">
+        <img
+          alt="pebble icon"
+          className="footer-section__box__pebble"
+          src={pebbleIcon}
+        />
+        Pebble
+      </p>
       <p className="footer-section__box__info-text">
         Solving key issues
         <br />
