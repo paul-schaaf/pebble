@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import Img from 'gatsby-image';
-import { Spring, animated } from 'react-spring';
+import { Spring, animated, config } from 'react-spring';
+import Waypoint from 'react-waypoint';
 
 import Container from './helperComponents/container';
 import Centrifier from './helperComponents/centrifier';
@@ -77,81 +78,115 @@ class ProblemCardContent extends Component {
   }
 }
 
-const ProblemSection = ({ lollipopEmoji, shackEmoji, fingerEmoji }) => (
-  <div className="problem-section">
-    <div className="problem-section__pebble-box">
-      <img
-        alt=""
-        className="problem-section__pebble-box__pebble1"
-        src={pebble1}
-      />
-      <img
-        alt=""
-        className="problem-section__pebble-box__pebble2"
-        src={pebble1}
-      />
-      <img
-        alt=""
-        className="problem-section__pebble-box__pebble3"
-        src={pebble1}
-      />
-      <img
-        alt=""
-        className="problem-section__pebble-box__pebble4"
-        src={pebble1}
-      />
-      <img
-        alt=""
-        className="problem-section__pebble-box__pebble5"
-        src={pebble1}
-      />
-    </div>
-    <Container>
-      <Centrifier>
-        <div className="problem-section__header-box">
-          <p className="problem-section__header-box__heading">Why Pebble?</p>
-          <p className="problem-section__header-box__subtitle">
-            We are solving key issues that the
-          </p>
-          <p className="problem-section__header-box__subtitle">
-            stone industry faces today
-          </p>
+class ProblemSection extends Component {
+  state = {
+    fadeUp: false,
+  };
+  onWaypointEnter = () => {
+    this.setState({ fadeUp: true });
+  };
+  render() {
+    return (
+      <div className="problem-section">
+        <div className="problem-section__pebble-box">
+          <img
+            alt=""
+            className="problem-section__pebble-box__pebble1"
+            src={pebble1}
+          />
+          <img
+            alt=""
+            className="problem-section__pebble-box__pebble2"
+            src={pebble1}
+          />
+          <img
+            alt=""
+            className="problem-section__pebble-box__pebble3"
+            src={pebble1}
+          />
+          <img
+            alt=""
+            className="problem-section__pebble-box__pebble4"
+            src={pebble1}
+          />
+          <img
+            alt=""
+            className="problem-section__pebble-box__pebble5"
+            src={pebble1}
+          />
         </div>
-      </Centrifier>
-      <Centrifier>
-        <div className="problem-section__card-box">
-          <Card type="problem">
-            <ProblemCardContent
-              heading="No Healthy Food"
-              emoji={lollipopEmoji}
-              alt="lollipop emoji"
-              text="Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            enim ad minim veniam, quis nostrud exercitation ullamco labo-ris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in volup-tate velit esse cillum dolore eu fugiat
-            nulla paria-tur. Excepteur sint aliquip ex ea commodo ea ut"
-              fingerEmoji={fingerEmoji}
-            />
-          </Card>
-          <Card type="problem">
-            <ProblemCardContent
-              heading="High Housing Costs"
-              emoji={shackEmoji}
-              alt="shack emoji"
-              text="Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            enim ad minim veniam, quis nostrud exercitation ullamco labo-ris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in volup-tate velit esse cillum dolore eu fugiat
-            nulla paria-tur. Excepteur sint aliquip ex ea commodo ea ut"
-              fingerEmoji={fingerEmoji}
-            />
-          </Card>
-        </div>
-      </Centrifier>
-    </Container>
-  </div>
-);
+        <Container>
+          <Centrifier>
+            <div className="problem-section__header-box">
+              <p className="problem-section__header-box__heading">
+                Why Pebble?
+              </p>
+              <p className="problem-section__header-box__subtitle">
+                We are solving key issues that the
+              </p>
+              <p className="problem-section__header-box__subtitle">
+                stone industry faces today
+              </p>
+            </div>
+          </Centrifier>
+          <Centrifier>
+            <Waypoint onEnter={this.onWaypointEnter}>
+              <div>
+                <Spring
+                  native
+                  items={this.state.fadeUp}
+                  from={{ opacity: 0, transform: 'translateY(150px)' }}
+                  to={{
+                    opacity: 1,
+                    transform: this.state.fadeUp
+                      ? 'translateY(0px)'
+                      : 'translateY(150px)',
+                  }}
+                  config={config.slow}
+                >
+                  {props => (
+                    <animated.div
+                      style={props}
+                      className="problem-section__card-box"
+                    >
+                      <Card type="problem">
+                        <ProblemCardContent
+                          heading="No Healthy Food"
+                          emoji={this.props.lollipopEmoji}
+                          alt="lollipop emoji"
+                          text="Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco labo-ris
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in volup-tate velit esse cillum dolore eu fugiat
+          nulla paria-tur. Excepteur sint aliquip ex ea commodo ea ut"
+                          fingerEmoji={this.props.fingerEmoji}
+                        />
+                      </Card>
+                      <Card type="problem">
+                        <ProblemCardContent
+                          heading="High Housing Costs"
+                          emoji={this.props.shackEmoji}
+                          alt="shack emoji"
+                          text="Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco labo-ris
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in volup-tate velit esse cillum dolore eu fugiat
+          nulla paria-tur. Excepteur sint aliquip ex ea commodo ea ut"
+                          fingerEmoji={this.props.fingerEmoji}
+                        />
+                      </Card>
+                    </animated.div>
+                  )}
+                </Spring>
+              </div>
+            </Waypoint>
+          </Centrifier>
+        </Container>
+      </div>
+    );
+  }
+}
 
 export default ProblemSection;
