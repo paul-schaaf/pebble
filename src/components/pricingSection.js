@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, Component } from 'react';
 import Img from 'gatsby-image';
 
 import Container from './helperComponents/container';
@@ -45,99 +45,103 @@ const PricingCardContent = ({ name, emoji, alt, price, features }) => (
   </Fragment>
 );
 
-const PricingSection = ({ smallFishEmoji, mediumFishEmoji, bigFishEmoji }) => (
-  <div className="pricing-section">
-    <div className="pricing-section__pebble-box">
-      <img
-        alt=""
-        className="pricing-section__pebble-box__pebble1"
-        src={pebble1}
-      />
+class PricingSection extends Component {
+  render() {
+    return (
+      <div className="pricing-section">
+        <div className="pricing-section__pebble-box">
+          <img
+            alt=""
+            className="pricing-section__pebble-box__pebble1"
+            src={pebble1}
+          />
 
-      <img
-        alt=""
-        className="pricing-section__pebble-box__pebble2"
-        src={pebble1}
-      />
-      <img
-        alt=""
-        className="pricing-section__pebble-box__pebble3"
-        src={pebble1}
-      />
+          <img
+            alt=""
+            className="pricing-section__pebble-box__pebble2"
+            src={pebble1}
+          />
+          <img
+            alt=""
+            className="pricing-section__pebble-box__pebble3"
+            src={pebble1}
+          />
 
-      <img
-        alt=""
-        className="pricing-section__pebble-box__pebble4"
-        src={pebble1}
-      />
+          <img
+            alt=""
+            className="pricing-section__pebble-box__pebble4"
+            src={pebble1}
+          />
 
-      <img
-        alt=""
-        className="pricing-section__pebble-box__pebble5"
-        src={pebble1}
-      />
+          <img
+            alt=""
+            className="pricing-section__pebble-box__pebble5"
+            src={pebble1}
+          />
 
-      <img
-        alt=""
-        className="pricing-section__pebble-box__pebble6"
-        src={pebble1}
-      />
-    </div>
-    <Container>
-      <p className="pricing-section__heading">Pricing</p>
-      <Centrifier>
-        <div className="pricing-section__plan-box">
-          <Card type="pricing">
-            <PricingCardContent
-              name="Basic"
-              emoji={smallFishEmoji}
-              alt="basic plan emoji"
-              price={9}
-              features={[
-                'fascinating artificial intelligence',
-                'sublime construction tech',
-                'astonishing speed',
-                'magnificent motherboards',
-                'state-of-the-art bioengineering',
-                'dazzling devOps',
-              ]}
-            />
-          </Card>
-          <Card type="pricing">
-            <PricingCardContent
-              name="Pro"
-              emoji={mediumFishEmoji}
-              alt="pro plan emoji"
-              price={20}
-              features={[
-                'all the basic features',
-                '+',
-                'cool blockchain thingy',
-                'some machine learning',
-                'crazy nanotechnology',
-                'more spectacular things',
-              ]}
-            />
-          </Card>
-          <Card type="pricing">
-            <PricingCardContent
-              name="Enterprise"
-              emoji={bigFishEmoji}
-              alt="enterprise plan emoji"
-              features={[
-                'all the basic and pro features',
-                '+',
-                'more bling bling',
-                'crazy good 24/7 support',
-                'top-notch cybersecurity',
-                'robots with sick moves',
-              ]}
-            />
-          </Card>
+          <img
+            alt=""
+            className="pricing-section__pebble-box__pebble6"
+            src={pebble1}
+          />
         </div>
-      </Centrifier>
-    </Container>
-  </div>
-);
+        <Container>
+          <p className="pricing-section__heading">Pricing</p>
+          <Centrifier>
+            <div className="pricing-section__plan-box">
+              <Card type="pricing">
+                <PricingCardContent
+                  name="Basic"
+                  emoji={this.props.smallFishEmoji}
+                  alt="basic plan emoji"
+                  price={9}
+                  features={[
+                    'fascinating artificial intelligence',
+                    'sublime construction tech',
+                    'astonishing speed',
+                    'magnificent motherboards',
+                    'state-of-the-art bioengineering',
+                    'dazzling devOps',
+                  ]}
+                />
+              </Card>
+              <Card type="pricing">
+                <PricingCardContent
+                  name="Pro"
+                  emoji={this.props.mediumFishEmoji}
+                  alt="pro plan emoji"
+                  price={20}
+                  features={[
+                    'all the basic features',
+                    '+',
+                    'cool blockchain thingy',
+                    'some machine learning',
+                    'crazy nanotechnology',
+                    'more spectacular things',
+                  ]}
+                />
+              </Card>
+              <Card type="pricing">
+                <PricingCardContent
+                  name="Enterprise"
+                  emoji={this.props.bigFishEmoji}
+                  alt="enterprise plan emoji"
+                  features={[
+                    'all the basic and pro features',
+                    '+',
+                    'more bling bling',
+                    'crazy good 24/7 support',
+                    'top-notch cybersecurity',
+                    'robots with sick moves',
+                  ]}
+                />
+              </Card>
+            </div>
+          </Centrifier>
+        </Container>
+      </div>
+    );
+  }
+}
 
 export default PricingSection;
