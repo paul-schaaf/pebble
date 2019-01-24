@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import Img from 'gatsby-image';
-import { Spring, animated } from 'react-spring';
+import { Spring, animated, config } from 'react-spring';
+import Waypoint from 'react-waypoint';
 
 import Container from './helperComponents/container';
 import Centrifier from './helperComponents/centrifier';
@@ -82,107 +83,133 @@ class FeatureCardContent extends Component {
   }
 }
 
-const FeatureSection = ({
-  craneEmoji,
-  microscopeEmoji,
-  robotEmoji,
-  dnaEmoji,
-  policeCarEmoji,
-  brainEmoji,
-  fingerEmoji,
-}) => (
-  <div className="feature-section">
-    <div className="feature-section___pebble-box">
-      <img
-        alt=""
-        className="feature-section__pebble-box__pebble1"
-        src={pebble1}
-      />
-      <img
-        alt=""
-        className="feature-section__pebble-box__pebble2"
-        src={pebble1}
-      />
-      <img
-        alt=""
-        className="feature-section__pebble-box__pebble3"
-        src={pebble1}
-      />
+class FeatureSection extends Component {
+  state = {
+    fadeUp: false,
+  };
 
-      <img
-        alt=""
-        className="feature-section__pebble-box__pebble4"
-        src={pebble1}
-      />
+  onWaypointEnter = () => {
+    this.setState({ fadeUp: true });
+  };
 
-      <img
-        alt=""
-        className="feature-section__pebble-box__pebble5"
-        src={pebble1}
-      />
+  render() {
+    return (
+      <div className="feature-section">
+        <div className="feature-section___pebble-box">
+          <img
+            alt=""
+            className="feature-section__pebble-box__pebble1"
+            src={pebble1}
+          />
+          <img
+            alt=""
+            className="feature-section__pebble-box__pebble2"
+            src={pebble1}
+          />
+          <img
+            alt=""
+            className="feature-section__pebble-box__pebble3"
+            src={pebble1}
+          />
 
-      <img
-        alt=""
-        className="feature-section__pebble-box__pebble6"
-        src={pebble1}
-      />
-    </div>
-    <Container>
-      <p className="feature-section__heading">Features</p>
-      <Centrifier>
-        <div className="feature-section__card-grid">
-          <Card type="feature">
-            <FeatureCardContent
-              heading="Construction Tech"
-              alt="crane emoji"
-              emoji={craneEmoji}
-              fingerEmoji={fingerEmoji}
-            />
-          </Card>
-          <Card type="feature">
-            <FeatureCardContent
-              heading="Nanotechnology"
-              alt="microscope emoji"
-              emoji={microscopeEmoji}
-              fingerEmoji={fingerEmoji}
-            />
-          </Card>
-          <Card type="feature">
-            <FeatureCardContent
-              heading="Robotics"
-              alt="robot emoji"
-              emoji={robotEmoji}
-              fingerEmoji={fingerEmoji}
-            />
-          </Card>
-          <Card type="feature">
-            <FeatureCardContent
-              heading="Bioengineering"
-              alt="dna emoji"
-              emoji={dnaEmoji}
-              fingerEmoji={fingerEmoji}
-            />
-          </Card>
-          <Card type="feature">
-            <FeatureCardContent
-              heading="Cybersecurity"
-              alt="police car emoji"
-              emoji={policeCarEmoji}
-              fingerEmoji={fingerEmoji}
-            />
-          </Card>
-          <Card type="feature">
-            <FeatureCardContent
-              heading="Neuroscience"
-              alt="brain emoji"
-              emoji={brainEmoji}
-              fingerEmoji={fingerEmoji}
-            />
-          </Card>
+          <img
+            alt=""
+            className="feature-section__pebble-box__pebble4"
+            src={pebble1}
+          />
+
+          <img
+            alt=""
+            className="feature-section__pebble-box__pebble5"
+            src={pebble1}
+          />
+
+          <img
+            alt=""
+            className="feature-section__pebble-box__pebble6"
+            src={pebble1}
+          />
         </div>
-      </Centrifier>
-    </Container>
-  </div>
-);
+        <Container>
+          <p className="feature-section__heading">Features</p>
+          <Centrifier>
+            <Waypoint onEnter={this.onWaypointEnter}>
+              <div>
+                <Spring
+                  native
+                  items={this.state.fadeUp}
+                  from={{ opacity: 0, transform: 'translateY(150px)' }}
+                  to={{
+                    opacity: 1,
+                    transform: this.state.fadeUp
+                      ? 'translateY(0px)'
+                      : 'translateY(150px)',
+                  }}
+                  config={config.slow}
+                >
+                  {props => (
+                    <animated.div
+                      style={props}
+                      className="feature-section__card-grid"
+                    >
+                      <Card type="feature">
+                        <FeatureCardContent
+                          heading="Construction Tech"
+                          alt="crane emoji"
+                          emoji={this.props.craneEmoji}
+                          fingerEmoji={this.props.fingerEmoji}
+                        />
+                      </Card>
+                      <Card type="feature">
+                        <FeatureCardContent
+                          heading="Nanotechnology"
+                          alt="microscope emoji"
+                          emoji={this.props.microscopeEmoji}
+                          fingerEmoji={this.props.fingerEmoji}
+                        />
+                      </Card>
+                      <Card type="feature">
+                        <FeatureCardContent
+                          heading="Robotics"
+                          alt="robot emoji"
+                          emoji={this.props.robotEmoji}
+                          fingerEmoji={this.props.fingerEmoji}
+                        />
+                      </Card>
+                      <Card type="feature">
+                        <FeatureCardContent
+                          heading="Bioengineering"
+                          alt="dna emoji"
+                          emoji={this.props.dnaEmoji}
+                          fingerEmoji={this.props.fingerEmoji}
+                        />
+                      </Card>
+                      <Card type="feature">
+                        <FeatureCardContent
+                          heading="Cybersecurity"
+                          alt="police car emoji"
+                          emoji={this.props.policeCarEmoji}
+                          fingerEmoji={this.props.fingerEmoji}
+                        />
+                      </Card>
+                      <Card type="feature">
+                        <FeatureCardContent
+                          heading="Neuroscience"
+                          alt="brain emoji"
+                          emoji={this.props.brainEmoji}
+                          fingerEmoji={this.props.fingerEmoji}
+                        />
+                      </Card>
+                    </animated.div>
+                  )}
+                </Spring>
+              </div>
+            </Waypoint>
+          </Centrifier>
+        </Container>
+      </div>
+    );
+  }
+}
 
 export default FeatureSection;
