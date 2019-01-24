@@ -43,25 +43,21 @@ const PraiseSection = ({
         className="praise-section__pebble-box__pebble1"
         src={pebble1}
       />
-
       <img
         alt=""
         className="praise-section__pebble-box__pebble2"
         src={pebble1}
       />
-
       <img
         alt=""
         className="praise-section__pebble-box__pebble3"
         src={pebble1}
       />
-
       <img
         alt=""
         className="praise-section__pebble-box__pebble4"
         src={pebble1}
       />
-
       <img
         alt=""
         className="praise-section__pebble-box__pebble5"
@@ -87,7 +83,6 @@ const PraiseSection = ({
             author="Mr.Robot"
           />
         </Card>
-
         <Card type="praise">
           <PraiseCardContent
             emoji={manYellowFaceWhiteHair}
@@ -102,7 +97,6 @@ const PraiseSection = ({
             author="grandma"
           />
         </Card>
-
         <Card type="praise">
           <PraiseCardContent
             emoji={womanBlackFaceCurlyHair}
@@ -141,7 +135,6 @@ const PraiseSection = ({
             author="Dnice"
           />
         </Card>
-
         <Card type="praise">
           <PraiseCardContent
             emoji={santaEmoji}
@@ -149,7 +142,6 @@ const PraiseSection = ({
             author="Santa"
           />
         </Card>
-
         <Card type="praise">
           <PraiseCardContent
             emoji={manBlackFaceBlackHair}
@@ -164,7 +156,6 @@ const PraiseSection = ({
             author="hannah"
           />
         </Card>
-
         <Card type="praise">
           <PraiseCardContent
             emoji={manScientist}
