@@ -81,12 +81,12 @@ class ProblemCardContent extends Component {
 
 class ProblemSection extends Component {
   state = {
-    fadeUp: false,
     headingUp: false,
     subtitleUp: false,
+    contentUp: false,
   };
-  onWaypointEnter = () => {
-    this.setState({ fadeUp: true });
+  onContentWaypointEnter = () => {
+    this.setState({ contentUp: true });
   };
 
   onHeadingWaypointEnter = () => {
@@ -156,9 +156,9 @@ class ProblemSection extends Component {
             </div>
           </Centrifier>
           <Centrifier>
-            <Waypoint bottomOffset="50px" onEnter={this.onWaypointEnter}>
+            <Waypoint bottomOffset="50px" onEnter={this.onContentWaypointEnter}>
               <div>
-                <FadeUp fadeUp={this.state.fadeUp}>
+                <FadeUp fadeUp={this.state.contentUp}>
                   <div className="problem-section__card-box">
                     <Card type="problem">
                       <ProblemCardContent
