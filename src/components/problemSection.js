@@ -82,9 +82,19 @@ class ProblemCardContent extends Component {
 class ProblemSection extends Component {
   state = {
     fadeUp: false,
+    headingUp: false,
+    subtitleUp: false,
   };
   onWaypointEnter = () => {
     this.setState({ fadeUp: true });
+  };
+
+  onHeadingWaypointEnter = () => {
+    this.setState({ headingUp: true });
+  };
+
+  onSubtitleWaypointEnter = () => {
+    this.setState({ subtitleUp: true });
   };
   render() {
     return (
@@ -119,19 +129,34 @@ class ProblemSection extends Component {
         <Container>
           <Centrifier>
             <div className="problem-section__header-box">
-              <p className="problem-section__header-box__heading">
-                Why Pebble?
-              </p>
-              <p className="problem-section__header-box__subtitle">
-                We are solving key issues that the
-              </p>
-              <p className="problem-section__header-box__subtitle">
-                stone industry faces today
-              </p>
+              <Waypoint
+                bottomOffset="20px"
+                onEnter={this.onHeadingWaypointEnter}
+              >
+                <div>
+                  <FadeUp fadeUp={this.state.headingUp}>
+                    <p className="problem-section__header-box__heading">
+                      Why Pebble?
+                    </p>
+                  </FadeUp>
+                </div>
+              </Waypoint>
+              <Waypoint onEnter={this.onSubtitleWaypointEnter}>
+                <div>
+                  <FadeUp fadeUp={this.state.subtitleUp}>
+                    <p className="problem-section__header-box__subtitle">
+                      We are solving key issues that the
+                    </p>
+                    <p className="problem-section__header-box__subtitle">
+                      stone industry faces today
+                    </p>
+                  </FadeUp>
+                </div>
+              </Waypoint>
             </div>
           </Centrifier>
           <Centrifier>
-            <Waypoint onEnter={this.onWaypointEnter}>
+            <Waypoint bottomOffset="50px" onEnter={this.onWaypointEnter}>
               <div>
                 <FadeUp fadeUp={this.state.fadeUp}>
                   <div className="problem-section__card-box">
