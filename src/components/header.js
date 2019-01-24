@@ -23,13 +23,12 @@ const NavbarTransition = ({ children, show }) => (
   </Transition>
 );
 
-const MenuTrail = ({ list, onMenuClick }) => (
+const MenuTrail = ({ list, onMenuClick, toggle }) => (
   <Trail
     native
     items={list}
     from={{ transform: 'translate3d(0,80px,0)', opacity: 0 }}
     to={{ transform: 'translate3d(0,0px,0)', opacity: 1 }}
-    leave={{ transform: 'translate3d(0,80px,0)', opacity: 0 }}
   >
     {(item, index) => props => (
       <Link
@@ -65,7 +64,7 @@ class Header extends Component {
       { text: 'Pricing', section: 'pricingSection' },
       { text: 'Praise', section: 'praiseSection' },
     ],
-    showTrail: false,
+    showMenu: false,
   };
 
   componentDidMount = () => {
@@ -135,7 +134,7 @@ class Header extends Component {
       pebble.style.opacity = 0.85;
       body.classList.add('stop-scrolling');
       setTimeout(() => {
-        this.setState({ showTrail: true });
+        this.setState({ showMenu: true });
       }, 500);
       this.setState({ menuOpen: true });
     } else {
@@ -143,7 +142,7 @@ class Header extends Component {
       pebble.style.transform =
         'scale3d(1, 1, 1) rotate(0deg) translateY(2.5px)';
       pebble.style.opacity = 1;
-      this.setState({ showTrail: false });
+      this.setState({ showMenu: false });
       body.classList.remove('stop-scrolling');
       this.setState({ menuOpen: false });
     }
@@ -175,7 +174,7 @@ class Header extends Component {
             </div>
           </NavbarTransition>
         </Container>
-        {this.state.showTrail && (
+        {this.state.showMenu && (
           <div className="menu">
             <div onClick={this.onMenuClick} className="menu__icon-close" />
             <MenuTrail
