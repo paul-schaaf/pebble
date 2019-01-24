@@ -24,7 +24,7 @@ const NavbarTransition = ({ children, showNavbar }) => (
   </Transition>
 );
 
-const MenuTrail = ({ list, onMenuClick, toggle }) => (
+const MenuTrail = ({ list, onMenuClick }) => (
   <Trail
     native
     items={list}
