@@ -42,7 +42,7 @@
     &__pebble3
       position: absolute
       width: 170px
-      left: 100vw * 0.33
+      left: 100vw * 0.31
       top: 350px
       transform: rotate(220deg)
       display: none
@@ -61,10 +61,26 @@
         width: 300px
     &__pebble4
       position: absolute
-      width: 170px
-      left: 100vw * 0.75
-      top: 430px
-      transform: rotate(140deg)
+      width: 50px
+      left: 100vw * 0.755
+      top: 420px
+      transform: rotate(160deg)
+      display: none
+      @media (min-width: 671px)
+        display: block
+      @media (min-width: 768px)
+        left: 100vw * 0.72
+        width: 100px
+        top: 480px
+      @media (min-width: 1051px)
+        top: 410px
+        left: 100vw * 0.62
+        width: 150px
+      @media (min-width: 1152px)
+        left: 100vw * 0.675
+      @media (min-width: 1350px)
+        left: 100vw * 0.7
+        top: 450px
     &__pebble5
       position: absolute
       width: 170px
