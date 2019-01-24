@@ -9,16 +9,17 @@ import pebbleIcon from '../images/header_oval.svg';
 
 import './header.sass';
 
-const NavbarTransition = ({ children, show }) => (
+const NavbarTransition = ({ children, showNavbar }) => (
   <Transition
     native
-    items={show}
+    items={showNavbar}
     from={{ transform: 'translateY(-50px)' }}
     enter={{ transform: 'translateY(0px)' }}
     config={{ friction: 50, delay: 700 }}
   >
-    {show =>
-      show && (props => <animated.div style={props}>{children}</animated.div>)
+    {showNavbar =>
+      showNavbar &&
+      (props => <animated.div style={props}>{children}</animated.div>)
     }
   </Transition>
 );
@@ -57,7 +58,7 @@ class Header extends Component {
     canShowNavbar: true,
     scrollTimer: 'none',
     menuOpen: false,
-    show: false,
+    showNavbar: false,
     trailList: [
       { text: 'Why Pebble?', section: 'problemSection' },
       { text: 'Features', section: 'featureSection' },
@@ -69,7 +70,7 @@ class Header extends Component {
 
   componentDidMount = () => {
     window.addEventListener('scroll', this.navbarDisplayHandler);
-    this.setState({ prevScrollpos: window.pageYOffset, show: true });
+    this.setState({ prevScrollpos: window.pageYOffset, showNavbar: true });
   };
 
   navbarDisplayHandler = () => {
@@ -152,7 +153,7 @@ class Header extends Component {
     return (
       <div id="navbar" className="navbar-box">
         <Container>
-          <NavbarTransition show={this.state.show}>
+          <NavbarTransition showNavbar={this.state.showNavbar}>
             <img
               alt="pebble icon"
               className="navbar-box__pebble"
