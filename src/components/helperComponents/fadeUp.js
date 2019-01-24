@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Spring, animated, config } from 'react-spring';
 
-const FadeUp = ({ fadeUp }) => (
+const FadeUp = ({ fadeUp, children }) => (
   <Spring
     native
     items={fadeUp}
