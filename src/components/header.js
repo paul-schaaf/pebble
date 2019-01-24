@@ -20,7 +20,32 @@ const NavbarTransition = ({ children, show }) => (
   </Transition>
 );
 
-const menuTrail = ({ children }) => <Trail />;
+const menuTrail = ({ children, list }) => (
+  <Trail
+    items={list}
+    from={{ transform: 'translate3d(0,40px,0)' }}
+    to={{ transform: 'translate3d(0,0px,0)' }}
+  >
+    {(item, index) => props => (
+      <Link
+        to="problemSection"
+        spy={true}
+        smooth={'easeInOutCubic'}
+        duration={750}
+        offset={-80}
+        delay={1300}
+      >
+        <p
+          style={props}
+          onClick={this.onMenuClick}
+          className={`menu__link--${index}`}
+        >
+          {item}
+        </p>
+      </Link>
+    )}
+  </Trail>
+);
 
 class Header extends Component {
   state = {
