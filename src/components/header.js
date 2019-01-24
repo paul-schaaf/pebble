@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-scroll';
-import { Transition, Trail, animated } from 'react-spring';
+import { Transition, Trail, animated, config } from 'react-spring';
 
 import Container from './helperComponents/container';
 
@@ -24,12 +24,20 @@ const NavbarTransition = ({ children, showNavbar }) => (
   </Transition>
 );
 
-const MenuTrail = ({ list, onMenuClick }) => (
+const MenuTrail = ({ list, onMenuClick, showTrail }) => (
   <Trail
     native
     items={list}
-    from={{ transform: 'translate3d(0,80px,0)', opacity: 0 }}
-    to={{ transform: 'translate3d(0,0px,0)', opacity: 1 }}
+    config={config.gentle}
+    keys={item => item.section}
+    from={{
+      transform: 'translate3d(0,80px,0)',
+      opacity: 0,
+    }}
+    to={{
+      transform: showTrail ? 'translate3d(0,0px,0)' : 'translate3d(0,80px,0)',
+      opacity: showTrail ? 1 : 0,
+    }}
   >
     {(item, index) => props => (
       <Link
@@ -66,6 +74,7 @@ class Header extends Component {
       { text: 'Praise', section: 'praiseSection' },
     ],
     showMenu: false,
+    showTrail: false,
   };
 
   componentDidMount = () => {
@@ -134,16 +143,23 @@ class Header extends Component {
         'scale3d(250, 250, 250) rotate(45deg) translateY(2.5px) translateX(4px)';
       pebble.style.opacity = 0.85;
       body.classList.add('stop-scrolling');
+      this.setState({ showMenu: true });
+
       setTimeout(() => {
-        this.setState({ showMenu: true });
-      }, 500);
+        this.setState({ showTrail: true });
+      }, 200);
+
       this.setState({ menuOpen: true });
     } else {
       const pebble = document.querySelector('.navbar-box__pebble');
       pebble.style.transform =
         'scale3d(1, 1, 1) rotate(0deg) translateY(2.5px)';
       pebble.style.opacity = 1;
-      this.setState({ showMenu: false });
+      this.setState({ showTrail: false });
+      setTimeout(() => {
+        this.setState({ showMenu: false });
+      }, 1000);
+
       body.classList.remove('stop-scrolling');
       this.setState({ menuOpen: false });
     }
@@ -179,6 +195,7 @@ class Header extends Component {
           <div className="menu">
             <div onClick={this.onMenuClick} className="menu__icon-close" />
             <MenuTrail
+              showTrail={this.state.showTrail}
               list={this.state.trailList}
               onMenuClick={this.onMenuClick}
             />
