@@ -10,15 +10,21 @@ import pebble1 from '../images/pebbles/orange_pebble1.svg';
 
 import './praiseSection.sass';
 
-const PraiseCardContent = ({ emoji, text, author }) => (
-  <Fragment>
-    <div className="card--praise__praise-emoji">
-      <Img fixed={emoji.childImageSharp.fixed} />
-    </div>
-    <p className="card--praise__praise-text">{text}</p>
-    <p className="card--praise__praise-author">{`- @${author}`}</p>
-  </Fragment>
-);
+class PraiseCardContent extends Component {
+  render() {
+    return (
+      <Fragment>
+        <div className="card--praise__praise-emoji">
+          <Img fixed={this.props.emoji.childImageSharp.fixed} />
+        </div>
+        <p className="card--praise__praise-text">{this.props.text}</p>
+        <p className="card--praise__praise-author">{`- @${
+          this.props.author
+        }`}</p>
+      </Fragment>
+    );
+  }
+}
 
 class PraiseSection extends Component {
   state = {
