@@ -9,6 +9,17 @@ import pebbleIcon from '../images/header_oval.svg';
 
 import './header.sass';
 
+const NavbarTransition = ({ children, show }) => (
+  <Transition
+    items={show}
+    from={{ transform: 'translateY(-50px)' }}
+    enter={{ transform: 'translateY(0px)' }}
+    config={{ friction: 50, delay: 700 }}
+  >
+    {show => show && (props => <div style={props}>{children}</div>)}
+  </Transition>
+);
+
 class Header extends Component {
   state = {
     prevScrollpos: 0,
@@ -105,43 +116,30 @@ class Header extends Component {
     return (
       <div id="navbar" className="navbar-box">
         <Container>
-          <Transition
-            items={this.state.show}
-            from={{ transform: 'translateY(-50px)' }}
-            enter={{ transform: 'translateY(0px)' }}
-            config={{ friction: 50, delay: 700 }}
-          >
-            {show =>
-              show &&
-              (props => (
-                <div style={props}>
-                  <img
-                    alt="pebble icon"
-                    className="navbar-box__pebble"
-                    src={pebbleIcon}
-                  />
-                  <Link
-                    to="heroSection"
-                    spy={true}
-                    smooth={'easeInOutCubic'}
-                    duration={750}
-                    offset={-80}
-                  >
-                    <p className="title">{this.props.siteTitle}</p>
-                  </Link>
-                  <div onClick={this.onMenuClick} className="hamburger-menu">
-                    <div className="hamburger-menu__line hamburger-menu__line--one" />
-                    <div className="hamburger-menu__line hamburger-menu__line--two" />
-                    <div className="hamburger-menu__line hamburger-menu__line--three" />
-                  </div>
-                </div>
-              ))
-            }
-          </Transition>
+          <NavbarTransition show={this.state.show}>
+            <img
+              alt="pebble icon"
+              className="navbar-box__pebble"
+              src={pebbleIcon}
+            />
+            <Link
+              to="heroSection"
+              spy={true}
+              smooth={'easeInOutCubic'}
+              duration={750}
+              offset={-80}
+            >
+              <p className="title">{this.props.siteTitle}</p>
+            </Link>
+            <div onClick={this.onMenuClick} className="hamburger-menu">
+              <div className="hamburger-menu__line hamburger-menu__line--one" />
+              <div className="hamburger-menu__line hamburger-menu__line--two" />
+              <div className="hamburger-menu__line hamburger-menu__line--three" />
+            </div>
+          </NavbarTransition>
         </Container>
         <div className="menu">
           <div onClick={this.onMenuClick} className="menu__icon-close" />
-
           <Link
             to="problemSection"
             spy={true}
