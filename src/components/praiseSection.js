@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import Img from 'gatsby-image';
 import Waypoint from 'react-waypoint';
+import { Keyframes, animated, config } from 'react-spring';
 
 import Container from './helperComponents/container';
 import Card from './helperComponents/card';
@@ -9,15 +10,66 @@ import FadeUp from './helperComponents/fadeUp';
 import pebble1 from '../images/pebbles/orange_pebble1.svg';
 
 import './praiseSection.sass';
+import { delay } from 'q';
+
+const Wiggler = Keyframes.Spring({
+  wiggle: async next => {
+    next({
+      transform: 'rotate(-15deg)',
+      config: config.wobbly,
+    });
+    await delay(100);
+    next({
+      transform: 'rotate(15deg)',
+      config: config.wobbly,
+    });
+    await delay(100);
+    next({
+      transform: 'rotate(-10deg)',
+      config: config.wobbly,
+    });
+    await delay(100);
+    next({
+      transform: 'rotate(10deg)',
+      config: config.wobbly,
+    });
+    await delay(100);
+    await next({
+      transform: 'rotate(0deg)',
+      config: config.wobbly,
+    });
+  },
+  static: { transform: 'rotate(0deg)' },
+});
 
 class PraiseCardContent extends Component {
+  state = {
+    wiggle: 'static',
+  };
+
+  onCardEnter = () => {
+    this.setState({ wiggle: 'wiggle' });
+  };
+
+  onCardLeave = () => {
+    this.setState({ wiggle: 'static' });
+  };
+
   render() {
     return (
       <Fragment>
-        <div className="card--praise__wiggle-box" />
-        <div className="card--praise__praise-emoji">
-          <Img fixed={this.props.emoji.childImageSharp.fixed} />
-        </div>
+        <div
+          onMouseEnter={this.onCardEnter}
+          onMouseLeave={this.onCardLeave}
+          className="card--praise__wiggle-box"
+        />
+        <Wiggler state={this.state.wiggle} native>
+          {props => (
+            <animated.div style={props} className="card--praise__praise-emoji">
+              <Img fixed={this.props.emoji.childImageSharp.fixed} />
+            </animated.div>
+          )}
+        </Wiggler>
         <p className="card--praise__praise-text">{this.props.text}</p>
         <p className="card--praise__praise-author">{`- @${
           this.props.author
