@@ -65,16 +65,15 @@ class Header extends Component {
     prevScrollpos: 0,
     canShowNavbar: true,
     scrollTimer: 'none',
-    menuOpen: false,
     showNavbar: false,
+    menuOpen: false,
+    showTrail: false,
     trailList: [
       { text: 'Why Pebble?', section: 'problemSection' },
       { text: 'Features', section: 'featureSection' },
       { text: 'Pricing', section: 'pricingSection' },
       { text: 'Praise', section: 'praiseSection' },
     ],
-    showMenu: false,
-    showTrail: false,
   };
 
   componentDidMount = () => {
@@ -143,7 +142,6 @@ class Header extends Component {
         'scale3d(250, 250, 250) rotate(45deg) translateY(2.5px) translateX(4px)';
       pebble.style.opacity = 0.85;
       body.classList.add('stop-scrolling');
-      this.setState({ showMenu: true });
 
       setTimeout(() => {
         this.setState({ showTrail: true });
@@ -157,11 +155,10 @@ class Header extends Component {
       pebble.style.opacity = 1;
       this.setState({ showTrail: false });
       setTimeout(() => {
-        this.setState({ showMenu: false });
+        this.setState({ menuOpen: false });
       }, 1000);
 
       body.classList.remove('stop-scrolling');
-      this.setState({ menuOpen: false });
     }
   };
 
@@ -191,7 +188,7 @@ class Header extends Component {
             </div>
           </NavbarTransition>
         </Container>
-        {this.state.showMenu && (
+        {this.state.menuOpen && (
           <div className="menu">
             <div onClick={this.onMenuClick} className="menu__icon-close" />
             <MenuTrail
