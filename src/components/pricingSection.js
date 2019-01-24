@@ -66,6 +66,7 @@ class PricingSection extends Component {
       .fill(0)
       .map((item, index) => (
         <img
+          key={`pricing pebble: ${index}`}
           alt=""
           className={`pricing-section__pebble-box__pebble${index + 1}`}
           src={pebble1}

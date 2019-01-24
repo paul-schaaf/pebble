@@ -98,6 +98,7 @@ class PraiseSection extends Component {
       .fill(0)
       .map((item, index) => (
         <img
+          key={`praise pebble: ${index}`}
           alt=""
           className={`praise-section__pebble-box__pebble${index + 1}`}
           src={pebble1}

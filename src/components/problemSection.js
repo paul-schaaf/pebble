@@ -102,6 +102,7 @@ class ProblemSection extends Component {
       .fill(0)
       .map((item, index) => (
         <img
+          key={`problem pebble: ${index}`}
           alt=""
           className={`problem-section__pebble-box__pebble${index + 1}`}
           src={pebble1}
