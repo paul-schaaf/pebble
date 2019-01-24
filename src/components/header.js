@@ -11,12 +11,15 @@ import './header.sass';
 
 const NavbarTransition = ({ children, show }) => (
   <Transition
+    native
     items={show}
     from={{ transform: 'translateY(-50px)' }}
     enter={{ transform: 'translateY(0px)' }}
     config={{ friction: 50, delay: 700 }}
   >
-    {show => show && (props => <div style={props}>{children}</div>)}
+    {show =>
+      show && (props => <animated.div style={props}>{children}</animated.div>)
+    }
   </Transition>
 );
 
