@@ -21,6 +21,14 @@ const PraiseCardContent = ({ emoji, text, author }) => (
 );
 
 class PraiseSection extends Component {
+  state = {
+    fadeUp: false,
+  };
+
+  onWaypointEnter = () => {
+    this.setState({ fadeUp: true });
+  };
+
   render() {
     return (
       <div className="praise-section">
@@ -54,125 +62,147 @@ class PraiseSection extends Component {
         <Container>
           <p className="praise-section__heading">Praise</p>
         </Container>
-        <div className="praise-section__scroll-box">
-          <div className="praise-section__scroll-box__card-box--one">
-            <Card type="praise">
-              <PraiseCardContent
-                emoji={this.props.womanYellowFaceWhiteHair}
-                text="Amazing tool!"
-                author="Jayqueline"
-              />
-            </Card>
-            <Card type="praise">
-              <PraiseCardContent
-                emoji={this.props.robotEmoji}
-                text="Beep Boop."
-                author="Mr.Robot"
-              />
-            </Card>
-            <Card type="praise">
-              <PraiseCardContent
-                emoji={this.props.manYellowFaceWhiteHair}
-                text="Spectacular!"
-                author="Bob"
-              />
-            </Card>
-            <Card type="praise">
-              <PraiseCardContent
-                emoji={this.props.grandma}
-                text="I love this thing!!"
-                author="grandma"
-              />
-            </Card>
-            <Card type="praise">
-              <PraiseCardContent
-                emoji={this.props.womanBlackFaceCurlyHair}
-                text="Fantastic Features!"
-                author="annie"
-              />
-            </Card>
-            <Card type="praise">
-              <PraiseCardContent
-                emoji={this.props.zombie}
-                text="Nice work, yummy!"
-                author="theFriendlyZombie"
-              />
-            </Card>
-            <Card type="praise">
-              <PraiseCardContent
-                emoji={this.props.womanArtist}
-                text="Beautiful!"
-                author="emilia"
-              />
-            </Card>
-            <Card type="praise">
-              <PraiseCardContent
-                emoji={this.props.manAstronaut}
-                text="Five stars!"
-                author="oscar"
-              />
-            </Card>
-            <div className="praise-section__scroll-box__card-box--one__placeholder" />
+        <Waypoint onEnter={this.onWaypointEnter}>
+          <div>
+            <Spring
+              native
+              items={this.state.fadeUp}
+              from={{ opacity: 0, transform: 'translateY(150px)' }}
+              to={{
+                opacity: 1,
+                transform: this.state.fadeUp
+                  ? 'translateY(0px)'
+                  : 'translateY(150px)',
+              }}
+              config={config.slow}
+            >
+              {props => (
+                <animated.div
+                  style={props}
+                  className="praise-section__scroll-box"
+                >
+                  <div className="praise-section__scroll-box__card-box--one">
+                    <Card type="praise">
+                      <PraiseCardContent
+                        emoji={this.props.womanYellowFaceWhiteHair}
+                        text="Amazing tool!"
+                        author="Jayqueline"
+                      />
+                    </Card>
+                    <Card type="praise">
+                      <PraiseCardContent
+                        emoji={this.props.robotEmoji}
+                        text="Beep Boop."
+                        author="Mr.Robot"
+                      />
+                    </Card>
+                    <Card type="praise">
+                      <PraiseCardContent
+                        emoji={this.props.manYellowFaceWhiteHair}
+                        text="Spectacular!"
+                        author="Bob"
+                      />
+                    </Card>
+                    <Card type="praise">
+                      <PraiseCardContent
+                        emoji={this.props.grandma}
+                        text="I love this thing!!"
+                        author="grandma"
+                      />
+                    </Card>
+                    <Card type="praise">
+                      <PraiseCardContent
+                        emoji={this.props.womanBlackFaceCurlyHair}
+                        text="Fantastic Features!"
+                        author="annie"
+                      />
+                    </Card>
+                    <Card type="praise">
+                      <PraiseCardContent
+                        emoji={this.props.zombie}
+                        text="Nice work, yummy!"
+                        author="theFriendlyZombie"
+                      />
+                    </Card>
+                    <Card type="praise">
+                      <PraiseCardContent
+                        emoji={this.props.womanArtist}
+                        text="Beautiful!"
+                        author="emilia"
+                      />
+                    </Card>
+                    <Card type="praise">
+                      <PraiseCardContent
+                        emoji={this.props.manAstronaut}
+                        text="Five stars!"
+                        author="oscar"
+                      />
+                    </Card>
+                    <div className="praise-section__scroll-box__card-box--one__placeholder" />
+                  </div>
+                  <div className="praise-section__scroll-box__card-box">
+                    <Card type="praise">
+                      <PraiseCardContent
+                        emoji={this.props.womanWhiteFaceBlackHair}
+                        text="Great and simple!"
+                        author="Dnice"
+                      />
+                    </Card>
+                    <Card type="praise">
+                      <PraiseCardContent
+                        emoji={this.props.santaEmoji}
+                        text="Pebble is the bomb!"
+                        author="Santa"
+                      />
+                    </Card>
+                    <Card type="praise">
+                      <PraiseCardContent
+                        emoji={this.props.manBlackFaceBlackHair}
+                        text="Awesome stuff!"
+                        author="Jack"
+                      />
+                    </Card>
+                    <Card type="praise">
+                      <PraiseCardContent
+                        emoji={this.props.womanWhiteFaceRedhair}
+                        text="I've fallen in love!"
+                        author="hannah"
+                      />
+                    </Card>
+                    <Card type="praise">
+                      <PraiseCardContent
+                        emoji={this.props.manScientist}
+                        text="Just Sublime!"
+                        author="Lance"
+                      />
+                    </Card>
+                    <Card type="praise">
+                      <PraiseCardContent
+                        emoji={this.props.manLaptop}
+                        text="Magnificent"
+                        author="henry"
+                      />
+                    </Card>
+                    <Card type="praise">
+                      <PraiseCardContent
+                        emoji={this.props.princess}
+                        text="Yes, yes, yes!"
+                        author="sissi"
+                      />
+                    </Card>
+                    <Card type="praise">
+                      <PraiseCardContent
+                        emoji={this.props.blackOfficer}
+                        text="Very secure!"
+                        author="richard"
+                      />
+                    </Card>
+                  </div>
+                </animated.div>
+              )}
+            </Spring>
           </div>
-          <div className="praise-section__scroll-box__card-box">
-            <Card type="praise">
-              <PraiseCardContent
-                emoji={this.props.womanWhiteFaceBlackHair}
-                text="Great and simple!"
-                author="Dnice"
-              />
-            </Card>
-            <Card type="praise">
-              <PraiseCardContent
-                emoji={this.props.santaEmoji}
-                text="Pebble is the bomb!"
-                author="Santa"
-              />
-            </Card>
-            <Card type="praise">
-              <PraiseCardContent
-                emoji={this.props.manBlackFaceBlackHair}
-                text="Awesome stuff!"
-                author="Jack"
-              />
-            </Card>
-            <Card type="praise">
-              <PraiseCardContent
-                emoji={this.props.womanWhiteFaceRedhair}
-                text="I've fallen in love!"
-                author="hannah"
-              />
-            </Card>
-            <Card type="praise">
-              <PraiseCardContent
-                emoji={this.props.manScientist}
-                text="Just Sublime!"
-                author="Lance"
-              />
-            </Card>
-            <Card type="praise">
-              <PraiseCardContent
-                emoji={this.props.manLaptop}
-                text="Magnificent"
-                author="henry"
-              />
-            </Card>
-            <Card type="praise">
-              <PraiseCardContent
-                emoji={this.props.princess}
-                text="Yes, yes, yes!"
-                author="sissi"
-              />
-            </Card>
-            <Card type="praise">
-              <PraiseCardContent
-                emoji={this.props.blackOfficer}
-                text="Very secure!"
-                author="richard"
-              />
-            </Card>
-          </div>
-        </div>
+        </Waypoint>
       </div>
     );
   }
