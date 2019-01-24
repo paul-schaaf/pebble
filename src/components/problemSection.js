@@ -96,35 +96,25 @@ class ProblemSection extends Component {
   onSubtitleWaypointEnter = () => {
     this.setState({ subtitleUp: true });
   };
+
+  renderPebbles = () => {
+    const pebbleList = Array(5)
+      .fill(0)
+      .map((item, index) => (
+        <img
+          alt=""
+          className={`problem-section__pebble-box__pebble${index + 1}`}
+          src={pebble1}
+        />
+      ));
+    return pebbleList;
+  };
+
   render() {
     return (
       <div className="problem-section">
         <div className="problem-section__pebble-box">
-          <img
-            alt=""
-            className="problem-section__pebble-box__pebble1"
-            src={pebble1}
-          />
-          <img
-            alt=""
-            className="problem-section__pebble-box__pebble2"
-            src={pebble1}
-          />
-          <img
-            alt=""
-            className="problem-section__pebble-box__pebble3"
-            src={pebble1}
-          />
-          <img
-            alt=""
-            className="problem-section__pebble-box__pebble4"
-            src={pebble1}
-          />
-          <img
-            alt=""
-            className="problem-section__pebble-box__pebble5"
-            src={pebble1}
-          />
+          {this.renderPebbles()}
         </div>
         <Container>
           <Centrifier>

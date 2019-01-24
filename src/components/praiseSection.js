@@ -34,35 +34,24 @@ class PraiseSection extends Component {
     this.setState({ contentUp: true });
   };
 
+  renderPebbles = () => {
+    const pebbleList = Array(5)
+      .fill(0)
+      .map((item, index) => (
+        <img
+          alt=""
+          className={`praise-section__pebble-box__pebble${index + 1}`}
+          src={pebble1}
+        />
+      ));
+    return pebbleList;
+  };
+
   render() {
     return (
       <div className="praise-section">
         <div className="praise-section___pebble-box">
-          <img
-            alt=""
-            className="praise-section__pebble-box__pebble1"
-            src={pebble1}
-          />
-          <img
-            alt=""
-            className="praise-section__pebble-box__pebble2"
-            src={pebble1}
-          />
-          <img
-            alt=""
-            className="praise-section__pebble-box__pebble3"
-            src={pebble1}
-          />
-          <img
-            alt=""
-            className="praise-section__pebble-box__pebble4"
-            src={pebble1}
-          />
-          <img
-            alt=""
-            className="praise-section__pebble-box__pebble5"
-            src={pebble1}
-          />
+          {this.renderPebbles()}
         </div>
         <Container>
           <Waypoint bottomOffset="20px" onEnter={this.onHeadingWaypointEnter}>
