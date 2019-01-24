@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-scroll';
-import { Transition, Trail } from 'react-spring';
+import { Transition, Trail, animated } from 'react-spring';
 
 import Container from './helperComponents/container';
 
@@ -22,6 +22,7 @@ const NavbarTransition = ({ children, show }) => (
 
 const MenuTrail = ({ list, onMenuClick }) => (
   <Trail
+    native
     items={list}
     from={{ transform: 'translate3d(0,80px,0)', opacity: 0 }}
     to={{ transform: 'translate3d(0,0px,0)', opacity: 1 }}
@@ -36,13 +37,13 @@ const MenuTrail = ({ list, onMenuClick }) => (
         offset={-80}
         delay={1300}
       >
-        <p
+        <animated.p
           style={props}
           onClick={onMenuClick}
           className={`menu__link--${index}`}
         >
           {item.text}
-        </p>
+        </animated.p>
       </Link>
     )}
   </Trail>
@@ -133,7 +134,6 @@ class Header extends Component {
       setTimeout(() => {
         this.setState({ showTrail: true });
       }, 500);
-
       this.setState({ menuOpen: true });
     } else {
       const pebble = document.querySelector('.navbar-box__pebble');
@@ -175,7 +175,6 @@ class Header extends Component {
         {this.state.showTrail && (
           <div className="menu">
             <div onClick={this.onMenuClick} className="menu__icon-close" />
-
             <MenuTrail
               list={this.state.trailList}
               onMenuClick={this.onMenuClick}
