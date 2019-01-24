@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-scroll';
-import { Transition } from 'react-spring';
+import { Transition, Trail } from 'react-spring';
 
 import Container from './helperComponents/container';
 
@@ -20,6 +20,8 @@ const NavbarTransition = ({ children, show }) => (
   </Transition>
 );
 
+const menuTrail = ({ children }) => <Trail />;
+
 class Header extends Component {
   state = {
     prevScrollpos: 0,
@@ -27,6 +29,7 @@ class Header extends Component {
     scrollTimer: 'none',
     menuOpen: false,
     show: false,
+    trailList: ['Why Pebble?', 'Features', 'Pricing', 'Praise'],
   };
 
   componentDidMount = () => {
@@ -148,7 +151,7 @@ class Header extends Component {
             offset={-80}
             delay={1300}
           >
-            <p onClick={this.onMenuClick} className="menu__link--first">
+            <p onClick={this.onMenuClick} className="menu__link--0">
               Why Pebble?
             </p>
           </Link>
@@ -160,7 +163,7 @@ class Header extends Component {
             offset={-80}
             delay={1300}
           >
-            <p onClick={this.onMenuClick} className="menu__link--second">
+            <p onClick={this.onMenuClick} className="menu__link--1">
               Features
             </p>
           </Link>
@@ -172,7 +175,7 @@ class Header extends Component {
             offset={-80}
             delay={1300}
           >
-            <p onClick={this.onMenuClick} className="menu__link--third">
+            <p onClick={this.onMenuClick} className="menu__link--2">
               Pricing
             </p>
           </Link>
@@ -184,7 +187,7 @@ class Header extends Component {
             offset={-80}
             delay={1300}
           >
-            <p onClick={this.onMenuClick} className="menu__link--fourth">
+            <p onClick={this.onMenuClick} className="menu__link--3">
               Praise
             </p>
           </Link>
