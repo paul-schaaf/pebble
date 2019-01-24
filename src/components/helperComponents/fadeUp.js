@@ -9,7 +9,7 @@ const FadeUp = ({ fadeUp, children }) => (
     from={{ opacity: 0, transform: 'translateY(150px)' }}
     to={{
       opacity: 1,
-      transform: this.state.fadeUp ? 'translateY(0px)' : 'translateY(150px)',
+      transform: fadeUp ? 'translateY(0px)' : 'translateY(150px)',
     }}
     config={config.slow}
   >
