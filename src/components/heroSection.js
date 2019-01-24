@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Transition } from 'react-spring';
+import { Transition, Spring, animated } from 'react-spring';
 import Img from 'gatsby-image';
 
 import Container from './helperComponents/container';
@@ -32,9 +32,22 @@ const SubTitleTransition = ({ children, show }) => (
 class HeroSection extends Component {
   state = {
     show: false,
+    toggleFinger: false,
   };
 
   componentDidMount = () => this.setState({ show: true });
+
+  onReadEnter = () => {
+    if (!this.state.toggleFinger) {
+      this.setState({ toggleFinger: true });
+    }
+  };
+
+  onReadLeave = () => {
+    if (this.state.toggleFinger) {
+      this.setState({ toggleFinger: false });
+    }
+  };
 
   render() {
     return (
@@ -49,13 +62,32 @@ class HeroSection extends Component {
               <Centrifier>
                 <SubTitleTransition show={this.state.show}>
                   <div className="hero-section__content__text">
-                    <span aria-label="pointing finger" role="img">
-                      <Img
-                        alt="pointing finger"
-                        fluid={this.props.fingerEmoji.childImageSharp.fluid}
-                      />
-                    </span>
-                    Sign up for trial
+                    <Spring
+                      native
+                      from={{ transform: 'translateX(0px) translateY(1.5px)' }}
+                      to={{
+                        transform: this.state.toggleFinger
+                          ? 'translateX(4px) translateY(1.5px)'
+                          : 'translateX(0px) translateY(1.5px)',
+                      }}
+                      config={{ friction: 8 }}
+                    >
+                      {props => (
+                        <animated.span style={props}>
+                          <Img
+                            alt="pointing finger"
+                            fluid={this.props.fingerEmoji.childImageSharp.fluid}
+                          />
+                        </animated.span>
+                      )}
+                    </Spring>
+                    <p
+                      onMouseEnter={this.onReadEnter}
+                      onMouseLeave={this.onReadLeave}
+                      style={{ display: 'inline' }}
+                    >
+                      Sign up for trial
+                    </p>
                   </div>
                 </SubTitleTransition>
               </Centrifier>
