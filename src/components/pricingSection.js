@@ -70,7 +70,6 @@ class PricingSection extends Component {
             className="pricing-section__pebble-box__pebble1"
             src={pebble1}
           />
-
           <img
             alt=""
             className="pricing-section__pebble-box__pebble2"
@@ -81,19 +80,16 @@ class PricingSection extends Component {
             className="pricing-section__pebble-box__pebble3"
             src={pebble1}
           />
-
           <img
             alt=""
             className="pricing-section__pebble-box__pebble4"
             src={pebble1}
           />
-
           <img
             alt=""
             className="pricing-section__pebble-box__pebble5"
             src={pebble1}
           />
-
           <img
             alt=""
             className="pricing-section__pebble-box__pebble6"
