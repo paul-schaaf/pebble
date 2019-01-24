@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, Component } from 'react';
 import Img from 'gatsby-image';
+import { Spring, animated } from 'react-spring';
 
 import Container from './helperComponents/container';
 import Centrifier from './helperComponents/centrifier';
@@ -9,39 +10,77 @@ import pebble1 from '../images/pebbles/orange_pebble1.svg';
 
 import './featureSection.sass';
 
-const FeatureCardContent = ({ heading, alt, isRobot, emoji, fingerEmoji }) => (
-  <Fragment>
-    <p className="card__heading">{heading}</p>
-    <div className="card__main-emoji">
-      <span>
-        <Img
-          alt={alt}
-          className={`card__main-emoji__img card__main-emoji--${
-            isRobot ? 'feature' : 'robot'
-          }`}
-          fixed={emoji.childImageSharp.fixed}
-        />
-      </span>
-    </div>
-    <p className="card__text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis
-    </p>
-    <Centrifier>
-      <div className="card__read-more">
-        <span role="img" aria-label="pointing finger">
-          <Img
-            alt="pointing finger"
-            className="card__finger"
-            fixed={fingerEmoji.childImageSharp.fixed}
-          />
-        </span>
-        Read more
-      </div>
-    </Centrifier>
-  </Fragment>
-);
+class FeatureCardContent extends Component {
+  state = {
+    toggleFinger: false,
+  };
+
+  onReadEnter = () => {
+    if (!this.state.toggleFinger) {
+      this.setState({ toggleFinger: true });
+    }
+  };
+
+  onReadLeave = () => {
+    if (this.state.toggleFinger) {
+      this.setState({ toggleFinger: false });
+    }
+  };
+  render() {
+    return (
+      <Fragment>
+        <p className="card__heading">{this.props.heading}</p>
+        <div className="card__main-emoji">
+          <span>
+            <Img
+              alt={this.props.alt}
+              className={`card__main-emoji__img card__main-emoji--${
+                this.props.isRobot ? 'feature' : 'robot'
+              }`}
+              fixed={this.props.emoji.childImageSharp.fixed}
+            />
+          </span>
+        </div>
+        <p className="card__text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis
+        </p>
+        <Centrifier>
+          <div className="card__read-more">
+            <Spring
+              native
+              from={{ transform: 'translateX(0px) translateY(1.5px)' }}
+              to={{
+                transform: this.state.toggleFinger
+                  ? 'translateX(2px) translateY(1.5px)'
+                  : 'translateX(0px) translateY(1.5px)',
+              }}
+              config={{ friction: 6 }}
+            >
+              {props => (
+                <animated.span style={props}>
+                  <Img
+                    alt="pointing finger"
+                    className="card__finger"
+                    fixed={this.props.fingerEmoji.childImageSharp.fixed}
+                  />
+                </animated.span>
+              )}
+            </Spring>
+            <p
+              onMouseEnter={this.onReadEnter}
+              onMouseLeave={this.onReadLeave}
+              style={{ display: 'inline' }}
+            >
+              Read more
+            </p>
+          </div>
+        </Centrifier>
+      </Fragment>
+    );
+  }
+}
 
 const FeatureSection = ({
   craneEmoji,

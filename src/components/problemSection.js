@@ -51,7 +51,7 @@ class ProblemCardContent extends Component {
                   ? 'translateX(2px) translateY(1.5px)'
                   : 'translateX(0px) translateY(1.5px)',
               }}
-              config={{ friction: 10 }}
+              config={{ friction: 6 }}
             >
               {props => (
                 <animated.span style={props}>
