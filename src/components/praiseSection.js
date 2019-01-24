@@ -61,12 +61,12 @@ const PraiseSection = ({
         className="praise-section__pebble-box__pebble4"
         src={pebble1}
       />
-      {/*
+
       <img
         alt=""
         className="praise-section__pebble-box__pebble5"
         src={pebble1}
-      /> */}
+      />
     </div>
     <Container>
       <p className="praise-section__heading">Praise</p>

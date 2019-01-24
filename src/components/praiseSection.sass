@@ -84,9 +84,16 @@
     &__pebble5
       position: absolute
       width: 170px
-      left: 100vw * 0.15
-      top: 400px
-      transform: rotate(-80deg)
+      left: 100vw * 0.17
+      top: 370px
+      transform: rotate(-110deg)
+      display: none
+      @media (min-width: 1051px)
+        display: block
+      @media (min-width: 1350px)
+        left: 100vw * 0.14
+        transform: rotate(-80deg)
+        top: 400px
   &__heading
     font-size: 55px
     font-family: $secondary-text
