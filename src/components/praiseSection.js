@@ -22,11 +22,16 @@ const PraiseCardContent = ({ emoji, text, author }) => (
 
 class PraiseSection extends Component {
   state = {
-    fadeUp: false,
+    headingUp: false,
+    contentUp: false,
   };
 
-  onWaypointEnter = () => {
-    this.setState({ fadeUp: true });
+  onHeadingWaypointEnter = () => {
+    this.setState({ headingUp: true });
+  };
+
+  onContentWaypointEnter = () => {
+    this.setState({ contentUp: true });
   };
 
   render() {
@@ -60,11 +65,17 @@ class PraiseSection extends Component {
           />
         </div>
         <Container>
-          <p className="praise-section__heading">Praise</p>
+          <Waypoint bottomOffset="20px" onEnter={this.onHeadingWaypointEnter}>
+            <div>
+              <FadeUp fadeUp={this.state.headingUp}>
+                <p className="praise-section__heading">Praise</p>
+              </FadeUp>
+            </div>
+          </Waypoint>
         </Container>
-        <Waypoint onEnter={this.onWaypointEnter}>
+        <Waypoint bottomOffset="40px" onEnter={this.onContentWaypointEnter}>
           <div>
-            <FadeUp fadeUp={this.state.fadeUp}>
+            <FadeUp fadeUp={this.state.contentUp}>
               <div className="praise-section__scroll-box">
                 <div className="praise-section__scroll-box__card-box--one">
                   <Card type="praise">
