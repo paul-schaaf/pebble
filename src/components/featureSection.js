@@ -87,10 +87,15 @@ class FeatureCardContent extends Component {
 class FeatureSection extends Component {
   state = {
     fadeUp: false,
+    headingUp: false,
   };
 
   onWaypointEnter = () => {
     this.setState({ fadeUp: true });
+  };
+
+  onHeadingWaypointEnter = () => {
+    this.setState({ headingUp: true });
   };
 
   render() {
@@ -132,9 +137,15 @@ class FeatureSection extends Component {
           />
         </div>
         <Container>
-          <p className="feature-section__heading">Features</p>
+          <Waypoint bottomOffset="20px" onEnter={this.onHeadingWaypointEnter}>
+            <div>
+              <FadeUp fadeUp={this.state.headingUp}>
+                <p className="feature-section__heading">Features</p>
+              </FadeUp>
+            </div>
+          </Waypoint>
           <Centrifier>
-            <Waypoint onEnter={this.onWaypointEnter}>
+            <Waypoint bottomOffset="40px" onEnter={this.onWaypointEnter}>
               <div>
                 <FadeUp fadeUp={this.state.fadeUp}>
                   <div className="feature-section__card-grid">
