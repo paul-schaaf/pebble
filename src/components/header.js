@@ -20,15 +20,16 @@ const NavbarTransition = ({ children, show }) => (
   </Transition>
 );
 
-const menuTrail = ({ children, list }) => (
+const MenuTrail = ({ list, onMenuClick }) => (
   <Trail
     items={list}
-    from={{ transform: 'translate3d(0,40px,0)' }}
-    to={{ transform: 'translate3d(0,0px,0)' }}
+    from={{ transform: 'translate3d(0,80px,0)', opacity: 0 }}
+    to={{ transform: 'translate3d(0,0px,0)', opacity: 1 }}
+    leave={{ transform: 'translate3d(0,80px,0)', opacity: 0 }}
   >
     {(item, index) => props => (
       <Link
-        to="problemSection"
+        to={item.section}
         spy={true}
         smooth={'easeInOutCubic'}
         duration={750}
@@ -37,10 +38,10 @@ const menuTrail = ({ children, list }) => (
       >
         <p
           style={props}
-          onClick={this.onMenuClick}
+          onClick={onMenuClick}
           className={`menu__link--${index}`}
         >
-          {item}
+          {item.text}
         </p>
       </Link>
     )}
@@ -54,7 +55,13 @@ class Header extends Component {
     scrollTimer: 'none',
     menuOpen: false,
     show: false,
-    trailList: ['Why Pebble?', 'Features', 'Pricing', 'Praise'],
+    trailList: [
+      { text: 'Why Pebble?', section: 'problemSection' },
+      { text: 'Features', section: 'featureSection' },
+      { text: 'Pricing', section: 'pricingSection' },
+      { text: 'Praise', section: 'praiseSection' },
+    ],
+    showTrail: false,
   };
 
   componentDidMount = () => {
@@ -118,15 +125,14 @@ class Header extends Component {
   onMenuClick = () => {
     const pebble = document.querySelector('.navbar-box__pebble');
     const body = document.querySelector('body');
-    const menu = document.querySelector('.menu');
     if (!this.state.menuOpen) {
       pebble.style.transform =
         'scale3d(250, 250, 250) rotate(45deg) translateY(2.5px) translateX(4px)';
       pebble.style.opacity = 0.85;
       body.classList.add('stop-scrolling');
       setTimeout(() => {
-        menu.style.display = 'flex';
-      }, 750);
+        this.setState({ showTrail: true });
+      }, 500);
 
       this.setState({ menuOpen: true });
     } else {
@@ -134,8 +140,8 @@ class Header extends Component {
       pebble.style.transform =
         'scale3d(1, 1, 1) rotate(0deg) translateY(2.5px)';
       pebble.style.opacity = 1;
+      this.setState({ showTrail: false });
       body.classList.remove('stop-scrolling');
-      menu.style.display = 'none';
       this.setState({ menuOpen: false });
     }
   };
@@ -166,57 +172,16 @@ class Header extends Component {
             </div>
           </NavbarTransition>
         </Container>
-        <div className="menu">
-          <div onClick={this.onMenuClick} className="menu__icon-close" />
-          <Link
-            to="problemSection"
-            spy={true}
-            smooth={'easeInOutCubic'}
-            duration={750}
-            offset={-80}
-            delay={1300}
-          >
-            <p onClick={this.onMenuClick} className="menu__link--0">
-              Why Pebble?
-            </p>
-          </Link>
-          <Link
-            to="featureSection"
-            spy={true}
-            smooth={'easeInOutCubic'}
-            duration={750}
-            offset={-80}
-            delay={1300}
-          >
-            <p onClick={this.onMenuClick} className="menu__link--1">
-              Features
-            </p>
-          </Link>
-          <Link
-            to="pricingSection"
-            spy={true}
-            smooth={'easeInOutCubic'}
-            duration={750}
-            offset={-80}
-            delay={1300}
-          >
-            <p onClick={this.onMenuClick} className="menu__link--2">
-              Pricing
-            </p>
-          </Link>
-          <Link
-            to="praiseSection"
-            spy={true}
-            smooth={'easeInOutCubic'}
-            duration={750}
-            offset={-80}
-            delay={1300}
-          >
-            <p onClick={this.onMenuClick} className="menu__link--3">
-              Praise
-            </p>
-          </Link>
-        </div>
+        {this.state.showTrail && (
+          <div className="menu">
+            <div onClick={this.onMenuClick} className="menu__icon-close" />
+
+            <MenuTrail
+              list={this.state.trailList}
+              onMenuClick={this.onMenuClick}
+            />
+          </div>
+        )}
       </div>
     );
   }
