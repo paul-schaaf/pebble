@@ -49,8 +49,8 @@ const PricingCardContent = ({ name, emoji, alt, price, features }) => (
 
 class PricingSection extends Component {
   state = {
-    contentUp: false,
     headingUp: false,
+    contentUp: false,
   };
 
   onHeadingWaypointEnter = () => {
