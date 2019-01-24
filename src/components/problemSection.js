@@ -1,11 +1,12 @@
 import React, { Fragment, Component } from 'react';
 import Img from 'gatsby-image';
-import { Spring, animated, config } from 'react-spring';
+import { Spring, animated } from 'react-spring';
 import Waypoint from 'react-waypoint';
 
 import Container from './helperComponents/container';
 import Centrifier from './helperComponents/centrifier';
 import Card from './helperComponents/card';
+import FadeUp from './helperComponents/fadeUp';
 
 import pebble1 from '../images/pebbles/blue_pebble1.svg';
 
@@ -132,54 +133,38 @@ class ProblemSection extends Component {
           <Centrifier>
             <Waypoint onEnter={this.onWaypointEnter}>
               <div>
-                <Spring
-                  native
-                  items={this.state.fadeUp}
-                  from={{ opacity: 0, transform: 'translateY(150px)' }}
-                  to={{
-                    opacity: 1,
-                    transform: this.state.fadeUp
-                      ? 'translateY(0px)'
-                      : 'translateY(150px)',
-                  }}
-                  config={config.slow}
-                >
-                  {props => (
-                    <animated.div
-                      style={props}
-                      className="problem-section__card-box"
-                    >
-                      <Card type="problem">
-                        <ProblemCardContent
-                          heading="No Healthy Food"
-                          emoji={this.props.lollipopEmoji}
-                          alt="lollipop emoji"
-                          text="Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
+                <FadeUp fadeUp={this.state.fadeUp}>
+                  <div className="problem-section__card-box">
+                    <Card type="problem">
+                      <ProblemCardContent
+                        heading="No Healthy Food"
+                        emoji={this.props.lollipopEmoji}
+                        alt="lollipop emoji"
+                        text="Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
           enim ad minim veniam, quis nostrud exercitation ullamco labo-ris
           nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
           reprehenderit in volup-tate velit esse cillum dolore eu fugiat
           nulla paria-tur. Excepteur sint aliquip ex ea commodo ea ut"
-                          fingerEmoji={this.props.fingerEmoji}
-                        />
-                      </Card>
-                      <Card type="problem">
-                        <ProblemCardContent
-                          heading="High Housing Costs"
-                          emoji={this.props.shackEmoji}
-                          alt="shack emoji"
-                          text="Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
+                        fingerEmoji={this.props.fingerEmoji}
+                      />
+                    </Card>
+                    <Card type="problem">
+                      <ProblemCardContent
+                        heading="High Housing Costs"
+                        emoji={this.props.shackEmoji}
+                        alt="shack emoji"
+                        text="Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
           enim ad minim veniam, quis nostrud exercitation ullamco labo-ris
           nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
           reprehenderit in volup-tate velit esse cillum dolore eu fugiat
           nulla paria-tur. Excepteur sint aliquip ex ea commodo ea ut"
-                          fingerEmoji={this.props.fingerEmoji}
-                        />
-                      </Card>
-                    </animated.div>
-                  )}
-                </Spring>
+                        fingerEmoji={this.props.fingerEmoji}
+                      />
+                    </Card>
+                  </div>
+                </FadeUp>
               </div>
             </Waypoint>
           </Centrifier>

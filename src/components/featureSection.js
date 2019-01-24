@@ -1,11 +1,12 @@
 import React, { Fragment, Component } from 'react';
 import Img from 'gatsby-image';
-import { Spring, animated, config } from 'react-spring';
+import { Spring, animated } from 'react-spring';
 import Waypoint from 'react-waypoint';
 
 import Container from './helperComponents/container';
 import Centrifier from './helperComponents/centrifier';
 import Card from './helperComponents/card';
+import FadeUp from './helperComponents/fadeUp';
 
 import pebble1 from '../images/pebbles/orange_pebble1.svg';
 
@@ -135,74 +136,58 @@ class FeatureSection extends Component {
           <Centrifier>
             <Waypoint onEnter={this.onWaypointEnter}>
               <div>
-                <Spring
-                  native
-                  items={this.state.fadeUp}
-                  from={{ opacity: 0, transform: 'translateY(150px)' }}
-                  to={{
-                    opacity: 1,
-                    transform: this.state.fadeUp
-                      ? 'translateY(0px)'
-                      : 'translateY(150px)',
-                  }}
-                  config={config.slow}
-                >
-                  {props => (
-                    <animated.div
-                      style={props}
-                      className="feature-section__card-grid"
-                    >
-                      <Card type="feature">
-                        <FeatureCardContent
-                          heading="Construction Tech"
-                          alt="crane emoji"
-                          emoji={this.props.craneEmoji}
-                          fingerEmoji={this.props.fingerEmoji}
-                        />
-                      </Card>
-                      <Card type="feature">
-                        <FeatureCardContent
-                          heading="Nanotechnology"
-                          alt="microscope emoji"
-                          emoji={this.props.microscopeEmoji}
-                          fingerEmoji={this.props.fingerEmoji}
-                        />
-                      </Card>
-                      <Card type="feature">
-                        <FeatureCardContent
-                          heading="Robotics"
-                          alt="robot emoji"
-                          emoji={this.props.robotEmoji}
-                          fingerEmoji={this.props.fingerEmoji}
-                        />
-                      </Card>
-                      <Card type="feature">
-                        <FeatureCardContent
-                          heading="Bioengineering"
-                          alt="dna emoji"
-                          emoji={this.props.dnaEmoji}
-                          fingerEmoji={this.props.fingerEmoji}
-                        />
-                      </Card>
-                      <Card type="feature">
-                        <FeatureCardContent
-                          heading="Cybersecurity"
-                          alt="police car emoji"
-                          emoji={this.props.policeCarEmoji}
-                          fingerEmoji={this.props.fingerEmoji}
-                        />
-                      </Card>
-                      <Card type="feature">
-                        <FeatureCardContent
-                          heading="Neuroscience"
-                          alt="brain emoji"
-                          emoji={this.props.brainEmoji}
-                          fingerEmoji={this.props.fingerEmoji}
-                        />
-                      </Card>
-                    </animated.div>
-                  )}
-                </Spring>
+                <FadeUp fadeUp={this.state.fadeUp}>
+                  <div className="feature-section__card-grid">
+                    <Card type="feature">
+                      <FeatureCardContent
+                        heading="Construction Tech"
+                        alt="crane emoji"
+                        emoji={this.props.craneEmoji}
+                        fingerEmoji={this.props.fingerEmoji}
+                      />
+                    </Card>
+                    <Card type="feature">
+                      <FeatureCardContent
+                        heading="Nanotechnology"
+                        alt="microscope emoji"
+                        emoji={this.props.microscopeEmoji}
+                        fingerEmoji={this.props.fingerEmoji}
+                      />
+                    </Card>
+                    <Card type="feature">
+                      <FeatureCardContent
+                        heading="Robotics"
+                        alt="robot emoji"
+                        emoji={this.props.robotEmoji}
+                        fingerEmoji={this.props.fingerEmoji}
+                      />
+                    </Card>
+                    <Card type="feature">
+                      <FeatureCardContent
+                        heading="Bioengineering"
+                        alt="dna emoji"
+                        emoji={this.props.dnaEmoji}
+                        fingerEmoji={this.props.fingerEmoji}
+                      />
+                    </Card>
+                    <Card type="feature">
+                      <FeatureCardContent
+                        heading="Cybersecurity"
+                        alt="police car emoji"
+                        emoji={this.props.policeCarEmoji}
+                        fingerEmoji={this.props.fingerEmoji}
+                      />
+                    </Card>
+                    <Card type="feature">
+                      <FeatureCardContent
+                        heading="Neuroscience"
+                        alt="brain emoji"
+                        emoji={this.props.brainEmoji}
+                        fingerEmoji={this.props.fingerEmoji}
+                      />
+                    </Card>
+                  </div>
+                </FadeUp>
               </div>
             </Waypoint>
           </Centrifier>
