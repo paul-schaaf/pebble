@@ -50,6 +50,11 @@ const PricingCardContent = ({ name, emoji, alt, price, features }) => (
 class PricingSection extends Component {
   state = {
     contentUp: false,
+    headingUp: false,
+  };
+
+  onHeadingWaypointEnter = () => {
+    this.setState({ headingUp: true });
   };
 
   onContentWaypointEnter = () => {
@@ -96,9 +101,15 @@ class PricingSection extends Component {
           />
         </div>
         <Container>
-          <p className="pricing-section__heading">Pricing</p>
+          <Waypoint bottomOffset="20px" onEnter={this.onHeadingWaypointEnter}>
+            <div>
+              <FadeUp fadeUp={this.state.headingUp}>
+                <p className="pricing-section__heading">Pricing</p>
+              </FadeUp>
+            </div>
+          </Waypoint>
           <Centrifier>
-            <Waypoint onEnter={this.onContentWaypointEnter}>
+            <Waypoint bottomOffset="40px" onEnter={this.onContentWaypointEnter}>
               <div>
                 <FadeUp fadeUp={this.state.contentUp}>
                   <div className="pricing-section__plan-box">
