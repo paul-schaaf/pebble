@@ -14,6 +14,7 @@ class PraiseCardContent extends Component {
   render() {
     return (
       <Fragment>
+        <div className="card--praise__wiggle-box" />
         <div className="card--praise__praise-emoji">
           <Img fixed={this.props.emoji.childImageSharp.fixed} />
         </div>
