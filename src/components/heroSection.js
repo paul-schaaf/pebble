@@ -29,6 +29,21 @@ const SubTitleTransition = ({ children, show }) => (
   </Transition>
 );
 
+const FingerSpring = ({ children, toggleFinger }) => (
+  <Spring
+    native
+    from={{ transform: 'translateX(0px) translateY(1.5px)' }}
+    to={{
+      transform: toggleFinger
+        ? 'translateX(4px) translateY(1.5px)'
+        : 'translateX(0px) translateY(1.5px)',
+    }}
+    config={{ friction: 8 }}
+  >
+    {props => <animated.span style={props}>{children}</animated.span>}
+  </Spring>
+);
+
 class HeroSection extends Component {
   state = {
     show: false,
@@ -62,25 +77,12 @@ class HeroSection extends Component {
               <Centrifier>
                 <SubTitleTransition show={this.state.show}>
                   <div className="hero-section__content__text">
-                    <Spring
-                      native
-                      from={{ transform: 'translateX(0px) translateY(1.5px)' }}
-                      to={{
-                        transform: this.state.toggleFinger
-                          ? 'translateX(4px) translateY(1.5px)'
-                          : 'translateX(0px) translateY(1.5px)',
-                      }}
-                      config={{ friction: 8 }}
-                    >
-                      {props => (
-                        <animated.span style={props}>
-                          <Img
-                            alt="pointing finger"
-                            fluid={this.props.fingerEmoji.childImageSharp.fluid}
-                          />
-                        </animated.span>
-                      )}
-                    </Spring>
+                    <FingerSpring toggleFinger={this.state.toggleFinger}>
+                      <Img
+                        alt="pointing finger"
+                        fluid={this.props.fingerEmoji.childImageSharp.fluid}
+                      />
+                    </FingerSpring>
                     <p
                       onMouseEnter={this.onReadEnter}
                       onMouseLeave={this.onReadLeave}
