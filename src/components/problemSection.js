@@ -12,6 +12,21 @@ import pebble1 from '../images/pebbles/blue_pebble1.svg';
 
 import './problemSection.sass';
 
+const FingerSpring = ({ children, toggleFinger }) => (
+  <Spring
+    native
+    from={{ transform: 'translateX(0px) translateY(1.5px)' }}
+    to={{
+      transform: toggleFinger
+        ? 'translateX(2px) translateY(1.5px)'
+        : 'translateX(0px) translateY(1.5px)',
+    }}
+    config={{ friction: 6 }}
+  >
+    {props => <animated.span style={props}>{children}</animated.span>}
+  </Spring>
+);
+
 class ProblemCardContent extends Component {
   state = {
     toggleFinger: false,
@@ -45,26 +60,13 @@ class ProblemCardContent extends Component {
         <p className="card__text">{this.props.text}</p>
         <Centrifier>
           <div className="card__read-more">
-            <Spring
-              native
-              from={{ transform: 'translateX(0px) translateY(1.5px)' }}
-              to={{
-                transform: this.state.toggleFinger
-                  ? 'translateX(2px) translateY(1.5px)'
-                  : 'translateX(0px) translateY(1.5px)',
-              }}
-              config={{ friction: 6 }}
-            >
-              {props => (
-                <animated.span style={props}>
-                  <Img
-                    alt="pointing finger"
-                    className="card__finger"
-                    fixed={this.props.fingerEmoji.childImageSharp.fixed}
-                  />
-                </animated.span>
-              )}
-            </Spring>
+            <FingerSpring toggleFinger={this.state.toggleFinger}>
+              <Img
+                alt="pointing finger"
+                className="card__finger"
+                fixed={this.props.fingerEmoji.childImageSharp.fixed}
+              />
+            </FingerSpring>
             <p
               onMouseEnter={this.onReadEnter}
               onMouseLeave={this.onReadLeave}
