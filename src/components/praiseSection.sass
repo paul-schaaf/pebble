@@ -4,7 +4,10 @@
   position: relative
   width: 100%
   &__pebble-box
-    position: absolute
+    position: relative
+    max-width: 1440px
+    width: auto
+    margin: 0 auto
     &__pebble1
       position: absolute
       width: 180px
@@ -15,6 +18,8 @@
         width: 200px
         transform: rotate(10deg)
         top: 50px
+      @media (min-width: 1440px)
+        left: 1440px * 0.08
     &__pebble2
       position: absolute
       width: 120px
@@ -39,6 +44,8 @@
         transform: rotate(-70deg)
       @media (min-width: 1051px)
         left: 100vw * 0.74
+      @media (min-width: 1440px)
+        left: 1440px * 0.74
     &__pebble3
       position: absolute
       width: 170px
@@ -59,6 +66,8 @@
       @media (min-width: 1350px)
         left: 100vw * 0.375
         width: 300px
+      @media (min-width: 1440px)
+        left: 1440px * 0.375
     &__pebble4
       position: absolute
       width: 50px
@@ -81,6 +90,8 @@
       @media (min-width: 1350px)
         left: 100vw * 0.7
         top: 450px
+      @media (min-width: 1440px)
+        left: 1440px * 0.7
     &__pebble5
       position: absolute
       width: 170px
@@ -94,6 +105,8 @@
         left: 100vw * 0.14
         transform: rotate(-80deg)
         top: 400px
+      @media (min-width: 1440px)
+        left: 1440px * 0.14
   &__heading
     font-size: 55px
     font-family: $secondary-text
@@ -121,7 +134,7 @@
     
     &__card-box
       display: flex
-    
+      
       &--one
         display: flex
         margin-bottom: 30px

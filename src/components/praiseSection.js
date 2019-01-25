@@ -110,9 +110,7 @@ class PraiseSection extends Component {
   render() {
     return (
       <div className="praise-section">
-        <div className="praise-section___pebble-box">
-          {this.renderPebbles()}
-        </div>
+        <div className="praise-section__pebble-box">{this.renderPebbles()}</div>
         <Container>
           <Waypoint bottomOffset="20px" onEnter={this.onHeadingWaypointEnter}>
             <div>
