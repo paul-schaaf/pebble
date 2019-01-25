@@ -1,9 +1,11 @@
 @import layout
   
 .feature-section
-  position: relative
   &__pebble-box
-    position: absolute
+    position: relative
+    max-width: 1440px
+    width: auto
+    margin: 0 auto
     &__pebble1
       display: none
       position: absolute
@@ -28,6 +30,8 @@
         left: 100vw * 0.11
       @media (min-width: 1350px)
         left: 100vw * 0.13
+      @media (min-width: 1440px)
+        left: 1440px * 0.13
     &__pebble2
       position: absolute
       width: 200px
@@ -48,6 +52,8 @@
       @media (min-width: 1051px)
         transform: rotate(180deg)
         width: 250px
+      @media (min-width: 1440px)
+        left: 1440px * 0.42
     &__pebble3
       position: absolute
       width: 170px
@@ -67,6 +73,8 @@
         left: 100vw * 0.78
       @media (min-width: 1350px)
         left: 100vw * 0.75
+      @media (min-width: 1440px)
+        left: 1440px * 0.75
     &__pebble4
       position: absolute
       width: 150px
@@ -92,6 +100,8 @@
         top: 600px
       @media (min-width: 1350px)
         left: 100vw * 0.75
+      @media (min-width: 1440px)
+        left: 1440px * 0.75
         
     &__pebble5
       position: absolute
@@ -119,6 +129,8 @@
         left: 100vw * 0.08
       @media (min-width: 1350px)
         left: 100vw * 0.12
+      @media (min-width: 1440px)
+        left: 1440px * 0.12
     &__pebble6
       position: absolute
       width: 180px

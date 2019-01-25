@@ -117,7 +117,7 @@ class FeatureSection extends Component {
   render() {
     return (
       <div className="feature-section">
-        <div className="feature-section___pebble-box">
+        <div className="feature-section__pebble-box">
           {this.renderPebbles()}
         </div>
         <Container>
