@@ -24,6 +24,20 @@ const NavbarTransition = ({ children, showNavbar }) => (
   </Transition>
 );
 
+const IconTransition = ({ showIcon, children }) => (
+  <Transition
+    native
+    items={showIcon}
+    from={{ opacity: 0 }}
+    enter={{ opacity: 1 }}
+    leave={{ opacity: 0 }}
+  >
+    {show =>
+      show && (props => <animated.div style={props}>{children}</animated.div>)
+    }
+  </Transition>
+);
+
 const MenuTrail = ({ list, onMenuClick, showTrail }) => (
   <Trail
     native
@@ -191,23 +205,14 @@ class Header extends Component {
         </Container>
         {this.state.menuOpen && (
           <div className="menu">
-            <Transition
-              items={this.state.showIcon}
-              from={{ opacity: 0 }}
-              enter={{ opacity: 1 }}
-              leave={{ opacity: 0 }}
-            >
-              {show =>
-                show &&
-                (props => (
-                  <div
-                    style={props}
-                    onClick={this.onMenuClick}
-                    className="menu__icon-close"
-                  />
-                ))
-              }
-            </Transition>
+            <IconTransition showIcon={this.state.showIcon}>
+              <div
+                style={props}
+                onClick={this.onMenuClick}
+                className="menu__icon-close"
+              />
+            </IconTransition>
+
             <MenuTrail
               showTrail={this.state.showTrail}
               list={this.state.trailList}
