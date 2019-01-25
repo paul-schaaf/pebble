@@ -206,13 +206,8 @@ class Header extends Component {
         {this.state.menuOpen && (
           <div className="menu">
             <IconTransition showIcon={this.state.showIcon}>
-              <div
-                style={props}
-                onClick={this.onMenuClick}
-                className="menu__icon-close"
-              />
+              <div onClick={this.onMenuClick} className="menu__icon-close" />
             </IconTransition>
-
             <MenuTrail
               showTrail={this.state.showTrail}
               list={this.state.trailList}
